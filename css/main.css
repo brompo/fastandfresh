@@ -1,0 +1,33 @@
+.mainmenu{
+	background-color: #ffffff;
+}
+.categoriessidebar{
+}
+.nav>li>a:hover{
+color#:ff962e;
+	;}
+.nav>li>a{
+	color:#649b33;
+}
+.sectionholder{
+	border-bottom:1px dotted #ff962e;
+	padding-bottom:15px;
+}
+.mainheader{
+	background-color: #649b33;
+	border-left:2px solid white;
+	border-right:2px solid white;
+	border-bottom:2px solid white;
+
+	-moz-border-radius: 0;
+border-radius: 0;
+-moz-box-shadow: 0 0 5px gray;
+-webkit-box-shadow: 0 0 5px gray;
+box-shadow: 0 0 5px gray;
+}
+.mainheader>ul>li>a{
+	color:#ffffff;
+}
+.fastandfresh-header{
+	text-align: left;
+}
