@@ -60,232 +60,134 @@
       <div class="container-fluid">
         <div class="row">
           <div class="col-sm-3 col-md-2 sidebar categoriessidebar">
-            <ul class="nav nav-sidebar">
-              <li class="active"><a href="vegetables.html">Vegetables</a></li>
-              <li><a href="herbs.html">Fresh Herbs</a></li>
-              <li><a href="fruits.html">Fruits</a></li>
-              <li><a href="vegetables.html">Meat & Sea Foods</a></li>
-              <li><a href="driedgoods.html">Groceries & Dried Goods</a></li>
-              <li><a href="cleanings.html">Cleaning Materials</a></li>
-            </ul>
+           <ul class="nav nav-sidebar">
+            <li><a href="/fastandfresh/vegetables.html">Vegetables</a></li>
+            <li><a href="/fastandfresh/herbs.html">Fresh Herbs</a></li>
+            <li><a href="/fastandfresh/fruits.html">Fruits</a></li>
+            <li><a href="/fastandfresh/meats.html">Meat & Sea Foods</a></li>
+            <li><a href="/fastandfresh/driedgoods.html">Groceries & Dried Goods</a></li>
+            <li><a href="/fastandfresh/cleanings.html">Cleaning Materials</a></li>
+          </ul>
+        </div>
+
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+          <div class="row">
+            <div class="col-sm-6 col-md-6">
+              <h4 class="fastandfresh-header">Vegetables</h4>
+            </div>
+            <div class="col-sm-6 col-md-6">
+              <div class="btn-group cartholder">
+                <button id="btn-total-checkout" type="button" class="btn btn-default btn-cart" value=1000>TZS: 0</button>
+                <button type="button" class="btn btn-default btn-cart">Checkout</button>
+              </div>            
+
+            </div>
           </div>
+          <div class="row placeholders sectionholder">
 
-          <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-
-            <h4 class="fastandfresh-header">Vegetables</h4>            
-
-            <div class="row placeholders sectionholder">
-              <div class="col-sm-3 col-md-2">
-                <div class="thumbnail">
-                  <img data-src="/images/vegetables/cabbage.jpg" src="images/vegetables/cabbage.jpg" alt="...">
-                  <div class="caption">
-                    <h5><b>Cabbage</b></h5>
-                    <p>Tsh 1,500/piece</p>
-                    <p>
-                      <a href="#" class="btn btn-default" role="button"><b>Add to Cart</b></a> 
-                    </p>
-                  </div>
-                </div>
+          <!--
+           <div class="col-sm-3 col-md-2">
+              <div class="cartcontainer">
+              <button type="button" class="btn btn-default btn-xs">
+                  <span class="glyphicon glyphicon-shopping-cart"></span> 
+                  <label class="boughtcabbage" id="lblcabbagecount">1kg</label>
+                </button>
               </div>
-              <div class="col-sm-3 col-md-2">
-                <div class="thumbnail">
-                  <img src="images/vegetables/carrot.jpg" alt="carrots">
-                  <div class="caption">
-                    <h5><b>Carrots</b></h5>
-                    <p>Tsh 1,500/kg</p>
-                    <p>
-                      <a href="#" class="btn btn-default" role="button"><b>Add to Cart</b></a> 
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-sm-3 col-md-2">
-                <div class="thumbnail">
-                  <img src="images/vegetables/celery.jpg" alt="Celery">
-                  <div class="caption">
-                    <h5><b>Celery</b></h5>
-                    <p>Tsh 1,000/bunch</p>
-                    <p>
-                      <a href="#" class="btn btn-default" role="button"><b>Add to Cart</b></a> 
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-sm-3 col-md-2">
-                <div class="thumbnail">
-                  <img data-src="holder.js/300x300" src="images/vegetables/tomato.jpg" alt="...">
-                  <div class="caption">
-                    <h5><b>Tomatoes</b></h5>
-                    <p>Tsh 1,800/kg</p>
-                    <p>
-                      <a href="#" class="btn btn-default" role="button"><b>Add to Cart</b></a> 
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-sm-3 col-md-2">
-                <div class="thumbnail">
-                  <img src="images/vegetables/eggplant.jpg" alt="Egg Plants" >
-                  <div class="caption">
-                    <h5><b>Egg Plants</b></h5>
-                    <p>Tsh 1,500/kg</p>
-                    <p>
-                      <a href="#" class="btn btn-default" role="button"><b>Add to Cart</b></a> 
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-sm-3 col-md-2">
-                <div class="thumbnail">
-                  <img data-src="holder.js/300x300" src="images/vegetables/pepper.jpg" alt="Peppers">
-                  <div class="caption">
-                    <h5><b>Peppers</b></h5>
-                    <p>Tsh 2,500/kg</p>
-                    <p>
-                      <a href="#" class="btn btn-default" role="button"><b>Add to Cart</b></a> 
-                    </p>
-                  </div>
+              <div class="thumbnail">
+                <img data-src="/images/vegetables/cabbage.jpg" src="images/vegetables/cabbage.jpg" alt="...">
+                <div id="cabbagecontainer" class="caption">
+                  <h5><b>Cabbage</b></h5>
+                  <input id="txtcabbage" class="itemvalue" type="text" value="1500" hidden>
+                  <p>Tsh 1,500/piece</p>
+                  <input type="button" value="-" class="qtyminus" field="quantity">
+                  <input type="text" name="quantity" value="1" class="qty">
+                  <input type="button" value="+" class="qtyplus" field="quantity">
+                  <p><a href="#" class="btn btn-default btn-add" role="button"><b> Add to Cart</b></a>     </p>
                 </div>
               </div>
             </div>
-
-            <h3 class="sub-header">Price List</h3>
-            <div class="table-responsive">
-              <table class="table table-striped">
-                <thead>
-                  <tr>
-                    <th>#</th>
-                    <th>Header</th>
-                    <th>Header</th>
-                    <th>Header</th>
-                    <th>Header</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>1,001</td>
-                    <td>Lorem</td>
-                    <td>ipsum</td>
-                    <td>dolor</td>
-                    <td>sit</td>
-                  </tr>
-                  <tr>
-                    <td>1,002</td>
-                    <td>amet</td>
-                    <td>consectetur</td>
-                    <td>adipiscing</td>
-                    <td>elit</td>
-                  </tr>
-                  <tr>
-                    <td>1,003</td>
-                    <td>Integer</td>
-                    <td>nec</td>
-                    <td>odio</td>
-                    <td>Praesent</td>
-                  </tr>
-                  <tr>
-                    <td>1,003</td>
-                    <td>libero</td>
-                    <td>Sed</td>
-                    <td>cursus</td>
-                    <td>ante</td>
-                  </tr>
-                  <tr>
-                    <td>1,004</td>
-                    <td>dapibus</td>
-                    <td>diam</td>
-                    <td>Sed</td>
-                    <td>nisi</td>
-                  </tr>
-                  <tr>
-                    <td>1,005</td>
-                    <td>Nulla</td>
-                    <td>quis</td>
-                    <td>sem</td>
-                    <td>at</td>
-                  </tr>
-                  <tr>
-                    <td>1,006</td>
-                    <td>nibh</td>
-                    <td>elementum</td>
-                    <td>imperdiet</td>
-                    <td>Duis</td>
-                  </tr>
-                  <tr>
-                    <td>1,007</td>
-                    <td>sagittis</td>
-                    <td>ipsum</td>
-                    <td>Praesent</td>
-                    <td>mauris</td>
-                  </tr>
-                  <tr>
-                    <td>1,008</td>
-                    <td>Fusce</td>
-                    <td>nec</td>
-                    <td>tellus</td>
-                    <td>sed</td>
-                  </tr>
-                  <tr>
-                    <td>1,009</td>
-                    <td>augue</td>
-                    <td>semper</td>
-                    <td>porta</td>
-                    <td>Mauris</td>
-                  </tr>
-                  <tr>
-                    <td>1,010</td>
-                    <td>massa</td>
-                    <td>Vestibulum</td>
-                    <td>lacinia</td>
-                    <td>arcu</td>
-                  </tr>
-                  <tr>
-                    <td>1,011</td>
-                    <td>eget</td>
-                    <td>nulla</td>
-                    <td>Class</td>
-                    <td>aptent</td>
-                  </tr>
-                  <tr>
-                    <td>1,012</td>
-                    <td>taciti</td>
-                    <td>sociosqu</td>
-                    <td>ad</td>
-                    <td>litora</td>
-                  </tr>
-                  <tr>
-                    <td>1,013</td>
-                    <td>torquent</td>
-                    <td>per</td>
-                    <td>conubia</td>
-                    <td>nostra</td>
-                  </tr>
-                  <tr>
-                    <td>1,014</td>
-                    <td>per</td>
-                    <td>inceptos</td>
-                    <td>himenaeos</td>
-                    <td>Curabitur</td>
-                  </tr>
-                  <tr>
-                    <td>1,015</td>
-                    <td>sodales</td>
-                    <td>ligula</td>
-                    <td>in</td>
-                    <td>libero</td>
-                  </tr>
-                </tbody>
-              </table>
+            <div class="col-sm-3 col-md-2">
+              <div class="thumbnail">
+                <img src="images/vegetables/carrot.jpg" alt="carrots">
+                <div id="carrotscontainer" class="caption">
+                  <h5><b>Carrots</b></h5>
+                  <input id="txtcabbage" class="itemvalue" type="text" value="1500" hidden>
+                  <p>Tsh 1,500/kg</p>
+                  <p>
+                    <a href="#" class="btn btn-default btn-remove" role="button"><b>-</b></a>
+                    <a href="#" class="btn btn-default btn-add" role="button"><b>+ Add</b></a> 
+                  </p>
+                </div>
+              </div>
             </div>
+            <div class="col-sm-3 col-md-2">
+              <div class="thumbnail">
+                <img src="images/vegetables/celery.jpg" alt="Celery">
+                <div id="celerycontainer" class="caption">
+                  <h5><b>Celery</b></h5>
+                  <input id="txtcabbage" class="itemvalue" type="text" value="1000" hidden>
+                  <p>Tsh 1,000/bunch</p>
+                  <p>
+                    <a href="#" class="btn btn-default btn-remove" role="button"><b>-</b></a>
+                    <a href="#" class="btn btn-default btn-add" role="button"><b>+ Add</b></a> 
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-3 col-md-2">
+              <div class="thumbnail">
+                <img src="images/vegetables/tomato.jpg" alt="...">
+                <div id="tomatoescontainer" class="caption">
+                  <h5><b>Tomatoes</b></h5>
+                  <input id="txtcabbage" class="itemvalue" type="text" value="1800" hidden>
+                  <p>Tsh 1,800/kg</p>
+                  <p>
+                    <a href="#" class="btn btn-default btn-remove" role="button"><b>-</b></a>
+                    <a href="#" class="btn btn-default btn-add" role="button"><b>+ Add</b></a> 
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-3 col-md-2">
+              <div class="thumbnail">
+                <img src="images/vegetables/eggplant.jpg" alt="Egg Plants" >
+                <div id="eggplantscontainer" class="caption">
+                  <h5><b>Egg Plants</b></h5>
+                  <input id="txtcabbage" class="itemvalue" type="text" value="1500" hidden>
+                  <p>Tsh 1,500/kg</p> 
+                  <p>
+                    <a href="#" class="btn btn-default btn-remove" role="button">-</a>
+                    <a href="#" class="btn btn-default btn-add" role="button"><b>+ Add</b></a> 
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-3 col-md-2">
+              <div class="thumbnail">
+                <img data-src="holder.js/300x300" src="images/vegetables/pepper.jpg" alt="Peppers">
+                <div id="pepperscontainer" class="caption">
+                  <h5><b>Peppers</b></h5>
+                  <input id="txtcabbage" class="itemvalue" type="text" value="2500" hidden>
+                  <p>Tsh 2,500/kg</p>
+                  <p>
+                    <a href="#" class="btn btn-default btn-remove" role="button">-</a>
+                    <a href="#" class="btn btn-default btn-add" role="button"><b>+ Add</b></a> 
+                  </p>
+                </div>
+              </div>
+            </div>
+            -->
           </div>
         </div>
       </div>
+    </div>
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/app.js"></script>
     <script src="../../assets/js/docs.min.js"></script>
   </body>
   </html>
