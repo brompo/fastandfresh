@@ -48,7 +48,7 @@
           <div class="navbar-collapse collapse mainheader">
             <ul class="nav navbar-nav navbar-right">
               <li><a href="#">Delivery Info</a></li>
-              <li><a href="#">Help</a></li>
+              <li><a href="#">Contact Us</a></li>
             </ul>
             <form class="navbar-form navbar-right">
               <input type="text" class="form-control" placeholder="I am looking for...">
@@ -72,85 +72,30 @@
 
           <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
 
-            <h4 class="fastandfresh-header">Fruits</h4>            
-
-            <div class="row placeholders sectionholder">
-              <div class="col-sm-3 col-md-2">
-                <div class="thumbnail">
-                  <img data-src="/images/hrb_cat.jpg" src="images/hrb_cat.jpg" alt="...">
-                  <div class="caption">
-                    <h5><b>Parsley</b></h5>
-                    <p>Tsh 700/bunch</p>
-                    <p>
-                      <a href="#" class="btn btn-default" role="button"><b>Add to Cart</b></a> 
-                    </p>
-                  </div>
-                </div>
+            <div class="row">
+              <div class="col-sm-6 col-md-6">
+                <h4 class="fastandfresh-header">Fresh Herbs</h4>
               </div>
-              <div class="col-sm-3 col-md-2">
-                <div class="thumbnail">
-                  <img src="images/avocado.gif" alt="avocado">
-                  <div class="caption">
-                    <h5><b>Avocados</b></h5>
-                    <p>Tsh 1,800/kg</p>
-                    <p>
-                      <a href="#" class="btn btn-default" role="button"><b>Add to Cart</b></a> 
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-sm-3 col-md-2">
-                <div class="thumbnail">
-                  <img data-src="holder.js/300x300" src="images/berry.jpg" alt="Berries">
-                  <div class="caption">
-                    <h5><b>Berries</b></h5>
-                    <p>Tsh 2,500/kg</p>
-                    <p>
-                      <a href="#" class="btn btn-default" role="button"><b>Add to Cart</b></a> 
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-sm-3 col-md-2">
-                <div class="thumbnail">
-                  <img data-src="/images/banana.jpg" src="images/banana.jpg" alt="...">
-                  <div class="caption">
-                    <h5><b>Bananas</b></h5>
-                    <p>Tsh 1,000/bunch</p>
-                    <p>
-                      <a href="#" class="btn btn-default" role="button"><b>Add to Cart</b></a> 
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-sm-3 col-md-2">
-                <div class="thumbnail">
-                  <img src="images/basil.jpg" alt="basil">
-                  <div class="caption">
-                    <h5><b>Basil</b></h5>
-                    <p>Tsh 700/bunch</p>
-                    <p>
-                      <a href="#" class="btn btn-default" role="button"><b>Add to Cart</b></a> 
-                    </p>
-                  </div>
-                </div>
-              </div>              
-              <div class="col-sm-3 col-md-2">
-                <div class="thumbnail">
-                  <img src="images/wild_and_foraged.jpg" alt="wild and foraged">
-                  <div class="caption">
-                    <h5><b>Wild and Foraged</b></h5>
-                    <p>Tsh 700/bunch</p>
-                    <p>
-                      <a href="#" class="btn btn-default" role="button"><b>Add to Cart</b></a> 
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+              <div class="col-sm-6 col-md-6" >
+                <div class="btn-group cartholder">
+                  <button id="btn-total-items" type="button" class="btn btn-default btn-cart drop-down-toggle dropdown cart-dropdown" data-toggle="dropdown">
+                   <span class="caret"></span>
+                   <label class="btn-items">0 items</label>
+                 </button>
+                 <div class=" table-responsive  dropdown-menu">
+                   <table class="table table-hover cartitems">
+                   </table>
+                 </div>
+                 <button id="btn-total-checkout" type="button" class="btn btn-default btn-cart" value=1000>TZS: 0</button>
+                 <button type="button" class="btn btn-default btn-cart">Checkout</button>
+               </div>
+             </div>
+           </div>           
+           <div class="row placeholders herbssectionholder">
+           </div>
+         </div>
+       </div>
+     </div>
 
     <!-- Bootstrap core JavaScript
     ================================================== -->

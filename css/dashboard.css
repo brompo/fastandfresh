@@ -36,7 +36,8 @@ body {
 @media (min-width: 768px) {
   .sidebar {
     position: fixed;
-    top: 51px;
+    /*top: 51px;*/
+    top:80px;
     bottom: 0;
     left: 0;
     z-index: 1000;
@@ -52,7 +53,6 @@ body {
 .nav-sidebar {
   margin-right: -21px; /* 20px padding + 1px border */
   margin-bottom: 20px;
-  margin-left: -20px;
 }
 .nav-sidebar > li > a {
   padding-right: 20px;
@@ -61,8 +61,23 @@ body {
 .nav-sidebar > .active > a,
 .nav-sidebar > .active > a:hover,
 .nav-sidebar > .active > a:focus {
-  color: #ff962e;
+  color: #ff962e; 
+  font-size:16px;
+  font-weight:bold;
+/*
+  background-color: #649b33;
+  border-left: 1px solid white;
+  border-right: 1px solid white;
+  border-bottom: 1px solid white;
+  border-top: 1px solid white;
+  margin-right:10px;
+  margin-bottom:2px;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  -moz-box-shadow: 1px 1px 1px 1px gray;
+  box-shadow: 1px 1px 1px 1px gray;
   /*background-color: #428bca;*/
+  */
 }
 
 
