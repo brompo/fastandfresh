@@ -1,0 +1,8 @@
+{
+	"category":"herbs",
+	"products":
+	[{"name":"parsley","displayname":"Parsley","picture":"images/hrb_cat.jpg","unit":"bunch","price":"700"},
+     {"name":"basil","displayname":"Basil","picture":"images/basil.jpg","unit":"bunch","price":"700"},
+     {"name":"wild","displayname":"Wild and Foraged","picture":"images/wild_and_foraged.jpg","unit":"bunch","price":"700"}
+   	]
+}
