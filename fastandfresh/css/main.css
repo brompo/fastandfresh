@@ -83,6 +83,12 @@ footer > .container {
 .caption>h5{
 	color:#649b33;
 }
+.navbar-header{
+	float:none;
+}
+
+
+
 .caption>p>a{
 	color:#ff962e
 	;}
