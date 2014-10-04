@@ -35,7 +35,7 @@ a {
   padding-right: 0;
   padding-top: 20px;
 }
-
+/*
 #sidebar .affix {
   position:fixed;
   top:55;
@@ -47,13 +47,13 @@ a {
   top:55;
   width:220px;
 }
-
+*/
 #sidebar .nav {
   width: 95%;
 }
 #sidebar li {
   /*border:0 #1e1e1e solid;*/
-  border-bottom-width:1px;
+  /*border-bottom-width:1px;*/
 }
 #sidebar li a {
   padding-left:1px;
@@ -120,7 +120,7 @@ a {
   }
   #sidebar .nav>li {
     color: #ff962e;
-    border-top: 1px solid #484848;
+    /*border-top: 1px solid #484848;*/
     border-bottom: 1px solid #FFFFFF;
     padding-left:10px;
   }
