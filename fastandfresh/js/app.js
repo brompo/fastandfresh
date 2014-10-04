@@ -283,7 +283,7 @@ function appendhtml(data){
 	"</div>"+
 	"<div class='thumbnail'>"+
 	"<img data-src='/images/vegetables/cabbage.jpg' src='"+val.picture+"' alt='...'>"+
-	"<div id='"+val.name+"container' class='caption simpleCart_shelfItem'>"+
+	"<div id='"+val.name+"container' class='caption simpleCart_shelfItem cartinfo'>"+
 	"<h5 class='item_name'>"+val.displayname+"</h5>"+
 	"<input id='txtcabbage' class='itemvalue item_price' type='text' value='"+val.price+"' hidden>"+
 	"<p>Tsh "+val.price+"/"+val.unit+"</p>"+
@@ -319,7 +319,7 @@ function showcart(cart){
 	$.each(cart,function(key,val){
 		//alert(val.name);
 
-		cartitems += "<tr class='cartrow'><td class='cartitemname'>"+val.displayname+"</td><td class='cartitemcount'>"+val.count+
+		cartitems += "<tr class='cartrow'><td class='cartitemname'>"+val.displayname+"</td><td class='cartitemcount'>"+val.count+" "+val.unit+
 		"</td><td>"+val.price+"</td><td><a href='#'><span class='glyphicon glyphicon-trash removefromcart'></span></a></td>";
 	});
 	$(".cartitems").html(cartitems);

@@ -36,8 +36,12 @@ footer {
 footer > .container {
   padding: 20px;
 }
-
-
+.cartinfo{
+	text-align: center;
+}
+.cartitemcount{
+	width:80px;
+}
 
 
 .mainmenu{
@@ -147,7 +151,10 @@ footer > .container {
 	}
 	.dropdown-menu{
 		float:right;
-		width:250px;
+		width:270px;
+	}
+	.open>.dropdown-menu{
+		width:305px;
 	}
 	.table th{
 	}
