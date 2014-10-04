@@ -141,7 +141,7 @@
           -->
           <div class="form-group">
             <div class="col-sm-offset-2 col-sm-10">
-              <button type="submit" id="btnsubmitorder" class="btn btn-default btn-order" data-target="#myModal">Submit Order</button>
+              <button type="submit" id="btnsubmitorder" class="btn btn-success btn-lg btn-order" data-target="#myModal">Submit Order</button>
             </div>
           </div>
 
@@ -191,9 +191,11 @@
       <li class="col-sm-4 col-xs-6">
         <a href="#">Services</a>
       </li>
+      <!--
       <li class="col-sm-4 col-xs-6">
         <a href="#">Login</a>
       </li>
+      -->
       <li class="col-sm-4 col-xs-6">
         <a href="#">Contact</a>
       </li>
@@ -209,83 +211,5 @@
 <script src="js/map.js"></script>
 <script src="js/validate.js"></script>
 <script src="js/scripts.js"></script>
-
-   <!-- <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
-    <script type="text/javascript">
-
-      function initialize() {
-        var myLatLng = new google.maps.LatLng(-6.800041, 39.281278);
-        positionmap(myLatLng,14);
-      }
-      
-      google.maps.event.addDomListener(window, 'load', initialize);
-
-      function positionmap(latlng,zoomlevel){
-
-
-        var mapCanvas = document.getElementById('map_canvas');
-        
-        var mapOptions = {
-          center: latlng,
-          zoom: zoomlevel,
-          mapTypeId: google.maps.MapTypeId.ROADMAP
-        }
-        var map = new google.maps.Map(mapCanvas, mapOptions)
-
-        var marker = new google.maps.Marker({
-          draggable: true,
-          position: latlng, 
-          map: map,
-          title: "Your location"
-        });
-
-        google.maps.event.addListener(marker, 'dragend', function (event) {
-          document.getElementById("latbox").value = event.latLng.lat();
-          document.getElementById("lngbox").value = event.latLng.lng();
-
-        });
-
-        google.maps.event.addListener(map,'click',function(event){
-          var mylat = event.latLng.lat();
-          var mylng = event.latLng.lng();
-          document.getElementById("latbox").value = mylat;
-          document.getElementById("lngbox").value = mylng;
-          var location = new google.maps.LatLng(mylat,mylng);
-          marker.setPosition(location);
-        });
-        }
-
-
-      $("#getlocation").click(function() {
-        /* Act on the event */
-        getlocation();
-      });
-
-      function getlocation(){
-
-        x = navigator.geolocation;
-        x.getCurrentPosition(success,failure);
-        function success(position)
-        {
-          var mylat = position.coords.latitude;
-          var mylng = position.coords.longitude;
-
-          $("#latbox").val(mylat);
-          $("#lngbox").val(mylng);
-
-          var coords = new google.maps.LatLng(mylat,mylng);
-
-          positionmap(coords,16);
-
-        }
-        function failure()
-        {
-          $("#latbox").html("Where the hell are you");
-        }
-      }
-
-    </script>-->
-    <!--<script src="../../assets/js/docs.min.js"></script>-->
-    <!-- <script src="js/simpleCart.js"></script>-->
   </body>
   </html>

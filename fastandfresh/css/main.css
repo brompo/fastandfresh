@@ -14,9 +14,9 @@ p,h1,h2,h3,h4 {
   height: auto !important;
   height: 100%;
   /* negative indent footer by its height */
-  margin: 0 auto -120px;
+  /*margin: 0 auto -120px;*/
   /* pad bottom by footer height */
-  padding: 0 0 120px;
+  /*padding: 0 0 120px;*/
 }
 
 #sidebar li a.active{
