@@ -109,6 +109,9 @@ a {
   .row-offcanvas-left.active {
     left: 41.6%;
   }
+  .mainheader{
+
+  }
   .sidebar-offcanvas {
     position: absolute;
     top: 0;
@@ -152,6 +155,14 @@ a {
     border-bottom-color: #fff;
   }
 }
+@media screen and (max-width: 500px) {
+
+  .container-fluid{
+    margin-top: 50px;
+  }
+
+}
+
 
 /* theme */
 .nav-tabs>li>a {

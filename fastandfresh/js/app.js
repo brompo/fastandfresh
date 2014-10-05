@@ -20,6 +20,10 @@ $(".categoriessidebar").find("a").each(function(){
 
 	appendVegetables(); // Appends data into the vegetable page
 	appendHerbs(); // Appends data into the Herbs page
+	appendFruits(); // Appends data into the Fruits page
+	appendMeats(); //Appends data into the Meats page
+	appendDriedGoods(); //Appends data into the dried goods page
+	appendCleaningMaterials(); //Appends data into the Cleaning Materials page
 
 function appendVegetables(){
 	//Read the json file and append the div onto the 
@@ -32,6 +36,31 @@ function appendVegetables(){
 function appendHerbs(){
 	//Read the json file and append the div onto the 
 	$.getJSON("data/herbs.json",function(data){
+		appendhtml(data);
+	});
+}
+//Appending data to the Fruits page
+function appendFruits(){
+$.getJSON("data/fruits.json",function(data){
+		appendhtml(data);
+	});
+}
+
+//Appending data to the Meat and Sea Foods page
+function appendMeats(){
+$.getJSON("data/meatandseafoods.json",function(data){
+		appendhtml(data);
+	});
+}
+//Appending data to the Dried Goods page
+function appendDriedGoods(){
+$.getJSON("data/driedgoods.json",function(data){
+		appendhtml(data);
+	});
+}
+//Appending data to the Fruits page
+function appendCleaningMaterials(){
+$.getJSON("data/cleaningmaterials.json",function(data){
 		appendhtml(data);
 	});
 }
@@ -274,7 +303,7 @@ function appendhtml(data){
 
 	$.each(data.products,function(key,val){
 
-	var appendel = $("<div class='col-xs-6 col-sm-4 col-md-2' col-lg-2>"+
+	var appendel = $("<div class='col-xs-6 col-sm-4 col-md-2 col-lg-2 itemcontainer'>"+
 	"<div id='"+val.name+"containercount' class='"+val.name+"containercount cartcontainer' hidden>"+
 	"<button type='button' class='btn btn-default btn-xs'>"+
 	"<span class='glyphicon glyphicon-shopping-cart'></span>"+ 
@@ -289,7 +318,7 @@ function appendhtml(data){
 	"<p>Tsh "+val.price+"/"+val.unit+"</p>"+
 	"<input type='button' value='"+val.unit+"' class='itemunit' field='itemunit' hidden>"+
 	"<input type='button' value='-' class='qtyminus' field='quantity'>"+
-	"<input type='text' name='quantity' value='1' class='qty item_Quantity'>"+
+	"<input type='text' name='quantity' value='1' class='qty val"+val.name+"containercount'>"+
 	"<input type='button' value='+'' class='qtyplus' field='quantity'>"+
 	"<p><a href='#' class='btn btn-default btn-add item_add' role='button'><b> Add to Cart</b></a></p>"+
 	"</div>"+
@@ -304,6 +333,7 @@ var itemcountid = appendel.find(".cartcontainer").attr('id');
 		if(itemcountid == val.countname){
 			appendel.find("#"+val.countname).show();
 			$('#lbl'+val.countname).text(val.count+val.unit);
+			$('.val'+val.countname).val(val.count);
 		}
 	});
 	//alert("I am here");

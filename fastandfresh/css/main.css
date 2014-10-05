@@ -18,9 +18,21 @@ p,h1,h2,h3,h4 {
   /* pad bottom by footer height */
   /*padding: 0 0 120px;*/
 }
-
+.itemcontainer{
+	padding-left:4px;
+	padding-right:3px;
+}
+.thumbnail{
+	height: 300px;
+}
 #sidebar li a.active{
   color: rgb(255, 150, 46);
+font-size: 16px;
+font-weight: bold;
+}
+li.active>a
+{
+	color: #ff962e;
 font-size: 16px;
 font-weight: bold;
 }
@@ -56,7 +68,7 @@ footer > .container {
 }
 
 .nav>li>a{
-	color:#649b33;
+	/*color:#649b33;*/
 }
 .sectionholder{
 	/*border-bottom:1px dotted #ff962e;*/
