@@ -1,0 +1,11 @@
+{
+	"category":"cleaningmaterials",
+	"products":
+	[{"name":"toiletpaperrexa","displayname":"Toilet Paper (Rexa)","picture":"images/cleaningmaterials/toiletpaperrexa.jpg","unit":"1p","price":"400"},
+     {"name":"dettolsoap","displayname":"Dettol Soap","picture":"images/cleaningmaterials/dettolsoap.png","unit":"1p","price":"1800"},
+     {"name":"tarmalliquidsoap","displayname":"Tarmal Liquid Soap","picture":"images/cleaningmaterials/tarmalliquidsoap.jpg","unit":"5lt","price":"6500"},
+     {"name":"axionsoap","displayname":"Axion Soap","picture":"images/cleaningmaterials/axionsoap.jpg","unit":"800grm","price":"7000"},
+     {"name":"jik","displayname":"Jik","picture":"images/cleaningmaterials/jik.jpg","unit":"750ml","price":"3000"},
+     {"name":"vim","displayname":"Vim","picture":"images/cleaningmaterials/vim.jpg","unit":"","price":"1900"}
+   	]
+}

@@ -1,9 +1,0 @@
-{
-	"category":"vegetables",
-	"products":
-	[{"name":"cabbage","displayname":"Cabbage","picture":"images/vegetables/cabbage.jpg","unit":"piece","price":"1,000"},
-     {"name":"carrot","displayname":"Carrots","picture":"images/vegetables/carrot.jpg","unit":"kg","price":"1,500"},
-     {"name":"eggplant","displayname":"Egg plants","picture":"images/vegetables/eggplant.jpg","unit":"kg","price":"1,500"},
-     {"name":"tomato","displayname":"Tomatoes","picture":"images/vegetables/tomato.jpg","unit":"kg","price":"1,800"},
-     {"name":"pepper","displayname":"Peppers","picture":"images/vegetables/pepper.jpg","unit":"kg","price":"2,500"}]
-}

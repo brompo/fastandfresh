@@ -1,3 +1,108 @@
+html,body {
+  height: 100%;
+  /*font-family: 'Droid Sans Mono', sans-serif;*/
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+p,h1,h2,h3,h4 {
+  /*font-family: 'Droid Sans Mono', sans-serif;*/
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+.containerabout
+{
+	margin-bottom:20px;
+}
+.logoimage
+{
+	margin-top:-10px;
+}
+.page-container {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  /* negative indent footer by its height */
+  /*margin: 0 auto -120px;*/
+  /* pad bottom by footer height */
+  /*padding: 0 0 120px;*/
+}
+h3
+{
+font-family: 'Archer SSm A', 'Archer SSm B';
+color: #6f6b5e;
+font-size: 30px;
+font-weight: normal;
+}
+.orderprocesscontainer
+{
+	text-align:center;
+}
+.aboutuscontainer{
+	text-align: left;
+	color:rgb(107, 103, 103);
+}
+.deliverypricerow
+{
+	background-color: rgb(228, 221, 221);
+}
+.contactfootercontainer
+{
+	color:#C27E3A;
+	margin-bottom: 0px;
+	margin-top:5px;
+}
+.footerheader
+{
+	color:rgb(107, 103, 103);
+	font-size: 15px;
+	font-weight: bold;
+	margin-bottom: 15px;
+
+}
+.fastandfreshheader{
+	color:#ff962e;
+}
+.carousel-inner>.item>img, .carousel-inner>.item>a>img{
+	width:100%;
+}
+
+.itemcontainer{
+	padding-left:4px;
+	padding-right:3px;
+}
+.thumbnail{
+	height: 300px;
+}
+#sidebar li a.active{
+  color: rgb(255, 150, 46);
+font-size: 16px;
+font-weight: bold;
+}
+li.active>a
+{
+	color: #ff962e;
+font-size: 16px;
+font-weight: bold;
+}
+
+footer {
+  /*height: 120px;*/
+  background-color: #222222;
+  border:0 solid #080808;
+  border-top-width: 1px;
+  margin-top:50px;
+}
+
+footer > .container {
+  padding: 20px;
+}
+.cartinfo{
+	text-align: center;
+}
+.cartitemcount{
+	width:80px;
+}
+
+
 .mainmenu{
 	background-color: #ffffff;
 }
@@ -10,10 +115,10 @@
 }
 
 .nav>li>a{
-	color:#649b33;
+	/*color:#649b33;*/
 }
 .sectionholder{
-	border-bottom:1px dotted #ff962e;
+	/*border-bottom:1px dotted #ff962e;*/
 	padding-bottom:15px;
 }
 .mainheader{
@@ -37,6 +142,12 @@
 .caption>h5{
 	color:#649b33;
 }
+.navbar-header{
+	float:none;
+}
+
+
+
 .caption>p>a{
 	color:#ff962e
 	;}
@@ -105,7 +216,10 @@
 	}
 	.dropdown-menu{
 		float:right;
-		width:250px;
+		width:270px;
+	}
+	.open>.dropdown-menu{
+		width:305px;
 	}
 	.table th{
 	}
@@ -119,7 +233,7 @@
 		width: 500px;
 		height: 400px;
 	}
-	#checkoutform input.error{
+	input.error{
 		background: #f8dbdb;
 		border-color: #e77776;
 	}

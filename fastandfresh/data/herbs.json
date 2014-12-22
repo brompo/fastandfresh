@@ -1,9 +1,0 @@
-{
-	"category":"herbs",
-	"products":
-	[{"name":"freshparsley","displayname":"Fresh Parsley","picture":"images/freshparsley.jpg","unit":"bunch","price":"700"},
-     {"name":"freshmint","displayname":"Fresh Mint","picture":"images/freshmint.jpg","unit":"bunch","price":"700"},
-     {"name":"freshbasil","displayname":"Fresh Basil","picture":"images/freshbasil.jpg","unit":"bunch","price":"700"},
-     {"name":"freshcoriander","displayname":"Fresh Coriander","picture":"images/vegetables/freshcoriander.jpg","unit":"bunch","price":"700"}
-   	]
-}

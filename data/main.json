@@ -1,0 +1,11 @@
+{
+	"category":"main",
+	"products":
+	[{"name":"freshparsley","displayname":"Fresh Parsley","picture":"images/herbs/freshparsley.jpg","unit":"bunch","price":"700"},
+     {"name":"bigsweetbananas","displayname":"Big Sweet Bananas","picture":"images/fruits/bigsweetbananas.jpg","unit":"piece","price":"300"},
+     {"name":"freshbasil","displayname":"Fresh Basil","picture":"images/herbs/freshbasil.jpg","unit":"bunch","price":"700"},
+     {"name":"roundtomatoes","displayname":"Round Tomatoes","picture":"images/vegetables/roundtomatoes.jpg","unit":"kg","price":"1800"},
+     {"name":"redonions","displayname":"Red Onions","picture":"images/vegetables/redonions.jpg","unit":"kg","price":"1800"},
+     {"name":"carrot","displayname":"Carrots","picture":"images/vegetables/carrot.jpg","unit":"kg","price":"2500"}
+   	]
+}

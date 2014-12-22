@@ -1,0 +1,19 @@
+{
+	"category":"fruits",
+	"products":
+	[{"name":"appleimported","displayname":"Apple (Imported)","picture":"images/fruits/appleimported.jpg","unit":"piece","price":"800"},
+     {"name":"bigsweetbananas","displayname":"Big Sweet Bananas","picture":"images/fruits/bigsweetbananas.jpg","unit":"piece","price":"300"},
+     {"name":"smallsweetbananas","displayname":"Small Sweet Bananas","picture":"images/fruits/smallsweetbananas.jpg","unit":"bunch","price":"1500"},
+     {"name":"grapefruit","displayname":"Grapefruit","picture":"images/fruits/grapefruit.jpg","unit":"piece","price":"1000"},
+     {"name":"grapesimported","displayname":"Grapes (Imported)","picture":"images/fruits/grapesimported.jpg","unit":"kg","price":"8000"},
+     {"name":"lemon","displayname":"Lemon","picture":"images/fruits/lemon.jpg","unit":"kg","price":"2500"},
+     {"name":"lime","displayname":"Lime","picture":"images/fruits/lime.jpg","unit":"kg","price":"2500"},
+     {"name":"localoranges","displayname":"Local Oranges","picture":"images/fruits/localoranges.jpg","unit":"piece","price":"200"},
+     {"name":"mangoes","displayname":"Mangoes","picture":"images/fruits/mangoes.jpg","unit":"piece","price":"1000"},
+     {"name":"papaya","displayname":"Papaya","picture":"images/fruits/papaya.jpg","unit":"piece","price":"2000"},
+     {"name":"passionfruit","displayname":"Passion Fruit","picture":"images/fruits/passionfruit.jpg","unit":"kg","price":"2500"},
+     {"name":"pineapple","displayname":"Pineapple","picture":"images/fruits/pineapple.jpg","unit":"piece","price":"3000"},
+     {"name":"plumsseasonal","displayname":"Plums (Seasonal)","picture":"images/fruits/plumsseasonal.jpg","unit":"kg","price":"3000"},
+     {"name":"watermelon","displayname":"Water Melon","picture":"images/fruits/watermelon.jpg","unit":"piece","price":"5000"}
+   	]
+}

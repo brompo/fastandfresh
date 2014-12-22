@@ -5,10 +5,14 @@ var loc = window.location.pathname;
 
 //Check if the cart is empty or not, then display the items
 if(sessionStorage.getItem("cart") == null){
-	var cart = {};
+	var cart = [];
+	//cart.push({displayname:"Delivery Fee",countname:"deliveryfeecontainer",count:1,price:4000, unit:"",itemtotalcost:4000});
 }else
 {
 	var cart = JSON.parse(sessionStorage["cart"]);
+	if(cart.length == 0){
+	//cart.push({displayname:"Delivery Fee",countname:"deliveryfeecontainer",count:1,price:4000, unit:"",itemtotalcost:4000});	
+	};
 	fillcart(cart);
 	
 } 
@@ -20,10 +24,21 @@ $(".categoriessidebar").find("a").each(function(){
 
 	appendVegetables(); // Appends data into the vegetable page
 	appendHerbs(); // Appends data into the Herbs page
+	appendFruits(); // Appends data into the Fruits page
+	appendMeats(); //Appends data into the Meats page
+	appendDriedGoods(); //Appends data into the dried goods page
+	appendCleaningMaterials(); //Appends data into the Cleaning Materials page
+	appendmain();
 
 function appendVegetables(){
 	//Read the json file and append the div onto the 
 	$.getJSON("data/vegetables.json",function(data){
+		appendhtml(data);
+	});
+}
+function appendmain(){
+	//Read the json file and append the div onto the 
+	$.getJSON("data/main.json",function(data){
 		appendhtml(data);
 	});
 }
@@ -32,6 +47,31 @@ function appendVegetables(){
 function appendHerbs(){
 	//Read the json file and append the div onto the 
 	$.getJSON("data/herbs.json",function(data){
+		appendhtml(data);
+	});
+}
+//Appending data to the Fruits page
+function appendFruits(){
+$.getJSON("data/fruits.json",function(data){
+		appendhtml(data);
+	});
+}
+
+//Appending data to the Meat and Sea Foods page
+function appendMeats(){
+$.getJSON("data/meatandseafoods.json",function(data){
+		appendhtml(data);
+	});
+}
+//Appending data to the Dried Goods page
+function appendDriedGoods(){
+$.getJSON("data/driedgoods.json",function(data){
+		appendhtml(data);
+	});
+}
+//Appending data to the Fruits page
+function appendCleaningMaterials(){
+$.getJSON("data/cleaningmaterials.json",function(data){
 		appendhtml(data);
 	});
 }
@@ -102,10 +142,12 @@ $(document).on("click",".removefromcart",function(e){
 	$("#"+currentcontainername).hide();
 	//$('#lbl'+currentcontainername).text(val.count+val.unit);
 
+	e.preventDefault();
+
 });
 
 
-$(document).on("click","a.btn-add",function(){
+$(document).on("click","a.btn-add",function(e){
 	var itemvalue = $(this).closest('div').children('.itemvalue').val();
 	var countname = $(this).closest('div').attr('id')+"count";
 	var displayname = $(this).closest('div').children('.item_name').html();
@@ -142,7 +184,7 @@ $(document).on("click","a.btn-add",function(){
 
 		$('#lbl'+countname).text(count+unit);
 
-		
+		e.preventDefault();
 		//sessionStorage.delItem("cart");
 
 });
@@ -172,9 +214,13 @@ $(document).on("click",".cart-dropdown",function(){
 
 //On Click of the checkout button
 $(document).on("click","button.btn-checkout",function(){
-	 if (window.location.pathname != "/fastandfresh/checkout.html"){
-	 window.location.href = "/fastandfresh/checkout.html";
+	 if (window.location.pathname != "/checkout.html"){
+	 window.location.href = "/checkout.html";
 	 };
+});
+
+$(document).on("click","#btnsubmitorder",function(){
+	//alert("I clicked the register button");
 });
 
 //On hide of the modal
@@ -189,32 +235,20 @@ $('#myModal').on('hidden.bs.modal', function (e) {
   sessionStorage["cart"] = JSON.stringify(cart);
   console.log(sessionStorage["cart"]);
 
-  window.location.href = "/fastandfresh/index.html";
+  window.location.href = "/index.html";
 })
 
 //On Click of the order form
-/*
+
 $(document).on("click","button.btn-order",function(){
 	
-
 	//$("#myModal").modal('show');
 	var emptyfields  = $(":input.required").filter(function(){
 		return $(this).val() === "";
 	}).length;
-	alert(emptyfields);
-
-	if(emptyfields === 0){
-		if($("#checkoutform").valid()){
-			alert("form valid");
-		}
-		else
-		{
-			alert("form not valid");
-		}
-		alert("I am here");
-	}
+	//alert(emptyfields);
 });
-*/
+
 
 // Adding items to the Items List
 function addtoitems(itemtoappend,array)
@@ -234,16 +268,23 @@ function fillcart(presentcart){
 		carttotal = Number(carttotal) + (Number(val.count) * Number(val.price));
 	});
 	//console.log(cart);
-	totalitems = presentcart.length;
+	if (presentcart.length != 0)
+	{
+	carttotal = carttotal + 4000;
+	}
+	
+	totalitems = presentcart.length ;
 	$("btn-total-checkout").val(carttotal);
 	var valuetoshow = "TZS: " + carttotal;
 	$("#btn-total-checkout").html(valuetoshow);
 	$(".btn-items").html(totalitems + " items");
+		
 	
 } // fillcart
 
 function additemtocart(displayname,countname,count,itemvalue,unit,itemtotalcost){
-	cart.push({displayname:displayname,countname:countname,count:count,price:itemvalue, unit:unit,itemtotalcost:itemtotalcost});
+	//cart.push({displayname:displayname,countname:countname,count:count,price:itemvalue, unit:unit,itemtotalcost:itemtotalcost});
+	cart.push({displayname:displayname,countname:countname,count:count, unit:unit,price:itemvalue,itemtotalcost:itemtotalcost});
 	//cart.push({itembought:itembought});
 	sessionStorage["cart"] = JSON.stringify(cart);
 }
@@ -274,7 +315,7 @@ function appendhtml(data){
 
 	$.each(data.products,function(key,val){
 
-	var appendel = $("<div class='col-sm-3 col-md-2'>"+
+	var appendel = $("<div itemscope itemtype='http://schema.org/Product' class='col-xs-6 col-sm-4 col-md-2 col-lg-2 itemcontainer'>"+
 	"<div id='"+val.name+"containercount' class='"+val.name+"containercount cartcontainer' hidden>"+
 	"<button type='button' class='btn btn-default btn-xs'>"+
 	"<span class='glyphicon glyphicon-shopping-cart'></span>"+ 
@@ -283,13 +324,13 @@ function appendhtml(data){
 	"</div>"+
 	"<div class='thumbnail'>"+
 	"<img data-src='/images/vegetables/cabbage.jpg' src='"+val.picture+"' alt='...'>"+
-	"<div id='"+val.name+"container' class='caption simpleCart_shelfItem'>"+
-	"<h5 class='item_name'>"+val.displayname+"</h5>"+
+	"<div itemprop='offers' itemscope itemtype='http://schema.org/Offer' id='"+val.name+"container' class='caption simpleCart_shelfItem cartinfo'>"+
+	"<h5 itemprop='name' class='item_name'>"+val.displayname+"</h5>"+
 	"<input id='txtcabbage' class='itemvalue item_price' type='text' value='"+val.price+"' hidden>"+
-	"<p>Tsh "+val.price+"/"+val.unit+"</p>"+
+	"<p itemprop='price'>Tsh "+val.price+"/"+val.unit+"</p>"+
 	"<input type='button' value='"+val.unit+"' class='itemunit' field='itemunit' hidden>"+
 	"<input type='button' value='-' class='qtyminus' field='quantity'>"+
-	"<input type='text' name='quantity' value='1' class='qty item_Quantity'>"+
+	"<input type='text' name='quantity' value='1' class='qty val"+val.name+"containercount'>"+
 	"<input type='button' value='+'' class='qtyplus' field='quantity'>"+
 	"<p><a href='#' class='btn btn-default btn-add item_add' role='button'><b> Add to Cart</b></a></p>"+
 	"</div>"+
@@ -304,6 +345,7 @@ var itemcountid = appendel.find(".cartcontainer").attr('id');
 		if(itemcountid == val.countname){
 			appendel.find("#"+val.countname).show();
 			$('#lbl'+val.countname).text(val.count+val.unit);
+			$('.val'+val.countname).val(val.count);
 		}
 	});
 	//alert("I am here");
@@ -319,9 +361,12 @@ function showcart(cart){
 	$.each(cart,function(key,val){
 		//alert(val.name);
 
-		cartitems += "<tr class='cartrow'><td class='cartitemname'>"+val.displayname+"</td><td class='cartitemcount'>"+val.count+
-		"</td><td>"+val.price+"</td><td><a href='#'><span class='glyphicon glyphicon-trash removefromcart'></span></a></td>";
+		cartitems += "<tr class='cartrow'><td class='cartitemname'>"+val.displayname+"</td><td class='cartitemcount'>"+val.count+" "+val.unit+
+		"</td><td>"+val.itemtotalcost+"</td><td><a href='#'><span class='glyphicon glyphicon-trash removefromcart'></span></a></td>";
+
 	});
+	cartitems += "<tr class='cartrow deliverypricerow'><td class='cartitemname'>Delivery Fee</td><td class='cartitemcount'></td><td>4000</td><td></td>";
+
 	$(".cartitems").html(cartitems);
 }
 //Add items to the cart and display
