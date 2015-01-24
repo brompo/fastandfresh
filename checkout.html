@@ -72,245 +72,155 @@
 
               
               <div class="row placeholders checkoutsectionholder">
-               <div class="col-sm-6">
-                 <h5 class="checkoutHeadings">Personal Details</h5>
-                 <form id="checkoutform" class="form-horizontal" role="form">
-                  <div class="form-group">
-                    <label for="inputFirstname" class="col-sm-3 control-label">First Name:</label>
-                    <div class="col-sm-9">
-                      <input type="text" class="form-control " id="inputFirstname1" placeholder="First Name" >
-                    </div>
-                  </div>
-                  <div class="form-group">
-                    <label for="inputLastname1" class="col-sm-3 control-label">Last Name:</label>
-                    <div class="col-sm-9">
-                      <input type="text" class="form-control " id="inputLastname1" placeholder="Last Name" >
-                    </div>
-                  </div>
-                  <div class="form-group">
-                    <label for="inputEmail1" class="col-sm-3 control-label">Email:</label>
-                    <div class="col-sm-9">
-                      <input type="email" class="form-control " id="inputEmail1" placeholder="Email" >
-                    </div>
-                  </div>
-            <!--
-            <div class="form-group">
-              <label for="inputPassword" class="col-sm-3 control-label">Password</label>
-              <div class="col-sm-9">
-                <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
-              </div>
-            </div>
-          -->
-          <div class="form-group">
-            <label for="inputMobile" class="col-sm-3 control-label">Mobile Number:</label>
-            <div class="col-sm-9">
-              <input type="tel" class="form-control " id="inputMobile1" placeholder="Mobile Number" >
-            </div>
-          </div>
-          <h5 class="checkoutHeadings">Order Delivered To</h5>
-          <div class="form-group">
-            <label for="inputWhere" class="col-sm-3 control-label">Where:</label>
-            <div class="col-sm-9">
-              <input type="text" class="form-control" id="inputWhere1" placeholder="e.g Mikocheni A, bwanani Block 234" >
-            </div>
-          </div>
-          <div class="form-group">
-            <label for="inputWhen" class="col-sm-3 control-label">When:</label>
-            <div class="col-sm-9">
-              <input type="text" class="form-control" id="inputWhen1" placeholder="If left blank, default is next day">
-            </div>
-          </div>
-          <div class="form-group">
-            <label for="inputComment" class="col-sm-3 control-label">Comments:</label>
-            <div class="col-sm-9">
-              <textarea class="form-control" rows="4"  id="inputComment1" placeholder="Any Specifics?"></textarea>
-            </div>
-          </div>
-          <div>
-            Note: All payments will be done on delivery of goods.</br></br>
-          </div>
-            <!--
-            <div class="form-group">
-              <div class="col-sm-offset-2 col-sm-10">
-                <div class="checkbox">
-                  <label>
-                    <input type="checkbox"> Remember me
-                  </label>
-                </div>
-              </div>
-            </div>
-          -->
-          <div class="form-group">
-            <div class="col-sm-offset-2 col-sm-10">
-              <button type="submit" id="btnsubmitorder" class="btn btn-success btn-lg btn-order" data-target="#myModal">Submit Order</button>
-            </div>
-          </div>
 
-          <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-            <div class="modal-dialog" >
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h4 class="modal-title" id="myModalLabel">Thanks for using fastandfresh</h4>
-                </div>
-                <div class="modal-body">
-                  Your order will be processed and you will be notified soon
-                </div>
-                <div>
+                <div class="col-sm-6"><!-- User Area -->
+                  <div class="panel-group " id="accordion" role="tablist" aria-multiselectable="true">
+                    <div class="panel panel-default authenticationpanel" >
+                      <div class="panel-heading" role="tab" id="headingOne">
+                        <h4 class="panel-title">
+                          <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            Returning User
+                          </a>
+                        </h4>
+                      </div>
+                      <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                        <div class="panel-body">
+                          <form id="loginForm" class="form-horizontal" role="form">
 
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </form>
-      </div>
-      
-      <div class="col-sm-6">
+                            <div class="form-group">
+                              <label for="inputEmailLogin" class="col-sm-3 control-label">Email:</label>
+                              <div class="col-sm-9">
+                                <input type="email" class="form-control " id="inputEmailLogin" placeholder="Email" >
+                              </div>
+                            </div>
 
-        <div class="panel-group " id="accordion" role="tablist" aria-multiselectable="true">
-          <div class="panel panel-default authenticationpanel" >
-            <div class="panel-heading" role="tab" id="headingOne">
-              <h4 class="panel-title">
-                <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                  Returning User
-                </a>
-              </h4>
-            </div>
-            <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
-              <div class="panel-body">
-                <form id="loginForm" class="form-horizontal" role="form">
+                            <div class="form-group">
+                              <label for="inputPasswordLogin" class="col-sm-3 control-label">Password</label>
+                              <div class="col-sm-9">
+                                <input type="password" class="form-control" id="inputPasswordLogin" placeholder="Password">
+                              </div>
+                            </div>
+                            <div class="form-group">
+                              <div class="col-sm-offset-2 col-sm-10">
+                                <button type="submit" id="btnlogin" class="btn btn-success btn-md btn-order" data-target="#myModal">Login</button>
+                              </div>
+                            </div>
+                          </form>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="panel panel-default authenticationpanel">
+                      <div class="panel-heading" role="tab" id="headingTwo">
+                        <h4 class="panel-title">
+                          <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            New User
+                          </a>
+                        </h4>
+                      </div>
+                      <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                        <div class="panel-body">
+                          <h5 class="checkoutHeadings">Order Details</h5>
+                          <form id="registerform" class="form-horizontal" role="form">
+                            <div class="form-group">
+                              <label for="inputFirstname" class="col-sm-3 control-label">First Name:</label>
+                              <div class="col-sm-9">
+                                <input type="text" class="form-control " id="inputFirstname" placeholder="First Name" >
+                              </div>
+                            </div>
+                            <div class="form-group">
+                              <label for="inputLastname" class="col-sm-3 control-label">Last Name:</label>
+                              <div class="col-sm-9">
+                                <input type="text" class="form-control " id="inputLastname" placeholder="Last Name" >
+                              </div>
+                            </div>
+                            <div class="form-group">
+                              <label for="inputEmail" class="col-sm-3 control-label">Email:</label>
+                              <div class="col-sm-9">
+                                <input type="email" class="form-control " id="inputEmail" placeholder="Email" >
+                              </div>
+                            </div>
 
-                  <div class="form-group">
-                    <label for="inputEmailLogin" class="col-sm-3 control-label">Email:</label>
-                    <div class="col-sm-9">
-                      <input type="email" class="form-control " id="inputEmailLogin" placeholder="Email" >
-                    </div>
-                  </div>
+                            <div class="form-group">
+                              <label for="inputPassword" class="col-sm-3 control-label">Password</label>
+                              <div class="col-sm-9">
+                                <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+                              </div>
+                            </div>
 
-                  <div class="form-group">
-                    <label for="inputPasswordLogin" class="col-sm-3 control-label">Password</label>
-                    <div class="col-sm-9">
-                      <input type="password" class="form-control" id="inputPasswordLogin" placeholder="Password">
+                            <div class="form-group">
+                              <label for="inputMobile" class="col-sm-3 control-label">Mobile Number:</label>
+                              <div class="col-sm-9">
+                                <input type="tel" class="form-control " id="inputMobile" placeholder="Mobile Number" >
+                              </div>
+                            </div>
+                            <h5 class="checkoutHeadings">Default Delivery Place</h5>
+                            <div class="form-group">
+                              <label for="inputWhere" class="col-sm-3 control-label">Where:</label>
+                              <div class="col-sm-9">
+                                <input type="text" class="form-control" id="inputWhere" placeholder="e.g Mikocheni A, bwanani Block 234" >
+                              </div>
+                            </div>
+                            <div class="form-group">
+                              <div class="col-sm-offset-2 col-sm-10">
+                                <button type="submit" id="btnregister" class="btn btn-success btn-md btn-order" data-target="#myModal">Register</button>
+                              </div>
+                            </div>
+                          </form>
+                        </div>
+                      </div>
                     </div>
-                  </div>
-                  <div class="form-group">
-                    <div class="col-sm-offset-2 col-sm-10">
-                      <button type="submit" id="btnlogin" class="btn btn-success btn-md btn-order" data-target="#myModal">Login</button>
-                    </div>
-                  </div>
-                </form>
-              </div>
-            </div>
-          </div>
-          <div class="panel panel-default authenticationpanel">
-            <div class="panel-heading" role="tab" id="headingTwo">
-              <h4 class="panel-title">
-                <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                  New User
-                </a>
-              </h4>
-            </div>
-            <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
-              <div class="panel-body">
-                <h5 class="checkoutHeadings">Personal Details</h5>
-                <form id="registerform" class="form-horizontal" role="form">
-                  <div class="form-group">
-                    <label for="inputFirstname" class="col-sm-3 control-label">First Name:</label>
-                    <div class="col-sm-9">
-                      <input type="text" class="form-control " id="inputFirstname" placeholder="First Name" >
-                    </div>
-                  </div>
-                  <div class="form-group">
-                    <label for="inputLastname" class="col-sm-3 control-label">Last Name:</label>
-                    <div class="col-sm-9">
-                      <input type="text" class="form-control " id="inputLastname" placeholder="Last Name" >
-                    </div>
-                  </div>
-                  <div class="form-group">
-                    <label for="inputEmail" class="col-sm-3 control-label">Email:</label>
-                    <div class="col-sm-9">
-                      <input type="email" class="form-control " id="inputEmail" placeholder="Email" >
-                    </div>
-                  </div>
 
-                  <div class="form-group">
-                    <label for="inputPassword" class="col-sm-3 control-label">Password</label>
-                    <div class="col-sm-9">
-                      <input type="password" class="form-control" id="inputPassword" placeholder="Password">
-                    </div>
-                  </div>
+                    <div class="panel panel-default orderpanel" ><!-- Order Panel -->
+                      <div class="panel-heading" role="tab" id="headingThree">
+                        <h4 class="panel-title">
+                          <a class="collapsed" data-toggle="collapsed" data-parent="#accordion" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+                            Delivery Details | Welcome Brian
+                          </a>
+                        </h4>
+                      </div>
+                      <div id="collapseThree" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingThree">
+                        <div class="panel-body">
+                          <form id="loginForm" class="form-horizontal" role="form">
 
-                  <div class="form-group">
-                    <label for="inputMobile" class="col-sm-3 control-label">Mobile Number:</label>
-                    <div class="col-sm-9">
-                      <input type="tel" class="form-control " id="inputMobile" placeholder="Mobile Number" >
-                    </div>
-                  </div>
-                  <h5 class="checkoutHeadings">Default Delivery Place</h5>
-                  <div class="form-group">
-                    <label for="inputWhere" class="col-sm-3 control-label">Where:</label>
-                    <div class="col-sm-9">
-                      <input type="text" class="form-control" id="inputWhere" placeholder="e.g Mikocheni A, bwanani Block 234" >
-                    </div>
-                  </div>
-                  <div class="form-group">
-                    <div class="col-sm-offset-2 col-sm-10">
-                      <button type="submit" id="btnregister" class="btn btn-success btn-md btn-order" data-target="#myModal">Register</button>
-                    </div>
-                  </div>
-                </form>
-              </div>
-            </div>
-          </div>
+                            <div class="form-group">
+                              <label for="inputEmailLogin" class="col-sm-3 control-label">Email:</label>
+                              <div class="col-sm-9">
+                                <input type="email" class="form-control " id="inputEmailLogin" placeholder="Email" >
+                              </div>
+                            </div>
 
+                            <div class="form-group">
+                              <label for="inputPasswordLogin" class="col-sm-3 control-label">Password</label>
+                              <div class="col-sm-9">
+                                <input type="password" class="form-control" id="inputPasswordLogin" placeholder="Password">
+                              </div>
+                            </div>
+                            <div class="form-group">
+                              <div class="col-sm-offset-2 col-sm-10">
+                                <button type="submit" id="btnlogin" class="btn btn-success btn-md btn-order" data-target="#myModal">Login</button>
+                              </div>
+                            </div>
+                          </form>
+                        </div>
+                      </div>
+                    </div><!-- Order Panel -->
+                  </div>
+                </div><!-- User Area -->
 
-          <!-- Order Panel -->
+                
 
-          <div class="panel panel-default orderpanel" >
-            <div class="panel-heading" role="tab" id="headingThree">
-              <h4 class="panel-title">
-                <a class="collapsed" data-toggle="collapsed" data-parent="#accordion" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
-                  Order Details | Welcome Brian
-                </a>
-              </h4>
-            </div>
-            <div id="collapseThree" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingThree">
-              <div class="panel-body">
-                <form id="loginForm" class="form-horizontal" role="form">
+                <!-- Order Details-->
+                <div class="col-sm-6">
+                <table id="carttable" class="table table-hover cartitems fnftable">
+                <tr><td>Carttable</td></tr>
+                 </table>
+                 <!--<h4 class="checkoutHeadings">Order Details</h4>-->
+                 <form id="checkoutform" class="form-horizontal" role="form"><!--Checkout form-->
                  
-                  <div class="form-group">
-                    <label for="inputEmailLogin" class="col-sm-3 control-label">Email:</label>
-                    <div class="col-sm-9">
-                      <input type="email" class="form-control " id="inputEmailLogin" placeholder="Email" >
-                    </div>
-                  </div>
-                  
-                  <div class="form-group">
-                    <label for="inputPasswordLogin" class="col-sm-3 control-label">Password</label>
-                    <div class="col-sm-9">
-                      <input type="password" class="form-control" id="inputPasswordLogin" placeholder="Password">
-                    </div>
-                  </div>
-                  <div class="form-group">
-                    <div class="col-sm-offset-2 col-sm-10">
-                      <button type="submit" id="btnlogin" class="btn btn-success btn-md btn-order" data-target="#myModal">Login</button>
-                    </div>
-                  </div>
+                 </form><!--Checkout form-->
+               </div>
 
-
-                </form>
-              </div>
-            </div>
-          </div>
-
-
-
-        </div>
-
-
-
+               <!-- Order Details-->
 
         <!--
         <h5 class="checkoutHeadings">To help with delivery, you can Identify the delivery location on the map</h5>
@@ -320,9 +230,9 @@
         <input type="text" id="lngbox" name="lng" hidden/>
         <div id="map_canvas"></div>
       -->
-    </div>
-  </div> <!-- Checkout Placeholder -->
-</div><!--/.row main-->
+
+    </div> <!-- Checkout Placeholder -->
+  </div><!--/.row main-->
 </div> <!-- row-offcanvas-->
 </div><!--/.container-->
 </div><!--/.page-container-->

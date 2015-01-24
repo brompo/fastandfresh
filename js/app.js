@@ -12,9 +12,9 @@ if(sessionStorage.getItem("cart") == null){
 	var cart = JSON.parse(sessionStorage["cart"]);
 	if(cart.length == 0){
 	//cart.push({displayname:"Delivery Fee",countname:"deliveryfeecontainer",count:1,price:4000, unit:"",itemtotalcost:4000});	
-	};
-	fillcart(cart);
-	
+};
+fillcart(cart);
+
 } 
 
 $(".categoriessidebar").find("a").each(function(){
@@ -29,13 +29,52 @@ $(".categoriessidebar").find("a").each(function(){
 	appendDriedGoods(); //Appends data into the dried goods page
 	appendCleaningMaterials(); //Appends data into the Cleaning Materials page
 	appendmain();
-
-function appendVegetables(){
-	//Read the json file and append the div onto the 
-	$.getJSON("data/vegetables.json",function(data){
-		appendhtml(data);
-	});
-}
+	if(loc == "/checkout.html")
+	{
+		showcart(cart);
+	}
+	else if(loc == "/vegetable.html")
+	{
+		function appendVegetables(){
+		//Read the json file and append the div onto the 
+			$.getJSON("data/vegetables.json",function(data){
+				appendhtml(data);
+			});
+		}	
+	}
+	else if(loc == "/fruits.html")
+	{
+			function appendFruits(){
+				$.getJSON("data/fruits.json",function(data){
+					appendhtml(data);
+				});
+			}
+	}
+	else if(loc == "/herbs.html")
+	{
+			function appendHerbs(){
+				//Read the json file and append the div onto the 
+				$.getJSON("data/herbs.json",function(data){
+					appendhtml(data);
+				});
+			}	
+	}
+	else if(loc == "meats.html")
+	{
+			function appendMeats(){
+				$.getJSON("data/meatandseafoods.json",function(data){
+					appendhtml(data);
+				});
+			}
+	}
+	else if(loc == "driedgoods.html")
+	{
+			function appendDriedGoods(){
+				$.getJSON("data/driedgoods.json",function(data){
+					appendhtml(data);
+				});
+			}
+	}
 function appendmain(){
 	//Read the json file and append the div onto the 
 	$.getJSON("data/main.json",function(data){
@@ -44,34 +83,17 @@ function appendmain(){
 }
 
 // Appnding data to the herbs page
-function appendHerbs(){
-	//Read the json file and append the div onto the 
-	$.getJSON("data/herbs.json",function(data){
-		appendhtml(data);
-	});
-}
+
 //Appending data to the Fruits page
-function appendFruits(){
-$.getJSON("data/fruits.json",function(data){
-		appendhtml(data);
-	});
-}
+
 
 //Appending data to the Meat and Sea Foods page
-function appendMeats(){
-$.getJSON("data/meatandseafoods.json",function(data){
-		appendhtml(data);
-	});
-}
+
 //Appending data to the Dried Goods page
-function appendDriedGoods(){
-$.getJSON("data/driedgoods.json",function(data){
-		appendhtml(data);
-	});
-}
+
 //Appending data to the Fruits page
 function appendCleaningMaterials(){
-$.getJSON("data/cleaningmaterials.json",function(data){
+	$.getJSON("data/cleaningmaterials.json",function(data){
 		appendhtml(data);
 	});
 }
@@ -95,6 +117,8 @@ var tomatoescontainercount = 0;
 var eggplantscontainercount = 0;
 var pepperscontainercount = 0;
 
+
+//Check if the checkout page is fully loaded
 
 //Clicking the add button
 $(document).on("click",".qtyplus",function(){
@@ -128,8 +152,8 @@ $(document).on("click",".removefromcart",function(e){
 	var cartitemname = $(fadeoutcontainer).children('.cartitemname').html();
 	//[TODO]Remove the cart from the container
 	var currentcartrow = $.grep(cart, function(value){
-					return value.displayname == cartitemname; 
-				});
+		return value.displayname == cartitemname; 
+	});
 
 	var itemtotalcost = currentcartrow[0]['itemtotalcost'];
 
@@ -187,7 +211,7 @@ $(document).on("click","a.btn-add",function(e){
 		e.preventDefault();
 		//sessionStorage.delItem("cart");
 
-});
+	});
 
 //On Click of the remove button
 $(document).on("click","a.btn-remove",function(){
@@ -214,10 +238,13 @@ $(document).on("click",".cart-dropdown",function(){
 
 //On Click of the checkout button
 $(document).on("click","button.btn-checkout",function(){
-	 if (window.location.pathname != "/checkout.html"){
-	 window.location.href = "/checkout.html";
-	 };
+	if (window.location.pathname != "/checkout.html"){
+		window.location.href = "/checkout.html";
+	};
+	showcart(cart);
 });
+
+//On Load of the cart table
 
 $(document).on("click","#btnsubmitorder",function(){
 	//alert("I clicked the register button");
@@ -230,13 +257,32 @@ $(document).on("hidden","#myModal",function(){
 });*/
 
 $('#myModal').on('hidden.bs.modal', function (e) {
-  
-  cart = [];
-  sessionStorage["cart"] = JSON.stringify(cart);
-  console.log(sessionStorage["cart"]);
 
-  window.location.href = "/index.html";
+	cart = [];
+	sessionStorage["cart"] = JSON.stringify(cart);
+	console.log(sessionStorage["cart"]);
+
+	window.location.href = "/index.html";
 })
+
+// On keyup on the search area
+$(document).on("keyup","#vegetablesearch",function(){
+	var searchitem = $(this).val().toLowerCase();
+
+	//$("div.greenamaranthus").css("border","3px solid red");
+	$("div.itemcontainer").each(function(){
+		var idname = $(this).attr('id');
+		//alert(idname);
+		//alert(classname(indexOf(searchitem)));
+		(idname.indexOf(searchitem) != -1) ? $(this).show(): $(this).hide();
+
+	});
+	/*
+	$("div.vegetablesectionholder").filter(function(index) {
+		$(this).hide();
+	});
+*/
+});
 
 //On Click of the order form
 
@@ -270,7 +316,7 @@ function fillcart(presentcart){
 	//console.log(cart);
 	if (presentcart.length != 0)
 	{
-	carttotal = carttotal + 4000;
+		carttotal = carttotal + 4000;
 	}
 	
 	totalitems = presentcart.length ;
@@ -278,7 +324,7 @@ function fillcart(presentcart){
 	var valuetoshow = "TZS: " + carttotal;
 	$("#btn-total-checkout").html(valuetoshow);
 	$(".btn-items").html(totalitems + " items");
-		
+
 	
 } // fillcart
 
@@ -290,22 +336,22 @@ function additemtocart(displayname,countname,count,itemvalue,unit,itemtotalcost)
 }
 function deleteitemsfromcart()
 {
-				cart = $.grep(cart, function(value){
-					return value.count != 0; 
-				});
-				sessionStorage["cart"] = JSON.stringify(cart);
+	cart = $.grep(cart, function(value){
+		return value.count != 0; 
+	});
+	sessionStorage["cart"] = JSON.stringify(cart);
 }
 
 function edititemincart(displayname,count,itemtotalcost)
 {
 	var exist = 0;
 	$.each(cart,function(key,val){
-			if(val.displayname == displayname){
-				exist = 1;
-				val.count = count;
-				val.itemtotalcost = itemtotalcost;
-				}
-			});
+		if(val.displayname == displayname){
+			exist = 1;
+			val.count = count;
+			val.itemtotalcost = itemtotalcost;
+		}
+	});
 	sessionStorage["cart"] = JSON.stringify(cart);
 	return exist;
 }
@@ -315,27 +361,27 @@ function appendhtml(data){
 
 	$.each(data.products,function(key,val){
 
-	var appendel = $("<div itemscope itemtype='http://schema.org/Product' class='col-xs-6 col-sm-4 col-md-2 col-lg-2 itemcontainer'>"+
-	"<div id='"+val.name+"containercount' class='"+val.name+"containercount cartcontainer' hidden>"+
-	"<button type='button' class='btn btn-default btn-xs'>"+
-	"<span class='glyphicon glyphicon-shopping-cart'></span>"+ 
-	"<label class='boughtitems' id='lbl"+val.name+"containercount'></label>"+
-	"</button>"+
-	"</div>"+
-	"<div class='thumbnail'>"+
-	"<img data-src='/images/vegetables/cabbage.jpg' src='"+val.picture+"' alt='...'>"+
-	"<div itemprop='offers' itemscope itemtype='http://schema.org/Offer' id='"+val.name+"container' class='caption simpleCart_shelfItem cartinfo'>"+
-	"<h5 itemprop='name' class='item_name'>"+val.displayname+"</h5>"+
-	"<input id='txtcabbage' class='itemvalue item_price' type='text' value='"+val.price+"' hidden>"+
-	"<p itemprop='price'>Tsh "+val.price+"/"+val.unit+"</p>"+
-	"<input type='button' value='"+val.unit+"' class='itemunit' field='itemunit' hidden>"+
-	"<input type='button' value='-' class='qtyminus' field='quantity'>"+
-	"<input type='text' name='quantity' value='1' class='qty val"+val.name+"containercount'>"+
-	"<input type='button' value='+'' class='qtyplus' field='quantity'>"+
-	"<p><a href='#' class='btn btn-default btn-add item_add' role='button'><b> Add to Cart</b></a></p>"+
-	"</div>"+
-	"</div>"+
-	"</div>");
+		var appendel = $("<div id='"+val.name+"' itemscope itemtype='http://schema.org/Product' class='col-xs-6 col-sm-4 col-md-2 col-lg-2 itemcontainer '>"+
+			"<div id='"+val.name+"containercount' class='"+val.name+"containercount cartcontainer' hidden>"+
+			"<button type='button' class='btn btn-default btn-xs'>"+
+			"<span class='glyphicon glyphicon-shopping-cart'></span>"+ 
+			"<label class='boughtitems' id='lbl"+val.name+"containercount'></label>"+
+			"</button>"+
+			"</div>"+
+			"<div class='thumbnail'>"+
+			"<img data-src='/images/vegetables/cabbage.jpg' src='"+val.picture+"' alt='...'>"+
+			"<div itemprop='offers' itemscope itemtype='http://schema.org/Offer' id='"+val.name+"container' class='caption simpleCart_shelfItem cartinfo'>"+
+			"<h5 itemprop='name' class='item_name'>"+val.displayname+"</h5>"+
+			"<input id='txtcabbage' class='itemvalue item_price' type='text' value='"+val.price+"' hidden>"+
+			"<p itemprop='price'>Tsh "+val.price+"/"+val.unit+"</p>"+
+			"<input type='button' value='"+val.unit+"' class='itemunit' field='itemunit' hidden>"+
+			"<input type='button' value='-' class='qtyminus' field='quantity'>"+
+			"<input type='text' name='quantity' value='0' class='qty val"+val.name+"containercount'>"+
+			"<input type='button' value='+'' class='qtyplus' field='quantity'>"+
+			"<p><a href='#' class='btn btn-default btn-add item_add' role='button'><b> Add to Cart</b></a></p>"+
+			"</div>"+
+			"</div>"+
+			"</div>");
 $("."+data.category+"sectionholder").append(appendel);
 
 var itemcountid = appendel.find(".cartcontainer").attr('id');
