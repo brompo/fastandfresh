@@ -31,7 +31,7 @@ $(".categoriessidebar").find("a").each(function(){
 	appendmain();
 	if(loc == "/checkout.html")
 	{
-		showcart(cart);
+		showcarttable(cart);
 	}
 	else if(loc == "/vegetable.html")
 	{
@@ -233,7 +233,7 @@ $(document).on("click","a.btn-remove",function(){
 	});
 
 $(document).on("click",".cart-dropdown",function(){
-	showcart(cart);
+		showcart(cart);
 });
 
 //On Click of the checkout button
@@ -241,7 +241,7 @@ $(document).on("click","button.btn-checkout",function(){
 	if (window.location.pathname != "/checkout.html"){
 		window.location.href = "/checkout.html";
 	};
-	showcart(cart);
+	//showcart(cart);
 });
 
 //On Load of the cart table
@@ -408,6 +408,20 @@ function showcart(cart){
 		//alert(val.name);
 
 		cartitems += "<tr class='cartrow'><td class='cartitemname'>"+val.displayname+"</td><td class='cartitemcount'>"+val.count+" "+val.unit+
+		"</td><td>"+val.itemtotalcost+"</td><td><a href='#'><span class='glyphicon glyphicon-trash removefromcart'></span></a></td>";
+
+	});
+	cartitems += "<tr class='cartrow deliverypricerow'><td class='cartitemname'>Delivery Fee</td><td class='cartitemcount'></td><td>4000</td><td></td>";
+
+	$(".cartitems").html(cartitems);
+}
+function showcarttable(cart){
+	var cartitems = "<tr ><th>Item</th><th>Qty</th><th>Price</th><th></th></tr>";
+
+	$.each(cart,function(key,val){
+		//alert(val.name);
+
+		cartitems += "<tr class='cartrow'><td class='cartitemname'>"+val.displayname+"</td><td class='cartitemcount'><input type='text' value="+val.count+" /> "+val.unit+
 		"</td><td>"+val.itemtotalcost+"</td><td><a href='#'><span class='glyphicon glyphicon-trash removefromcart'></span></a></td>";
 
 	});

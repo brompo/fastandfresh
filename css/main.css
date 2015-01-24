@@ -98,8 +98,11 @@ footer > .container {
 .cartinfo{
 	text-align: center;
 }
+.cartitemname{
+	width:150px;
+}
 .cartitemcount{
-	width:80px;
+	width:100px;
 }
 
 
@@ -245,4 +248,18 @@ footer > .container {
 		border-left: 1px solid rgb(220, 215, 215);
 		border-right: 1px solid rgb(220, 215, 215);
 		border-bottom: 1px solid rgb(220, 215, 215);
+
+	}
+	table.fnftable input{
+		width:30px;
+		text-align: center;
+		border:2px solid white;
+	}
+	table.fnftable td,th{
+		text-align: left;
+		
+	}
+	table.fnftable td{
+		width:30px;
+
 	}

@@ -32,7 +32,7 @@
      {"name":"iceburglettuce","displayname":"Iceburg Lettuce","picture":"images/vegetables/iceburglettuce.jpg","unit":"kg","price":"2500"},
      {"name":"softlettuce","displayname":"Soft Lettuce","picture":"images/vegetables/softlettuce.jpg","unit":"bunch","price":"1000"},
      {"name":"okraladiesfingers","displayname":"Okra (Ladies Fingers)","picture":"images/vegetables/okraladiesfingers.jpg","unit":"kg","price":"2000"},
-     {"name":"peas","displayname":"Peas","picture":"images/vegetables/peas.jpg","unit":"kg","price":"6000"},
+     {"name":"peas","displayname":"Peas","picture":"images/vegetables/peas.jpg","unit":"kg","price":"10000"},
      {"name":"pumpkin","displayname":"Pumpkin","picture":"images/vegetables/pumpkin.jpg","unit":"piece","price":"3000"},
      {"name":"redonions","displayname":"Red Onions","picture":"images/vegetables/redonions.jpg","unit":"kg","price":"1800"},
      {"name":"whiteonions","displayname":"White Onions","picture":"images/vegetables/whiteonions.jpg","unit":"kg","price":"3000"},
