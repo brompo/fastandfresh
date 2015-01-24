@@ -29,33 +29,38 @@ ga('send', 'pageview');
       <div class="page-container">
 
        <!-- top navbar -->
-       <nav class="navbar navbar-inverse navbar-fixed-top mainheader" role="navigation">
-         <div class="navbar-header">
-           <button type="button" class="navbar-toggle" data-toggle="offcanvas" data-target=".sidebar-nav">
-             <span class="icon-bar"></span>
-             <span class="icon-bar"></span>
-             <span class="icon-bar"></span>
-           </button>
-           <a class="navbar-brand" href="/index.html" title="Online Grocery Delivery in Dar es salaam"><img src="/images/icons/fastandfreshlogo.png" class="logoimage" alt="Online Grocery Delivery in Dar es salaaam"></a>
-           <form class="navbar-form navbar-left">
-            <input type="text" class="form-control" placeholder="Search...">
-          </form>
-           <div class="btn-group cartholder">
-            <button id="btn-total-items" type="button" class="btn btn-default btn-cart drop-down-toggle dropdown cart-dropdown" data-toggle="dropdown">
-             <span class="caret"></span>
-             <label class="btn-items">0 items</label>
-           </button>
-           <div class=" table-responsive  dropdown-menu">
-             <table class="table table-hover cartitems">
-             </table>
-           </div>
-           <button id="btn-total-checkout" type="button" class="btn btn-default btn-cart" value=1000>TZS: 0</button>
-           <button type="button" class="btn btn-default btn-cart btn-checkout">
-             Checkout</button>
-           </div>
-         </div>
-         
-       </nav>
+       <!-- top navbar -->
+         <nav class="navbar navbar-inverse navbar-fixed-top mainheader" role="navigation">
+           <div class="navbar-header"><!-- navbar-header-->
+             <button type="button" class="navbar-toggle" data-toggle="offcanvas" data-target=".sidebar-nav">
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span>
+             </button>
+             <div class="fnfbrand"><!--fnfbrand-->
+               <a class="navbar-brand" href="/index.html" title="Online Grocery Delivery in Dar es salaam"><img src="/images/icons/fastandfreshlogo.png" class="logoimage" alt="Online Grocery Delivery in Dar es salaaam"></a>
+             </div><!--fnfbrand-->
+             <div class="fnfsearch"><!--fnfsearch-->
+             <form class="navbar-form navbar-left fnfform">
+              <input id="vegetablesearch" type="text" class="form-control" placeholder="Search Fast & Fresh">
+            </form>
+            </div><!--fnfsearch-->
+            <div class="btn-group cartholder"><!-- cartholder-->
+              <button id="btn-total-items" type="button" class="btn btn-default btn-cart drop-down-toggle dropdown cart-dropdown" data-toggle="dropdown">
+               <span class="caret"></span>
+               <label class="btn-items">0 items</label>
+             </button>
+             <div class=" table-responsive  dropdown-menu">
+               <table class="table table-hover cartitems">
+               </table>
+             </div>
+             <button id="btn-total-checkout" type="button" class="btn btn-default btn-cart" value=1000>TZS: 0</button>
+             <button type="button" class="btn btn-default btn-cart btn-checkout">
+               Checkout</button>
+             </div><!-- cartholder-->
+           </div><!-- navbar-header-->
+         </nav>
+         <!-- top navbar -->
 
        <div class="container-fluid">
         <div class="row row-offcanvas row-offcanvas-left">
