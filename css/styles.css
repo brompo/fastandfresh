@@ -81,9 +81,6 @@ form.fnfform{
     padding-right:10px;
     padding-left:10px;
   }
-.fnfsearch{
-  width:50%;
-}
 
 
 /* For Big Screens */
@@ -103,6 +100,9 @@ form.fnfform{
   form.fnfform input{
     width:100%;
 
+  }
+  .navbar-form .form-control{
+    width:400px;
   }
 }
 
@@ -196,12 +196,18 @@ form.fnfform{
   .navbar-toggle{
     margin-right:4px;
   }
+  .table-responsive>.table>tbody>tr>td{
+    white-space: inherit;
+  }
 
 }
 @media screen and (max-width: 500px) {
 
   .container-fluid{
     margin-top: 50px;
+  }
+  .navbar-form .form-control{
+    width:200px;
   }
 
 }
