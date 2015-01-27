@@ -45,6 +45,18 @@ form.fnfform{
     margin-bottom:0;
 
   }
+  .fnffilledfields{
+    /*border:1px solid rgb(241, 241, 241);*/
+    border:0px;
+  }
+  .fnfemptyfields
+  {
+    border:1px solid #F5C0BA;
+  }
+  .btn-lg
+  {
+    width: 250px;
+  }
 
 /*
 #sidebar .affix {

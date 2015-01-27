@@ -14,7 +14,10 @@ if(isset($_POST["email"]))
 	$email = $_POST["email"];
 	$password = $_POST["password"];
 
-	$person = $personDAO->selectperson($email,$password);
+	$result = $personDAO->selectperson($email,$password);
+
+	print json_encode($result);
+	
 
 }
 
@@ -22,7 +25,7 @@ if(isset($_POST["personinfo"])){
 	$persondetails = $_POST['personinfo'];
 	$result = $personDAO->insertperson($persondetails['firstname'],$persondetails['lastname'],$persondetails['email'],$persondetails['password'],$persondetails['phonenumber'],$persondetails['location']);
 
-	echo $result;
+	print_r($result);
 }
 
 //print_r($person);

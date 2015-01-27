@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/main.css" rel="stylesheet">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
   		<!--[if lt IE 9]>
   			<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
         <![endif]-->
@@ -91,7 +92,7 @@
                       <div class="panel-heading" role="tab" id="headingOne">
                         <h4 class="panel-title">
                           <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                            Returning User
+                            Returning User | Login
                           </a>
                         </h4>
                       </div>
@@ -125,7 +126,7 @@
                       <div class="panel-heading" role="tab" id="headingTwo">
                         <h4 class="panel-title">
                           <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                            New User
+                            New User | Register
                           </a>
                         </h4>
                       </div>
@@ -181,34 +182,61 @@
                       </div>
                     </div>
 
-                    <div class="panel panel-default orderpanel" ><!-- Order Panel -->
+                    <div class="panel panel-default orderpanel" id="orderContainer"><!-- Order Panel -->
                       <div class="panel-heading" role="tab" id="headingThree">
                         <h4 class="panel-title">
-                          <a class="collapsed" data-toggle="collapsed" data-parent="#accordion" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
-                            Delivery Details | Welcome Brian
-                          </a>
+                            Welcome Brian | Delivery Details 
                         </h4>
                       </div>
                       <div id="collapseThree" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingThree">
                         <div class="panel-body">
                           <form id="loginForm" class="form-horizontal" role="form">
-
-                            <div class="form-group">
-                              <label for="inputEmailLogin" class="col-sm-3 control-label">Email:</label>
+                          <div class="form-group">
+                              <label for="inputOrderFirstname" class="col-sm-3 control-label">First Name:</label>
                               <div class="col-sm-9">
-                                <input type="email" class="form-control " id="inputEmailLogin" placeholder="Email" >
+                                <input type="text" class="form-control fnffilledfields" id="inputOrderFirstname" placeholder="First Name" >
                               </div>
                             </div>
-
                             <div class="form-group">
-                              <label for="inputPasswordLogin" class="col-sm-3 control-label">Password</label>
+                              <label for="inputOrderLastname" class="col-sm-3 control-label">Last Name:</label>
                               <div class="col-sm-9">
-                                <input type="password" class="form-control" id="inputPasswordLogin" placeholder="Password">
+                                <input type="text" class="form-control fnffilledfields" id="inputOrderLastname" placeholder="Last Name" >
                               </div>
                             </div>
+                            <div class="form-group">
+                              <label for="inputOrderEmail" class="col-sm-3 control-label">Email:</label>
+                              <div class="col-sm-9">
+                                <input type="email" class="form-control fnffilledfields" id="inputOrderEmail" placeholder="Email" >
+                              </div>
+                            </div>
+                            <div class="form-group">
+                              <label for="inputOrderMobile" class="col-sm-3 control-label">Mobile Number:</label>
+                              <div class="col-sm-9">
+                                <input type="tel" class="form-control fnffilledfields" id="inputOrderMobile" placeholder="Mobile Number" >
+                              </div>
+                            </div>
+                            <div class="form-group">
+                              <label for="inputOrderWhere" class="col-sm-3 control-label">Delivery Place:</label>
+                              <div class="col-sm-9">
+                                <input type="text" class="form-control fnffilledfields" id="inputOrderWhere" placeholder="e.g Mikocheni A, bwanani Block 234" >
+                              </div>
+                            </div>
+                            <div class="form-group">
+                              <label for="inputOrderWhen" class="col-sm-3 control-label">When:</label>
+                              <div class="col-sm-9">
+                                <input type="text" class="form-control fnfemptyfields" id="inputOrderWhen" placeholder="if not specified, default is tomorrow" >
+                              </div>
+                            </div>
+                            <div class="form-group">
+                              <label for="inputOrderComment" class="col-sm-3 control-label">Comments:</label>
+                              <div class="col-sm-9">
+                                <textarea class="form-control fnfemptyfields" rows="4"  id="inputOrderComment" placeholder="Any Specifics?"></textarea>
+                              </div>
+                            </div>
+                            
                             <div class="form-group">
                               <div class="col-sm-offset-2 col-sm-10">
-                                <button type="submit" id="btnlogin" class="btn btn-success btn-md btn-order" data-target="#myModal">Login</button>
+                                <button type="submit" id="btnlogin" class="btn btn-success btn-lg btn-order" data-target="#myModal">Submit Order</button>
                               </div>
                             </div>
                           </form>
@@ -299,6 +327,7 @@
 <script src="js/map.js"></script>
 <script src="js/validate.js"></script>
 <script src="js/scripts.js"></script>
+<script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -308,6 +337,19 @@
   ga('create', 'UA-55525540-1', 'auto');
   ga('send', 'pageview');
   //ga(‘set’, ‘&uid’, {{USER_ID}}); // Set the user ID using signed-in user_id.
+
+  $(function() {
+    $( "#inputOrderWhen" ).datepicker({ 
+      defaultDate: +1,
+      minDate: +1,
+      dateFormat:"DD, d MM, yy",
+      firstDay:1,
+      beforeShowDay: function(date) {
+        var day = date.getDay();
+        return [day != 0,''];
+        }
+    });
+  });
 </script>
 </body>
 </html>

@@ -126,14 +126,52 @@ $(document).ready(function(){
 				type: 'POST',
 				data: {email: loginemail,password:loginpassword},
 				success:function(response){
-					alert(response);
+					var logininfo = $.parseJSON(response);
+
+					if (logininfo[0] === 0){
+						alert(logininfo[1]);
+					}
+					else
+					{
+						//alert(logininfo[1]["last_name"]);
+						var person = {};
+						person["firstname"] = logininfo[1]["first_name"];
+						person["lastname"] = logininfo[1]["last_name"];
+						person["email"] = logininfo[1]["email"];
+						person["mobile"] = logininfo[1]["mobile_phone"];
+						person["where"] = logininfo[1]["default_location"];
+						
+						sessionStorage["person"] = person;
+
+						//alert(person.length);
+/*
+						person.push({firstname:logininfo[1]["first_name"],
+							lastname:logininfo[1]["last_name"],
+							email:logininfo[1]["email"],
+							mobile:logininfo[1]["mobile_phone"],
+							location:logininfo[1]["default_location"]
+						});
+*/
+
+						$("div.authenticationpanel").hide('slow', function() {
+							//[TODO] Show a different panel with name and order details.
+							//$(this).fadeIn();
+						});
+						$("#orderContainer").css('display', 'block');
+						$("#inputOrderFirstname").val(logininfo[1]["first_name"]);
+						$("#inputOrderLastname").val(logininfo[1]["last_name"]);
+						$("#inputOrderEmail").val(logininfo[1]["email"]);
+						$("#inputOrderMobile").val(logininfo[1]["mobile_phone"]);
+						$("#inputOrderWhere").val(logininfo[1]["default_location"]);
+					}
+
 				},
 				error:function(ts){
 					var error = ts.responseText;
 						//alert(error);
 					}
 				});
-
+			e.preventDefault();
 		}
 		else
 		{

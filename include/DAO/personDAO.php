@@ -22,11 +22,30 @@ class personDAO
 
 	//Select Person Function
 	function selectperson($email,$password){
+
+		$person = $this->selectpersonbyemail($email);
+		if ($person[0] > 0)
+		{
 		$selectquery = "select * from tblperson where email = '$email' and password = '$password'";
 		$result = mysql_query($selectquery) or die(mysql_error());
 
+		if(mysql_num_rows($result)>0){
 		$person = mysql_fetch_array($result);
-		return $person;
+		return array(1,$person);	
+		}
+		else
+		{
+			$message = "password invalid, please try again";
+			return array(0,$message);
+		}
+
+		}
+		else
+		{
+			$message = "email does not exist,please register";
+			return array(0,$message);
+		}
+		
 	}
 	function selectpersonbyemail($email)
 	{
@@ -46,13 +65,15 @@ class personDAO
 		if ($person[0] > 0)
 		{
 			//[TODO] - Do something when someone does exist;
-			return false;
+			return "email already exists, log in instead";
 		}
 		else {
 			$insertquery = "insert into tblperson value ('','$firstname','$lastname','$email','$password','$phonenumber','$location')";
-			$result = mysql_query($insertquery) or die(mysql_error());	
+			$result = mysql_query($insertquery) or die(mysql_error());
 
-			return true;
+			$person = $this->selectpersonbyemail($email);	
+
+			return $person;
 		}
 		
 	}

@@ -3,6 +3,18 @@ $(document).ready(function(){
 var loc = window.location.pathname;
 	//alert(loc);
 
+//Initialize Session Variables
+
+if(sessionStorage.getItem("person")== null){
+	var person = {};
+}
+else
+{
+	var person = {};
+	person = sessionStorage["person"];
+}
+
+
 //Check if the cart is empty or not, then display the items
 if(sessionStorage.getItem("cart") == null){
 	var cart = [];
@@ -32,50 +44,66 @@ $(".categoriessidebar").find("a").each(function(){
 	if(loc == "/checkout.html")
 	{
 		showcarttable(cart);
+		if($.isEmptyObject(person))
+		{
+			$("#orderContainer").css('display', 'none');
+		}
+		else
+		{
+			$("div.authenticationpanel").hide();
+			alert(person.firstname);
+			$("#inputOrderFirstname").val(person.firstname);
+						$("#inputOrderLastname").val(person.lastname);
+						$("#inputOrderEmail").val(person.email);
+						$("#inputOrderMobile").val(person.mobile);
+						$("#inputOrderWhere").val(person.where);
+		}
+		
+		
 	}
 	else if(loc == "/vegetable.html")
 	{
 		function appendVegetables(){
 		//Read the json file and append the div onto the 
-			$.getJSON("data/vegetables.json",function(data){
-				appendhtml(data);
-			});
-		}	
+		$.getJSON("data/vegetables.json",function(data){
+			appendhtml(data);
+		});
+	}	
+}
+else if(loc == "/fruits.html")
+{
+	function appendFruits(){
+		$.getJSON("data/fruits.json",function(data){
+			appendhtml(data);
+		});
 	}
-	else if(loc == "/fruits.html")
-	{
-			function appendFruits(){
-				$.getJSON("data/fruits.json",function(data){
-					appendhtml(data);
-				});
-			}
-	}
-	else if(loc == "/herbs.html")
-	{
-			function appendHerbs(){
+}
+else if(loc == "/herbs.html")
+{
+	function appendHerbs(){
 				//Read the json file and append the div onto the 
 				$.getJSON("data/herbs.json",function(data){
 					appendhtml(data);
 				});
 			}	
-	}
-	else if(loc == "meats.html")
-	{
+		}
+		else if(loc == "meats.html")
+		{
 			function appendMeats(){
 				$.getJSON("data/meatandseafoods.json",function(data){
 					appendhtml(data);
 				});
 			}
-	}
-	else if(loc == "driedgoods.html")
-	{
+		}
+		else if(loc == "driedgoods.html")
+		{
 			function appendDriedGoods(){
 				$.getJSON("data/driedgoods.json",function(data){
 					appendhtml(data);
 				});
 			}
-	}
-function appendmain(){
+		}
+		function appendmain(){
 	//Read the json file and append the div onto the 
 	$.getJSON("data/main.json",function(data){
 		appendhtml(data);
@@ -233,7 +261,7 @@ $(document).on("click","a.btn-remove",function(){
 	});
 
 $(document).on("click",".cart-dropdown",function(){
-		showcart(cart);
+	showcart(cart);
 });
 
 //On Click of the checkout button
@@ -282,6 +310,11 @@ $(document).on("keyup","#vegetablesearch",function(){
 		$(this).hide();
 	});
 */
+});
+
+//On Click of the register buttom
+$(document).on("click","btnregister",function(){
+	
 });
 
 //On Click of the order form
