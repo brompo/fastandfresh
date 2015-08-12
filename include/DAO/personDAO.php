@@ -58,26 +58,26 @@ class personDAO
 	}
 
 	//Insert Person Function
-	function insertperson($firstname,$lastname,$email,$password,$phonenumber,$location){
+	function insertperson($firstname,$lastname,$email,$password,$phonenumber,$location,$role){
 
 		//[TODO] Check if the user exists;
 		$person = $this->selectpersonbyemail($email);
 		if ($person[0] > 0)
 		{
 			//[TODO] - Do something when someone does exist;
-			return "email already exists, log in instead";
+			$message = "email already exists,log in instead";
+			return array(0,$message);
 		}
 		else {
-			$insertquery = "insert into tblperson value ('','$firstname','$lastname','$email','$password','$phonenumber','$location')";
+			$insertquery = "insert into tblperson value ('','$firstname','$lastname','$email','$password','$phonenumber','$location','$role')";
 			$result = mysql_query($insertquery) or die(mysql_error());
 
 			$person = $this->selectpersonbyemail($email);	
 
-			return $person;
+			return array(1,$person);
 		}
 		
 	}
-
 	//Add Person Function
 	function addperson($first_name,$last_name,$email,$mobile_phone,$default_location)
 	{

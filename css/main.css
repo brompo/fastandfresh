@@ -25,6 +25,29 @@ p,h1,h2,h3,h4 {
   /* pad bottom by footer height */
   /*padding: 0 0 120px;*/
 }
+div.orderpanel{
+	/*display:none;*/
+}
+.panelheader:hover{
+	background-color: #649B33;
+	color:#FFF;
+	text-decoration:none;
+}
+.panel-heading {
+    padding: 0;
+}
+.panel-heading a{
+    display: block;
+    padding: 10px 15px;
+}
+
+
+#btnprofilename
+{
+  color: #FFF;
+  background-color: #649B33;
+  border-color: #ccc;
+}
 h3
 {
 font-family: 'Archer SSm A', 'Archer SSm B';
@@ -91,7 +114,29 @@ footer {
   border-top-width: 1px;
   margin-top:50px;
 }
-
+.cartrow
+{
+	height: 50px;
+	vertical-align: middle;
+	text-align: right;
+}
+.addglyphicon
+{
+	float:left;
+	width:100%;
+	padding-left: 6px
+}
+.removeglyphicon
+{
+	float:left;
+	width:100%;
+	padding-left: 6px
+}
+.inputcartcount
+{
+	float:left;
+	width:100%;
+}
 footer > .container {
   padding: 20px;
 }
@@ -214,6 +259,13 @@ footer > .container {
 		font-weight: normal;
 
 	}
+	.navbar-inverse .navbar-toggle {
+  border-color: #FDFDFD;
+}
+label.labelitemunit {
+  font-weight: 100;
+  padding-top: 4px;
+}
 	.item_name{
 		font-weight: bold;
 	}
@@ -223,6 +275,10 @@ footer > .container {
 	}
 	.open>.dropdown-menu{
 		width:305px;
+	}
+	.open>.accountdetail
+	{
+		width:50px;
 	}
 	.table th{
 	}

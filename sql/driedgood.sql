@@ -1,0 +1,17 @@
+INSERT INTO `tblitem`(`ID`, `category_ID`, `name`, `displayname`, `picture`, `unit`, `price`) VALUES ('',3,'drybeans','Dry Beans','images/driedgoods/drybeans.jpg','kg',2000);
+INSERT INTO `tblitem`(`ID`, `category_ID`, `name`, `displayname`, `picture`, `unit`, `price`) VALUES ('',3,'rawcashewnuts1stgrade','Raw Cashewnuts (1st Grade)','images/driedgoods/rawcashewnuts1stgrade.jpg','kg',15000);
+INSERT INTO `tblitem`(`ID`, `category_ID`, `name`, `displayname`, `picture`, `unit`, `price`) VALUES ('',3,'roastedcashewnuts1stgrade','Roasted Cashewnuts (1st Grade)','images/driedgoods/roastedcashewnuts1stgrade.jpg','kg',15000);
+INSERT INTO `tblitem`(`ID`, `category_ID`, `name`, `displayname`, `picture`, `unit`, `price`) VALUES ('',3,'eggs','Eggs','images/driedgoods/eggs.jpg','tray',9000);
+INSERT INTO `tblitem`(`ID`, `category_ID`, `name`, `displayname`, `picture`, `unit`, `price`) VALUES ('',3,'eggslocal','Eggs (Local)','images/driedgoods/eggslocal.jpg','kg',15000);
+INSERT INTO `tblitem`(`ID`, `category_ID`, `name`, `displayname`, `picture`, `unit`, `price`) VALUES ('',3,'wheatflourazam','Wheat Flour (Azam)','images/driedgoods/wheatflourazam.jpg','5kg',7000);
+INSERT INTO `tblitem`(`ID`, `category_ID`, `name`, `displayname`, `picture`, `unit`, `price`) VALUES ('',3,'applejuiceceres','Apple Juice (Ceres)','images/driedgoods/applejuiceceres.jpg','lt',3500);
+INSERT INTO `tblitem`(`ID`, `category_ID`, `name`, `displayname`, `picture`, `unit`, `price`) VALUES ('',3,'guavajuiceceres','Guava Juice (Ceres)','images/driedgoods/guavajuiceceres.jpg','lt',3500);
+INSERT INTO `tblitem`(`ID`, `category_ID`, `name`, `displayname`, `picture`, `unit`, `price`) VALUES ('',3,'mangojuiceceres','Mango Juice (Ceres)','images/driedgoods/mangojuiceceres.jpg','lt',3500);
+INSERT INTO `tblitem`(`ID`, `category_ID`, `name`, `displayname`, `picture`, `unit`, `price`) VALUES ('',3,'whitegrapejuiceceres','White Grape Juice (Ceres)','images/driedgoods/whitegrapejuiceceres.jpg','lt',3500);
+INSERT INTO `tblitem`(`ID`, `category_ID`, `name`, `displayname`, `picture`, `unit`, `price`) VALUES ('',3,'maizemeal','Maize Meal','images/driedgoods/maizemeal.jpg','kg',1300);
+INSERT INTO `tblitem`(`ID`, `category_ID`, `name`, `displayname`, `picture`, `unit`, `price`) VALUES ('',3,'uhtmilk','UHT milk','images/driedgoods/uhtmilk.jpg','lt',2800);
+INSERT INTO `tblitem`(`ID`, `category_ID`, `name`, `displayname`, `picture`, `unit`, `price`) VALUES ('',3,'whitericembeya1stgrade','White Rice (Mbeya 1st grade)	','images/driedgoods/whitericembeya1stgrade.jpg','kg',2000);
+INSERT INTO `tblitem`(`ID`, `category_ID`, `name`, `displayname`, `picture`, `unit`, `price`) VALUES ('',3,'basmatirice','Basmati Rice','images/driedgoods/basmatirice.jpg','kg',4000);
+INSERT INTO `tblitem`(`ID`, `category_ID`, `name`, `displayname`, `picture`, `unit`, `price`) VALUES ('',3,'saltkensalt','Salt (Kensalt)','images/driedgoods/saltkensalt.jpg','500grm',400);
+INSERT INTO `tblitem`(`ID`, `category_ID`, `name`, `displayname`, `picture`, `unit`, `price`) VALUES ('',3,'whitesugar','White Sugar','images/driedgoods/whitesugar.jpg','kg',2000);
+INSERT INTO `tblitem`(`ID`, `category_ID`, `name`, `displayname`, `picture`, `unit`, `price`) VALUES ('',3,'brownsugar','Brown Sugar','images/driedgoods/brownsugar.jpg','kg',2000);

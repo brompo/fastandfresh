@@ -1,0 +1,4 @@
+INSERT INTO `tblitem`(`ID`, `category_ID`, `name`, `displayname`, `picture`, `unit`, `price`) VALUES ('',4,'freshparsley','Fresh Parsley','images/herbs/freshparsley.jpg','bunch',700);
+INSERT INTO `tblitem`(`ID`, `category_ID`, `name`, `displayname`, `picture`, `unit`, `price`) VALUES ('',4,'freshmint','Fresh Mint','images/herbs/freshmint.jpg','bunch',700);
+INSERT INTO `tblitem`(`ID`, `category_ID`, `name`, `displayname`, `picture`, `unit`, `price`) VALUES ('',4,'freshbasil','Fresh Basil','images/herbs/freshbasil.jpg','bunch',700);
+INSERT INTO `tblitem`(`ID`, `category_ID`, `name`, `displayname`, `picture`, `unit`, `price`) VALUES ('',4,'freshcoriander','Fresh Coriander','images/herbs/freshcoriander.jpg','bunch',700);

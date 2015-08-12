@@ -2,7 +2,6 @@
 	"category":"driedgoods",
 	"products":
 	[{"name":"drybeans","displayname":"Dry Beans","picture":"images/driedgoods/drybeans.jpg","unit":"kg","price":"2000"},
-     {"name":"brownbreadloafazura","displayname":"Brown Bread loaf Azura","picture":"images/driedgoods/brownbreadloafazura.jpg","unit":"piece","price":"4500"},
      {"name":"rawcashewnuts1stgrade","displayname":"Raw Cashewnuts (1st Grade)","picture":"images/driedgoods/rawcashewnuts1stgrade.jpg","unit":"kg","price":"15000"},
      {"name":"roastedcashewnuts1stgrade","displayname":"Roasted Cashewnuts (1st Grade)","picture":"images/driedgoods/roastedcashewnuts1stgrade.jpg","unit":"kg","price":"15000"},
      {"name":"eggs","displayname":"Eggs","picture":"images/driedgoods/eggs.jpg","unit":"tray","price":"9000"},

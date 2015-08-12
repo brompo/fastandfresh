@@ -7,20 +7,28 @@
 
 $(document).ready(function(){
 	//global vars
-	var form = $("#checkoutform");
+	var checkoutform = $("#checkoutform");
 	var registerform = $("#registerform");
+	var recoverPasswordForm = $("#recoverPasswordForm");
 	var loginform = $("#loginForm");
 	var firstname = $("#inputFirstname");
+	var orderfirstname = $("#inputOrderFirstname");
 	var lastname = $("#inputLastname");
+	var orderlastname = $("#inputOrderLastname");
 	var where = $("#inputWhere");
+	var orderwhere = $("#inputOrderWhere");
 	var when = $("#inputWhen");
+	var orderwhen = $("#inputOrderWhen");
 	var comment = $("#inputComment");
+	var ordercomment = $("#inputOrderComment");
 	var mobilenumber = $("#inputMobile");
+	var ordermobilenumber = $("#inputOrderMobile");
 	var latitude = $("#latbox");
 	var longitude = $("#lngbox");
 	var nameInfo = $("#nameInfo");
 	var email = $("#inputEmail");
 	var emaillogin = $("#inputEmailLogin");
+	var orderemail = $("#inputOrderEmail");
 	var emailInfo = $("#emailInfo");
 	var passwordlogin = $("#inputPasswordLogin");
 	var password = $("#inputPassword");
@@ -29,6 +37,7 @@ $(document).ready(function(){
 	var pass2 = $("#pass2");
 	var pass2Info = $("#pass2Info");
 	var message = $("#message");
+
 
 	// Check the cart in storage
 	if(sessionStorage.getItem("cart") == null){
@@ -39,34 +48,37 @@ $(document).ready(function(){
 	} 
 	
 	//On blur
-	firstname.blur(validateFirstName);
-	lastname.blur(validateLastName);
-	where.blur(validateWhere);
-	mobilenumber.blur(validateMobile);
-	email.blur(validateEmail);
-	pass1.blur(validatePassword);
+	//firstname.blur(validateFirstName(firstname));
+	/*
+	orderfirstname.blur(validateFirstName(orderfirstname));
+	lastname.blur(validateLastName(lastname));
+	where.blur(validateWhere(where));
+	mobilenumber.blur(validateMobile(mobilenumber));
+	email.blur(validateEmail(email));
+	pass1.blur(validatePassword(pass1));
 	//pass2.blur(validatePass2);
 	//On key press
-	firstname.keyup(validateFirstName);
-	lastname.keyup(validateLastName);
-	where.keyup(validateWhere);
-	emaillogin.keyup(validateEmailLogin);
-	passwordlogin.keyup(validatePasswordLogin);
-	mobilenumber.keyup(validateMobile);
-	pass1.keyup(validatePassword);
+	orderfirstname.keyup(validateFirstName(orderfirstname));
+	//firstname.keyup(validateFirstName(firstname));
+	lastname.keyup(validateLastName(lastname));
+	where.keyup(validateWhere(where));
+	emaillogin.keyup(validateEmailLogin(emaillogin));
+	passwordlogin.keyup(validatePasswordLogin(passwordlogin));
+	mobilenumber.keyup(validateMobile(mobilenumber));
+	pass1.keyup(validatePassword(pass1));
 	//pass2.keyup(validatePass2);
-	message.keyup(validateMessage);
+	message.keyup(validateMessage(message));
+	*/
 	
 	//On Submitting of the Order Form
-	form.submit(function(e){
-		
+	checkoutform.submit(function(e){
 		//cart.push("firstname":firstname,"lastname":lastname,"email":email,"location":where);
 		//console.log(cart);
 
-		if( validateLastName() & validateFirstName() & validateEmail()  & validateWhere() & validateMobile())
+		if(validateFirstName(orderfirstname) & validateLastName(orderlastname) & validateWhere(orderwhere) & validateMobile(ordermobilenumber))
 		{
 				//return true;
-				//$("#myModal").modal("show");
+				
 				var cart = JSON.parse(sessionStorage["cart"]);
 				
 				console.log(cart);
@@ -74,21 +86,22 @@ $(document).ready(function(){
 
 				var items = JSON.stringify(cart);
 				var orderdetails = {};
-				orderdetails["firstname"] = firstname.val();
-				orderdetails["lastname"] = lastname.val();
-				orderdetails["where"] = where.val();
-				orderdetails["email"] = email.val();
-				orderdetails["mobilenumber"] = mobilenumber.val();
-				orderdetails["when"] = when.val();
-				orderdetails["comment"] = comment.val();
-				orderdetails["latitude"] = latitude.val();
-				orderdetails["longitude"] = longitude.val();
+				orderdetails["firstname"] = orderfirstname.val();
+				orderdetails["lastname"] = orderlastname.val();
+				orderdetails["where"] = orderwhere.val();
+				orderdetails["email"] = orderemail.val();
+				orderdetails["mobilenumber"] = ordermobilenumber.val();
+				orderdetails["when"] = orderwhen.val();
+				orderdetails["comment"] = ordercomment.val();
+				//orderdetails["latitude"] = latitude.val();
+				//orderdetails["longitude"] = longitude.val();
 
 				var details = JSON.stringify(orderdetails);
+				
 
-				$("#myModal").modal('show');
+				$("#myModal").modal("show");
 				$.ajax({
-					url: 'include/mail.php',
+					url: 'include/BL/personBL.php',
 					type: 'POST',
 					data: {data: items,orderdetails:orderdetails},
 					success:function(response){
@@ -99,15 +112,19 @@ $(document).ready(function(){
 						//alert(error);
 					}
 				});
+
+				//clearsessions();
+
 				//window.location.href = "js/mail.php?data=";
 				
 				return false;
 				//[TODO] Pass the variable and arrays to php
+				
 			}
 			else
 			{
 				e.preventDefault();
-				
+				alert("fields you entered are not correct");
 				return false;
 			}
 		});
@@ -116,7 +133,7 @@ $(document).ready(function(){
 	loginform.submit(function(e) {
 		
 		/* Act on the event */
-		if(validateEmailLogin() & validatePasswordLogin())
+		if(validateEmailLogin(emaillogin) & validatePasswordLogin(passwordlogin))
 		{
 			var loginemail = emaillogin.val();
 			var loginpassword = passwordlogin.val();
@@ -141,7 +158,7 @@ $(document).ready(function(){
 						person["mobile"] = logininfo[1]["mobile_phone"];
 						person["where"] = logininfo[1]["default_location"];
 						
-						sessionStorage["person"] = person;
+						sessionStorage["person"] = JSON.stringify(person);
 
 						//alert(person.length);
 /*
@@ -151,30 +168,31 @@ $(document).ready(function(){
 							mobile:logininfo[1]["mobile_phone"],
 							location:logininfo[1]["default_location"]
 						});
-*/
+			*/
 
-						$("div.authenticationpanel").hide('slow', function() {
+			$("div.authenticationpanel").hide('slow', function() {
 							//[TODO] Show a different panel with name and order details.
 							//$(this).fadeIn();
 						});
-						$("#orderContainer").css('display', 'block');
-						$("#inputOrderFirstname").val(logininfo[1]["first_name"]);
-						$("#inputOrderLastname").val(logininfo[1]["last_name"]);
-						$("#inputOrderEmail").val(logininfo[1]["email"]);
-						$("#inputOrderMobile").val(logininfo[1]["mobile_phone"]);
-						$("#inputOrderWhere").val(logininfo[1]["default_location"]);
-					}
+			displayuser(person["firstname"]);
+			$("#orderContainer").css('display', 'block');
+			$("#inputOrderFirstname").val(logininfo[1]["first_name"]);
+			$("#inputOrderLastname").val(logininfo[1]["last_name"]);
+			$("#inputOrderEmail").val(logininfo[1]["email"]);
+			$("#inputOrderMobile").val(logininfo[1]["mobile_phone"]);
+			$("#inputOrderWhere").val(logininfo[1]["default_location"]);
+		}
 
-				},
-				error:function(ts){
-					var error = ts.responseText;
+	},
+	error:function(ts){
+		var error = ts.responseText;
 						//alert(error);
 					}
 				});
-			e.preventDefault();
-		}
-		else
-		{
+e.preventDefault();
+}
+else
+{
 			//alert("I am here");
 			e.preventDefault();
 			return false
@@ -182,9 +200,10 @@ $(document).ready(function(){
 		
 	});
 
-	registerform.submit(function(e) {
+//On submit of Registration Form
+registerform.submit(function(e) {
 		//validate inputs on the form
-		if(validateFirstName() & validateLastName() & validateEmail() & validatePassword() & validateMobile()  ){
+		if(validateFirstName(firstname) & validateLastName(lastname) & validateEmail(email) & validatePassword(password) & validateMobile(mobilenumber)  ){
 
 				//var items = JSON.stringify(cart);
 				var persondetails = {};
@@ -197,24 +216,77 @@ $(document).ready(function(){
 				//var persondetails = JSON.stringify(persondetails);
 
 				//alert("I am here");
+				//$("#imgloading").show();
+				$("#registrationcontainer").html('<img id="imgloading" src="/images/loadingtomato.gif">');
 
 				$.ajax({
 					url: 'include/BL/personBL.php',
 					type: 'POST',
 					data: {personinfo: persondetails},
 					success:function(response){
-						alert(response);
-						$("div.authenticationpanel").hide('slow', function() {
-							//[TODO] Show a different panel with name and order details.
+						$("#imgloading").hide();
+						var registrationinfo = $.parseJSON(response);
+
+						if (registrationinfo[0] === 0)
+						{
+							alert(registrationinfo[1]);
+							$("#collapseTwo").collapse('hide');
+							$("#collapseOne").collapse('show');
+
+							$("#inputEmailLogin").val(persondetails["email"]);
+							$("#inputPasswordLogin").focus();
+						}
+						else
+						{
+
+							var person = {};
+							person["firstname"] = persondetails["firstname"];
+							person["lastname"] = persondetails["lastname"];
+							person["email"] = persondetails["email"];
+							person["mobile"] = persondetails["phonenumber"];
+							person["where"] = persondetails["location"];
+							person["password"] = persondetails["password"];
+							
+							sessionStorage["person"] = JSON.stringify(person);
+
+
+							$("div.authenticationpanel").hide('slow', function() {
 							//$(this).fadeIn();
 						});
+
+							displayuser(persondetails["firstname"]);
+							$("#orderContainer").css('display', 'block');
+							$("#inputOrderFirstname").val(persondetails["firstname"]);
+							$("#inputOrderLastname").val(persondetails["lastname"]);
+							$("#inputOrderEmail").val(persondetails["email"]);
+							$("#inputOrderMobile").val(persondetails["phonenumber"]);
+							$("#inputOrderWhere").val(persondetails["location"]);
+						}
+
+
+						//[TODO]Send an Email to the User with their account information
+						//alert("Send an email to user");
+						$.ajax({
+							url: 'include/BL/personBL.php',
+							type: 'POST',
+							data: {persondetails:person},
+							success:function(response){
+						//alert("email has been sent");
+					},
+					error:function(ts){
+						var error = ts.responseText;
+						//alert(error);
+					}
+				});
+
+
 						//$("div.orderdetails").show();
 					},
 					error:function(xhr, status, error){
 						var error = xhr.responseText;
 						alert(error);
-						}
-					});
+					}
+				});
 				//alert("I am here too");	
 				e.preventDefault();
 			}
@@ -224,11 +296,26 @@ $(document).ready(function(){
 			}
 		});
 
+//ON click of recover email form
+recoverPasswordForm.submit(function(e) {
+	/* Act on the event */
+	var recoverPasswordEmail = $("#inputRecoverPasswordEmail");
+	if(validateEmail(recoverPasswordEmail))
+	{
+			//[TODO] - Check password corresponding to the email and if its correct, then send the password to the corresponding email;
+		}
+		else
+		{
+			alert("Please enter correct email");
+			e.preventDefault();	
+		};
+		
+	});
 
 	//validation functions
-	function validateEmail(){
+	function validateEmail(email){
 		//testing regular expression
-		var a = $("#inputEmail").val();
+		var a = email.val();
 		var filter = /^[a-zA-Z0-9]+[a-zA-Z0-9_.-]+[a-zA-Z0-9_-]+@[a-zA-Z0-9]+[a-zA-Z0-9.-]+[a-zA-Z0-9]+.[a-z]{2,4}$/;
 		//if it's valid email
 		if(filter.test(a)){
@@ -246,8 +333,8 @@ $(document).ready(function(){
 		}
 	}
 	//validate Email when user is login in
-	function validateEmailLogin(){
-		var a = $("#inputEmailLogin").val();
+	function validateEmailLogin(emaillogin){
+		var a = emaillogin.val();
 		var filter = /^[a-zA-Z0-9]+[a-zA-Z0-9_.-]+[a-zA-Z0-9_-]+@[a-zA-Z0-9]+[a-zA-Z0-9.-]+[a-zA-Z0-9]+.[a-z]{2,4}$/;
 		//if it's valid email
 		//alert(a);
@@ -267,7 +354,7 @@ $(document).ready(function(){
 	}
 
 
-	function validateFirstName(){
+	function validateFirstName(firstname){
 		//if it's NOT valid
 		if(firstname.val().length < 1){
 			firstname.addClass("error");
@@ -283,7 +370,7 @@ $(document).ready(function(){
 			return true;
 		}
 	}
-	function validateLastName(){
+	function validateLastName(lastname){
 
 		if(lastname.val().length <1){
 			lastname.addClass("error");
@@ -300,7 +387,7 @@ $(document).ready(function(){
 		}
 	}
 
-	function validateMobile(){
+	function validateMobile(mobilenumber){
 		if(mobilenumber.val().length <1){
 			mobilenumber.addClass("error");
 			//whereInfo.text("We want last names with more than 1 letter");
@@ -316,7 +403,7 @@ $(document).ready(function(){
 		}
 	}
 
-	function validateWhere(){
+	function validateWhere(where){
 		if(where.val().length <1){
 			where.addClass("error");
 			//whereInfo.text("We want last names with more than 1 letter");
@@ -332,7 +419,7 @@ $(document).ready(function(){
 		}
 
 	}
-	function validatePasswordLogin(){
+	function validatePasswordLogin(passwordlogin){
 		//it's NOT valid
 		if(passwordlogin.val().length <1){
 			passwordlogin.addClass("error");
@@ -350,7 +437,7 @@ $(document).ready(function(){
 	}
 }
 
-function validatePassword(){
+function validatePassword(password){
 	//var a = $("#password1");
 	//var b = $("#password2");
 
@@ -370,7 +457,23 @@ function validatePassword(){
 			return true;
 		}
 	}
+	function displayuser(firstname){
+		$("#btnprofilename").html("Hi "+firstname+" <span class='caret'></span>");
+		$("#labelfirstname").html(firstname);
+	}
 
+
+	$('#myModal').on('hidden.bs.modal', function (e) {
+
+		clearsessions();
+	})
+
+	function clearsessions()
+	{
+		sessionStorage.removeItem("person");
+		sessionStorage.removeItem("cart");
+		window.location.href = "/index.html";
+	}
 /*
 function validatePass1(){
 	var a = $("#password1");
@@ -412,7 +515,7 @@ function validatePass1(){
 		}
 	}
 	*/
-	function validateMessage(){
+	function validateMessage(message){
 		//it's NOT valid
 		if(message.val().length < 10){
 			message.addClass("error");
@@ -424,4 +527,14 @@ function validatePass1(){
 			return true;
 		}
 	}
+	//[TODO] Impelement a function to logout a person
+	$("#logoutlink").on("click",function(){
+		//alert("Do you really want to log me out?");
+	});
+
+	function logout(){
+		$.session.remove("person");
+	}
+
+
 });

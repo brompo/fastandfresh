@@ -1,0 +1,14 @@
+INSERT INTO `tblitem`(`ID`, `category_ID`, `name`, `displayname`, `picture`, `unit`, `price`) VALUES ('',2,'appleimported','Apple (Imported)','images/fruits/appleimported.jpg','piece',800);
+INSERT INTO `tblitem`(`ID`, `category_ID`, `name`, `displayname`, `picture`, `unit`, `price`) VALUES ('',2,'bigsweetbananas','Big Sweet Bananas','images/fruits/bigsweetbananas.jpg','piece',300);
+INSERT INTO `tblitem`(`ID`, `category_ID`, `name`, `displayname`, `picture`, `unit`, `price`) VALUES ('',2,'smallsweetbananas','Small Sweet Bananas','images/fruits/smallsweetbananas.jpg','bunch',1500);
+INSERT INTO `tblitem`(`ID`, `category_ID`, `name`, `displayname`, `picture`, `unit`, `price`) VALUES ('',2,'grapefruit','Grapefruit','images/fruits/grapefruit.jpg','kg',1000);
+INSERT INTO `tblitem`(`ID`, `category_ID`, `name`, `displayname`, `picture`, `unit`, `price`) VALUES ('',2,'grapesimported','Grapes (Imported)','images/fruits/grapesimported.jpg','kg',13000);
+INSERT INTO `tblitem`(`ID`, `category_ID`, `name`, `displayname`, `picture`, `unit`, `price`) VALUES ('',2,'lemon','Lemon','images/fruits/lemon.jpg','kg',3000);
+INSERT INTO `tblitem`(`ID`, `category_ID`, `name`, `displayname`, `picture`, `unit`, `price`) VALUES ('',2,'lime','Lime','images/fruits/lime.jpg','kg',2500);
+INSERT INTO `tblitem`(`ID`, `category_ID`, `name`, `displayname`, `picture`, `unit`, `price`) VALUES ('',2,'localoranges','Local Oranges','images/fruits/localoranges.jpg','piece',200);
+INSERT INTO `tblitem`(`ID`, `category_ID`, `name`, `displayname`, `picture`, `unit`, `price`) VALUES ('',2,'mangoes','Mangoes','images/fruits/mangoes.jpg','piece',1000);
+INSERT INTO `tblitem`(`ID`, `category_ID`, `name`, `displayname`, `picture`, `unit`, `price`) VALUES ('',2,'papaya','Papaya','images/fruits/papaya.jpg','piece',2500);
+INSERT INTO `tblitem`(`ID`, `category_ID`, `name`, `displayname`, `picture`, `unit`, `price`) VALUES ('',2,'passionfruit','Passion Fruit','images/fruits/passionfruit.jpg','kg',2500);
+INSERT INTO `tblitem`(`ID`, `category_ID`, `name`, `displayname`, `picture`, `unit`, `price`) VALUES ('',2,'pineapple','Pineapple','images/fruits/pineapple.jpg','piece',3000);
+INSERT INTO `tblitem`(`ID`, `category_ID`, `name`, `displayname`, `picture`, `unit`, `price`) VALUES ('',2,'plumsseasonal','Plums (Seasonal)','images/fruits/plumsseasonal.jpg','kg',4000);
+INSERT INTO `tblitem`(`ID`, `category_ID`, `name`, `displayname`, `picture`, `unit`, `price`) VALUES ('',2,'watermelon','Water Melon','images/fruits/watermelon.jpg','piece',5000);

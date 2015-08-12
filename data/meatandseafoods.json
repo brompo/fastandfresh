@@ -2,7 +2,6 @@
 	"category":"meatandseafoods",
 	"products":
 	[{"name":"wholechicken","displayname":"Whole Chicken","picture":"images/meatandseafoods/wholechicken.jpg","unit":"kg","price":"9000"},
-     {"name":"tunachunksinspringwater","displayname":"Tuna Chunks in Spring Water","picture":"images/meatandseafoods/tunachunksinspringwater.jpg","unit":"185grm","price":"5500"},
      {"name":"topside","displayname":"Topside","picture":"images/meatandseafoods/topside.jpg","unit":"kg","price":"9000"},
      {"name":"beeffillet","displayname":"Beef Fillet","picture":"images/meatandseafoods/beeffillet.jpg","unit":"kg","price":"13000"},
      {"name":"fishfilletnileperch","displayname":"Fish Fillet (Nile Perch)","picture":"images/meatandseafoods/fishfilletnileperch.jpg","unit":"kg","price":"13000"},

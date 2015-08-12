@@ -11,7 +11,8 @@ if(sessionStorage.getItem("person")== null){
 else
 {
 	var person = {};
-	person = sessionStorage["person"];
+	person = JSON.parse(sessionStorage["person"]);
+	displayuser(person['firstname']);
 }
 
 
@@ -51,7 +52,7 @@ $(".categoriessidebar").find("a").each(function(){
 		else
 		{
 			$("div.authenticationpanel").hide();
-			alert(person.firstname);
+			//alert(person.firstname);
 			$("#inputOrderFirstname").val(person.firstname);
 						$("#inputOrderLastname").val(person.lastname);
 						$("#inputOrderEmail").val(person.email);
@@ -168,6 +169,54 @@ $(document).on("click",".qtyminus",function(){
 	}
 });
 
+//Clicking on the add button of the checkout page
+$(document).on("click",".addglyphicon",function(e){
+
+	var quantity = $(this).siblings('.qty').val();
+	var newquantity = Number(quantity)+ 1;
+	$(this).siblings('.qty').val(newquantity);
+
+	//[TODO] Update the information on the screen and the cart.
+	//alert("I am here");
+
+	var totalprice = $(this).parent().siblings('.dataitemcost').html();
+	var unitprice = $(this).parent().siblings('.itemprice').html();
+	var displayname = $(this).parent().siblings('.cartitemname').html()
+	var newtotalprice = unitprice * newquantity;
+
+	$(this).parents().siblings('.dataitemcost').html(newtotalprice);
+
+	edititemincart(displayname,newquantity,newtotalprice);
+
+	fillcart(cart);
+	e.preventDefault();
+	//var totalprice = 0;
+	//var item = '';
+
+});
+//Clicking on the remove button of the checkout page
+$(document).on("click",".removeglyphicon",function(e){
+	var quantity = $(this).siblings('.qty').val();
+	if(quantity <= 1){
+
+	}else{
+	var newquantity = Number(quantity) - 1;
+	$(this).siblings('.qty').val(newquantity);	
+	var totalprice = $(this).parent().siblings('.dataitemcost').html();
+	var unitprice = $(this).parent().siblings('.itemprice').html();
+	var displayname = $(this).parent().siblings('.cartitemname').html()
+	var newtotalprice = unitprice * newquantity;
+
+	$(this).parents().siblings('.dataitemcost').html(newtotalprice);
+
+	edititemincart(displayname,newquantity,newtotalprice);
+	fillcart(cart);
+
+	}
+	e.preventDefault();
+	
+});
+
 $(document).on("click",".removefromcart",function(e){
 	//alert("I am nowhere too");
 	e.stopPropagation();
@@ -176,7 +225,6 @@ $(document).on("click",".removefromcart",function(e){
 		this.remove();
 	});
 
-	
 	var cartitemname = $(fadeoutcontainer).children('.cartitemname').html();
 	//[TODO]Remove the cart from the container
 	var currentcartrow = $.grep(cart, function(value){
@@ -195,6 +243,37 @@ $(document).on("click",".removefromcart",function(e){
 	//$('#lbl'+currentcontainername).text(val.count+val.unit);
 
 	e.preventDefault();
+
+});
+
+//Check if the item in the cart has been changed
+$(document).on("focusout",".inputcartcount",function(){
+//[TODO] Implement if the item is changed, to update the cart
+	var newquantity = $(this).val();
+
+	var unitprice = $(this).parent().siblings('.itemprice').html();
+	var displayname = $(this).parent().siblings('.cartitemname').html()
+	var newtotalprice = unitprice * newquantity;
+
+	$(this).parents().siblings('.dataitemcost').html(newtotalprice);
+
+	edititemincart(displayname,newquantity,newtotalprice);
+	fillcart(cart);
+	
+	/*
+    $('#carttable tr').each(function(){
+    	var name = $('td:nth-child(1)').text();
+    	alert(name);
+        if($(this).find('td').eq(0).text() == cartitemname){
+      //      $('td:nth-child(3)').html(itemtotalcost);
+        }
+    });
+*/
+
+	edititemincart(cartitemname,changedvalue,itemtotalcost);
+	fillcart(cart);
+	//alert(itemtotalcost);
+
 
 });
 
@@ -266,6 +345,7 @@ $(document).on("click",".cart-dropdown",function(){
 
 //On Click of the checkout button
 $(document).on("click","button.btn-checkout",function(){
+	
 	if (window.location.pathname != "/checkout.html"){
 		window.location.href = "/checkout.html";
 	};
@@ -284,14 +364,13 @@ $(document).on("hidden","#myModal",function(){
 	window.location.href = "/fastandfresh/index.html";
 });*/
 
-$('#myModal').on('hidden.bs.modal', function (e) {
+$('#btnlogoutconfirm').on('click',function(){
+	sessionStorage.removeItem('person');
 
-	cart = [];
-	sessionStorage["cart"] = JSON.stringify(cart);
-	console.log(sessionStorage["cart"]);
+	window.location.href = "/checkout.html";
 
-	window.location.href = "/index.html";
-})
+	});
+
 
 // On keyup on the search area
 $(document).on("keyup","#vegetablesearch",function(){
@@ -321,7 +400,6 @@ $(document).on("click","btnregister",function(){
 
 $(document).on("click","button.btn-order",function(){
 	
-	//$("#myModal").modal('show');
 	var emptyfields  = $(":input.required").filter(function(){
 		return $(this).val() === "";
 	}).length;
@@ -434,7 +512,10 @@ var itemcountid = appendel.find(".cartcontainer").attr('id');
 
 }//Append HTML
 
+//Cart called on other pages, not the checkout page
 function showcart(cart){
+	
+	var cart = JSON.parse(sessionStorage["cart"]);
 	var cartitems = "<tr ><th>Item</th><th>Qty</th><th>Price</th><th>Delete</th></tr>";
 
 	$.each(cart,function(key,val){
@@ -448,20 +529,22 @@ function showcart(cart){
 
 	$(".cartitems").html(cartitems);
 }
+//Called when on the Checkout page
 function showcarttable(cart){
 	var cartitems = "<tr ><th>Item</th><th>Qty</th><th>Price</th><th></th></tr>";
 
 	$.each(cart,function(key,val){
 		//alert(val.name);
 
-		cartitems += "<tr class='cartrow'><td class='cartitemname'>"+val.displayname+"</td><td class='cartitemcount'><input type='text' value="+val.count+" /> "+val.unit+
-		"</td><td>"+val.itemtotalcost+"</td><td><a href='#'><span class='glyphicon glyphicon-trash removefromcart'></span></a></td>";
+	cartitems += "<tr class='cartrow'><td class='itemprice' style='display:none'>"+val.price+"</td><td class='cartitemname'>"+val.displayname+"</td><td class='cartitemcount'><a class='addglyphicon' href='#'><span class='glyphicon glyphicon-triangle-top '></span></a><input type='text' class='inputcartcount qty' value="+val.count+" /><a class='removeglyphicon' href='#'><span class='glyphicon glyphicon-triangle-bottom '></span></a> <label class='labelitemunit'>"+val.unit+"</label>"+
+	"</td><td class='dataitemcost'>"+val.itemtotalcost+"</td><td><a href='#'><span class='glyphicon glyphicon-trash removefromcart'></span></a></td>";
 
 	});
 	cartitems += "<tr class='cartrow deliverypricerow'><td class='cartitemname'>Delivery Fee</td><td class='cartitemcount'></td><td>4000</td><td></td>";
 
 	$(".cartitems").html(cartitems);
 }
+
 //Add items to the cart and display
 /*
 function showcart(cart)
@@ -476,4 +559,12 @@ function showcart(cart)
 	
 }
 */
+
+
+//[TODO] Function to change the title when there is a user
+function displayuser(firstname){
+$("#btnprofilename").html("Hi "+firstname+" <span class='caret'></span>");
+$("#labelfirstname").html(firstname);
+}
+
 });

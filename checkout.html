@@ -17,7 +17,7 @@
       <body>
         <div class="page-container">
 
-         
+
          <!-- top navbar -->
          <nav class="navbar navbar-inverse navbar-fixed-top mainheader" role="navigation">
            <div class="navbar-header"><!-- navbar-header-->
@@ -29,17 +29,31 @@
              <div class="fnfbrand"><!--fnfbrand-->
                <a class="navbar-brand" href="/index.html" title="Online Grocery Delivery in Dar es salaam"><img src="/images/icons/fastandfreshlogo.png" class="logoimage" alt="Online Grocery Delivery in Dar es salaaam"></a>
              </div><!--fnfbrand-->
-             <div class="fnfsearch"><!--fnfsearch-->
-             <form class="navbar-form navbar-left fnfform">
-              <input id="vegetablesearch" type="text" class="form-control" placeholder="Search Fast & Fresh">
-            </form>
-            </div><!--fnfsearch-->
-            <div class="btn-group cartholder"><!-- cartholder-->
+
+             <div class="fnfaccount"><!--fnfaccount-->
+
+               <div class="dropdown cartholder">
+                <button id="btnprofilename" class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                  Login 
+                </button>
+                <ul class="dropdown-menu dropdown-menu-right accountdetail" aria-labelledby="dropdownMenu1">
+                  <li><a href="#"><span class="glyphicon glyphicon-user"></span> Account</a></li>
+                  <li><a href="#"><span class="glyphicon glyphicon-tasks"></span> Order History</a></li>
+                  <li role="separator" class="divider"></li>
+                  <li>
+                   <a href="#" id="logoutlink" data-toggle="modal" data-target="#logoutModal"><span class="glyphicon glyphicon-log-out"></span>  Logout</a>
+                 </li>
+               </ul>
+             </div>
+
+           </div><!--fnfaccount-->
+
+           <div class="btn-group cartholder"><!-- cartholder-->
             <!--
               <button id="btn-total-items" type="button" class="btn btn-default btn-cart drop-down-toggle dropdown cart-dropdown" data-toggle="dropdown">
                <span class="caret"></span>
-               -->
-              <button id="btn-total-items" type="button" class="btn btn-default btn-cart drop-down-toggle dropdown cart-dropdown">
+             -->
+             <button id="btn-total-items" type="button" class="btn btn-default btn-cart drop-down-toggle dropdown cart-dropdown">
                <label class="btn-items">0 items</label>
              </button>
              <div class=" table-responsive  dropdown-menu">
@@ -87,51 +101,45 @@
               <div class="row placeholders checkoutsectionholder">
 
                 <div class="col-sm-6"><!-- User Area -->
-                  <div class="panel-group " id="accordion" role="tablist" aria-multiselectable="true">
-                    <div class="panel panel-default authenticationpanel" >
-                      <div class="panel-heading" role="tab" id="headingOne">
-                        <h4 class="panel-title">
-                          <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                            Returning User | Login
-                          </a>
-                        </h4>
-                      </div>
-                      <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
-                        <div class="panel-body">
-                          <form id="loginForm" class="form-horizontal" role="form">
 
-                            <div class="form-group">
-                              <label for="inputEmailLogin" class="col-sm-3 control-label">Email:</label>
-                              <div class="col-sm-9">
-                                <input type="email" class="form-control " id="inputEmailLogin" placeholder="Email" >
-                              </div>
-                            </div>
+                  <!-- Trigger the modal with a button -->
+                  
 
-                            <div class="form-group">
-                              <label for="inputPasswordLogin" class="col-sm-3 control-label">Password</label>
-                              <div class="col-sm-9">
-                                <input type="password" class="form-control" id="inputPasswordLogin" placeholder="Password">
-                              </div>
-                            </div>
-                            <div class="form-group">
-                              <div class="col-sm-offset-2 col-sm-10">
-                                <button type="submit" id="btnlogin" class="btn btn-success btn-md btn-order" data-target="#myModal">Login</button>
-                              </div>
-                            </div>
-                          </form>
+                  <!-- Modal -->
+                  <div id="logoutModal" class="modal fade" role="dialog">
+                    <div class="modal-dialog">
+                      <!-- Modal content-->
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <button type="button" class="close" data-dismiss="modal">&times;</button>
+                          <h4 class="modal-title">Logging Out</h4>
                         </div>
-                      </div>
-                    </div>
-                    <div class="panel panel-default authenticationpanel">
+                        <div class="modal-body">
+                          <p>Are you sure you wanna log out?</p>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" id="btnlogoutcancel" class="btn btn-default" data-dismiss="modal">No</button>
+                          <button type="button" id="btnlogoutconfirm" class="btn btn-primary" data-dismiss="modal">Yes</button>
+                        </div>
+                      </div> <!--.modal-content -->
+
+                    </div><!-- .modal-dialong-->
+                  </div> <!--#logoutModal-->
+
+
+
+                  <div class="panel-group authenticationpanel" id="accordion" role="tablist" aria-multiselectable="true">
+
+                  <div class="panel panel-default registerpanel">
                       <div class="panel-heading" role="tab" id="headingTwo">
                         <h4 class="panel-title">
-                          <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                          <a class="collapsed panelheader" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                             New User | Register
                           </a>
                         </h4>
                       </div>
                       <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
-                        <div class="panel-body">
+                        <div id="registrationcontainer" class="panel-body">
                           <form id="registerform" class="form-horizontal" role="form">
                             <div class="form-group">
                               <label for="inputFirstname" class="col-sm-3 control-label">First Name:</label>
@@ -180,18 +188,61 @@
                           </form>
                         </div>
                       </div>
+                    </div><!-- .registerpanel-->
+
+
+
+                    <div id="loginpanel" class="panel panel-default loginpanel" >
+                      <div class="panel-heading" role="tab" id="headingOne">
+                        <h4 class="panel-title">
+                          <a class="collapsed panelheader" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                            Returning User | Login
+                          </a>
+                        </h4>
+                      </div>
+                      <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                        <div class="panel-body">
+                          <form id="loginForm" class="form-horizontal" role="form">
+
+                            <div class="form-group">
+                              <label for="inputEmailLogin" class="col-sm-3 control-label">Email:</label>
+                              <div class="col-sm-9">
+                                <input type="email" class="form-control " id="inputEmailLogin" placeholder="Email" >
+                              </div>
+                            </div>
+
+                            <div class="form-group">
+                              <label for="inputPasswordLogin" class="col-sm-3 control-label">Password</label>
+                              <div class="col-sm-9">
+                                <input type="password" class="form-control" id="inputPasswordLogin" placeholder="Password">
+                              </div>
+                            </div>
+                            <div class="form-group">
+                              <div class="col-sm-offset-2 col-sm-4">
+                                <button type="submit" id="btnlogin" class="btn btn-success btn-md btn-order" data-target="#myModal">Login</button>
+                              </div>
+                              <div class="col-sm-6"><a href="forgotpassword.html">Forget your password?</a></div>
+                            </div>
+                          </form>
+                        </div>
+                      </div>
                     </div>
 
+                    
+                  </div>
+
+                  <!-- order Details -->
+                  <div class="panel-group orderpanel" id="accordion" role="tablist" aria-multiselectable="true" >
                     <div class="panel panel-default orderpanel" id="orderContainer"><!-- Order Panel -->
                       <div class="panel-heading" role="tab" id="headingThree">
                         <h4 class="panel-title">
-                            Welcome Brian | Delivery Details 
+                          <a class="panelheader">Welcome <label id="labelfirstname"></label> | Delivery Details </a>
                         </h4>
                       </div>
                       <div id="collapseThree" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingThree">
                         <div class="panel-body">
-                          <form id="loginForm" class="form-horizontal" role="form">
-                          <div class="form-group">
+                          <form id="checkoutform" class="form-horizontal" role="form">
+                            <div class="form-group">
                               <label for="inputOrderFirstname" class="col-sm-3 control-label">First Name:</label>
                               <div class="col-sm-9">
                                 <input type="text" class="form-control fnffilledfields" id="inputOrderFirstname" placeholder="First Name" >
@@ -236,30 +287,54 @@
                             
                             <div class="form-group">
                               <div class="col-sm-offset-2 col-sm-10">
-                                <button type="submit" id="btnlogin" class="btn btn-success btn-lg btn-order" data-target="#myModal">Submit Order</button>
+                                <button type="submit" id="btnlogin" class="btn btn-success btn-lg btn-order"  data-target="#myModal">Submit Order</button>
                               </div>
                             </div>
+
+                            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                              <div class="modal-dialog" >
+                                <div class="modal-content">
+                                  <div class="modal-header">
+                                    <h4 class="modal-title" id="myModalLabel">Thanks for using fastandfresh</h4>
+                                  </div>
+                                  <div class="modal-body">
+                                    <p>Your order will be processed and you will be notified soon</p>
+                                    <p>Please check your email for confirmation</p>
+                                  </div>
+                                  <div>
+
+                                  </div>
+                                  <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+
+
+
                           </form>
                         </div>
                       </div>
                     </div><!-- Order Panel -->
                   </div>
+
                 </div><!-- User Area -->
 
                 
 
                 <!-- Order Details-->
                 <div class="col-sm-6">
-                <table id="carttable" class="table table-hover cartitems fnftable">
-                <tr><td>Carttable</td></tr>
-                 </table>
-                 <!--<h4 class="checkoutHeadings">Order Details</h4>-->
-                 <form id="checkoutform" class="form-horizontal" role="form"><!--Checkout form-->
-                 
-                 </form><!--Checkout form-->
-               </div>
+                  <table id="carttable" class="table table-hover cartitems fnftable">
 
-               <!-- Order Details-->
+                  </table>
+                  <!--<h4 class="checkoutHeadings">Order Details</h4>-->
+                  <form id="" class="form-horizontal" role="form"><!--Checkout form-->
+
+                  </form><!--Checkout form-->
+                </div>
+
+                <!-- Order Details-->
 
         <!--
         <h5 class="checkoutHeadings">To help with delivery, you can Identify the delivery location on the map</h5>
@@ -347,9 +422,9 @@
       beforeShowDay: function(date) {
         var day = date.getDay();
         return [day != 0,''];
-        }
+      }
     });
   });
 </script>
 </body>
-</html>
+</html> 

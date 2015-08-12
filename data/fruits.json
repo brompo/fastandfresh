@@ -5,7 +5,7 @@
      {"name":"bigsweetbananas","displayname":"Big Sweet Bananas","picture":"images/fruits/bigsweetbananas.jpg","unit":"piece","price":"300"},
      {"name":"smallsweetbananas","displayname":"Small Sweet Bananas","picture":"images/fruits/smallsweetbananas.jpg","unit":"bunch","price":"1500"},
      {"name":"grapefruit","displayname":"Grapefruit","picture":"images/fruits/grapefruit.jpg","unit":"piece","price":"1000"},
-     {"name":"grapesimported","displayname":"Grapes (Imported)","picture":"images/fruits/grapesimported.jpg","unit":"kg","price":"12000"},
+     {"name":"grapesimported","displayname":"Grapes (Imported)","picture":"images/fruits/grapesimported.jpg","unit":"kg","price":"13000"},
      {"name":"lemon","displayname":"Lemon","picture":"images/fruits/lemon.jpg","unit":"kg","price":"3000"},
      {"name":"lime","displayname":"Lime","picture":"images/fruits/lime.jpg","unit":"kg","price":"2500"},
      {"name":"localoranges","displayname":"Local Oranges","picture":"images/fruits/localoranges.jpg","unit":"piece","price":"200"},
