@@ -8,10 +8,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/main.css" rel="stylesheet">
-      <!--[if lt IE 9]>
-        <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <link href="css/styles.css" rel="stylesheet">
+    	<!--[if lt IE 9]>
+  			<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
         <![endif]-->
-        <link href="css/styles.css" rel="stylesheet">
+
       </head>
       <body>
         <div class="page-container">
@@ -27,39 +28,14 @@
              <div class="fnfbrand"><!--fnfbrand-->
                <a class="navbar-brand" href="/index.html" title="Online Grocery Delivery in Dar es salaam"><img src="/images/icons/fastandfreshlogo.png" class="logoimage" alt="Online Grocery Delivery in Dar es salaaam"></a>
              </div><!--fnfbrand-->
-
-             <div class="fnfaccount"><!--fnfaccount-->
-
-               <div class="dropdown cartholder">
-                <button id="btnprofilename" class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                  Login 
-                </button>
-                <ul class="dropdown-menu dropdown-menu-right accountdetail" aria-labelledby="dropdownMenu1">
-                  <li><a href="#"><span class="glyphicon glyphicon-user"></span> Account</a></li>
-                  <li><a href="#"><span class="glyphicon glyphicon-tasks"></span> Order History</a></li>
-                  <li role="separator" class="divider"></li>
-                  <li>
-                   <a href="#" id="logoutlink" data-toggle="modal" data-target="#logoutModal"><span class="glyphicon glyphicon-log-out"></span>  Logout</a>
-                 </li>
-               </ul>
-             </div>
-
-           </div><!--fnfaccount-->
-
-           <div class="fnfsearch"><!--fnfsearch-->
+             <div class="fnfsearch"><!--fnfsearch-->
              <form class="navbar-form navbar-left fnfform">
-              <input id="vegetablesearch" type="text" class="form-control" placeholder="Search Dried Goods">
+              <input id="vegetablesearch" type="text" class="form-control" placeholder="Search Vegetables">
             </form>
             </div><!--fnfsearch-->
-
-           <div class="btn-group cartholder"><!-- cartholder-->
-            
+            <div class="btn-group cartholder"><!-- cartholder-->
               <button id="btn-total-items" type="button" class="btn btn-default btn-cart drop-down-toggle dropdown cart-dropdown" data-toggle="dropdown">
                <span class="caret"></span>
-             
-             <!--
-             <button id="btn-total-items" type="button" class="btn btn-default btn-cart drop-down-toggle dropdown cart-dropdown">
-             -->
                <label class="btn-items">0 items</label>
              </button>
              <div class=" table-responsive  dropdown-menu">
@@ -72,12 +48,13 @@
              </div><!-- cartholder-->
            </div><!-- navbar-header-->
          </nav>
+         <!-- top navbar -->
 
          <div class="container-fluid">
           <div class="row row-offcanvas row-offcanvas-left">
 
             <!--sidebar-->
-            <div class="col-xs-6 col-sm-2 sidebar-offcanvas categoriessidebar" id="sidebar" role="navigation">
+            <div class="col-xs-4 col-sm-2 sidebar-offcanvas categoriessidebar" id="sidebar" role="navigation">
               <div data-spy="affix" data-offset-top="45" data-offset-bottom="90">
                 <ul class="nav" id="sidebar-nav">
                   <li><a href="/vegetables.html">Vegetables</a></li>
@@ -102,45 +79,45 @@
                 </div>
               </div><!--row-->
 
-              <div class="row placeholders driedgoodssectionholder">
+              <div class="row placeholders vegetablessectionholder">
               </div> <!-- vegetablessectionholder -->
 
-           </div><!--/.row main-->
-         </div> <!-- row-offcanvas-->
-      </div><!--/.container-->
-  </div><!--/.page-container-->
+            </div><!--/.row main-->
+          </div> <!-- row-offcanvas-->
+        </div><!--/.container-->
+      </div><!--/.page-container-->
 
- <footer><!--footer-->
-      <div class="container">
-       <div class="row">
-        <ul class="list-unstyled text-right">
-          <li class="col-sm-3 col-xs-6">
-            <div>
-              <span class="footerheader">Connect with us:</span>
+      <footer><!--footer-->
+        <div class="container">
+         <div class="row">
+          <ul class="list-unstyled text-right">
+            <li class="col-sm-3 col-xs-6">
+              <div>
+                <span class="footerheader">Connect with us:</span>
               </div>
-            <div>
-            <a href="http://facebook.com/fastandfreshtz" target="_blank"><img src="images/icons/facebook.ico"></a>
-            <a href="http://twitter.com/fastandfreshtz" target="_blank"><img src="images/icons/twitter.ico"></a>
-            </div>
-            
-          </li>
+              <div>
+                <a href="http://facebook.com/fastandfreshtz" target="_blank"><img src="images/icons/facebook.ico"></a>
+                <a href="http://twitter.com/fastandfreshtz" target="_blank"><img src="images/icons/twitter.ico"></a>
+              </div>
 
-          <li class="col-sm-4 col-xs-6">
-          
-          <div class="aboutuscontainer">
-            <b>Fast and Fresh</b> is an online grocery delivery company in Dar es salaam, Tanzania. We simplify the shopping experience, while providing great quality products, directly from the farm.
-          </div>
-            <!--<a href="#">Services</a>-->
-          </li>
-          <li class="col-sm-2 col-xs-6">
-          <a href="about.html">About Us</a><br/>
-          
-          </li>
-          <li class="col-sm-3 col-xs-12">
-          <span class="footerheader">Get in touch with us</span>
-          <p class="contactfootercontainer"><b>E: </b> fast@fastandfresh.co.tz</p>
-          <p class="contactfootercontainer"><b>P: </b>0715718920 | 0787718920 </p>
-          </li>
+            </li>
+
+            <li class="col-sm-4 col-xs-6">
+
+              <div class="aboutuscontainer">
+                <b>Fast and Fresh</b> is an online grocery delivery company in Dar es salaam, Tanzania. We simplify the shopping experience, while providing great quality products, directly from the farm.
+              </div>
+              <!--<a href="#">Services</a>-->
+            </li>
+            <li class="col-sm-2 col-xs-6">
+              <a href="about.html">About Us</a><br/>
+
+            </li>
+            <li class="col-sm-3 col-xs-12">
+              <span class="footerheader">Get in touch with us</span>
+              <p class="contactfootercontainer"><b>E: </b> fast@fastandfresh.co.tz</p>
+              <p class="contactfootercontainer"><b>P: </b>0715718920 | 0787718920 </p>
+            </li>
         <!--
         <li class="col-sm-4 col-xs-6">
           <a href="#">Login</a>
@@ -154,21 +131,22 @@
 </div><!--/container-->
 </footer>
 
-  <!-- script references -->
-  <script src="js/jquery.min.js"></script>
-      <script src="js/bootstrap.min.js"></script>
-      <script src="js/app.js"></script>
-  <script src="js/scripts.js"></script>
- <script>
+<!-- script references -->
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/app.js"></script>
+<script src="js/scripts.js"></script>
+<script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
   })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
   ga('create', 'UA-55525540-1', 'auto');
   ga('send', 'pageview');
 
   //ga(‘set’, ‘&uid’, {{USER_ID}}); // Set the user ID using signed-in user_id.
+
 </script>
-  </body>
-  </html>
+</body>
+</html>

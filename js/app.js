@@ -54,10 +54,10 @@ $(".categoriessidebar").find("a").each(function(){
 			$("div.authenticationpanel").hide();
 			//alert(person.firstname);
 			$("#inputOrderFirstname").val(person.firstname);
-						$("#inputOrderLastname").val(person.lastname);
-						$("#inputOrderEmail").val(person.email);
-						$("#inputOrderMobile").val(person.mobile);
-						$("#inputOrderWhere").val(person.where);
+			$("#inputOrderLastname").val(person.lastname);
+			$("#inputOrderEmail").val(person.email);
+			$("#inputOrderMobile").val(person.mobile);
+			$("#inputOrderWhere").val(person.where);
 		}
 		
 		
@@ -150,6 +150,7 @@ var pepperscontainercount = 0;
 //Check if the checkout page is fully loaded
 
 //Clicking the add button
+/*
 $(document).on("click",".qtyplus",function(){
 
 	cabbagecontainercount = $(this).siblings('.qty').val();
@@ -157,16 +158,102 @@ $(document).on("click",".qtyplus",function(){
 	$(this).siblings('.qty').val(cabbagecontainercount);
 
 });
+*/
+
+$(document).on("click",".qtyplus",function(e){
+	var quantity = $(this).siblings('.qty').val();
+	var newquantity = Number(quantity)+ 1;
+	$(this).siblings('.qty').val(newquantity);
+
+	//[TODO] Update the information on the screen and the cart.
+	//alert("I am here");
+
+	var itemvalue = $(this).closest('div').children('.itemvalue').val();
+	var countname = $(this).closest('div').attr('id')+"count";
+	var displayname = $(this).closest('div').children('.item_name').html();
+	var count = $(this).closest('div').children('.qty').val();
+	var unit = $(this).closest('div').children('.itemunit').val();
+	var itemtotalcost = Number(itemvalue) * Number(count);
+
+	var totalprice = $(this).parent().siblings('.dataitemcost').html();
+	//var newtotalprice = unitprice * newquantity;
+
+	$(this).parents().siblings('.dataitemcost').html(itemtotalcost);
+
+	var exist = 0
+	exist =edititemincart(displayname,newquantity,itemtotalcost);
+
+	if (exist == 0 & count != 0){
+		additemtocart(displayname,countname,count,itemvalue,unit,itemtotalcost); 	
+	}
+	
+
+	fillcart(cart);
+	e.preventDefault();
+
+	if(count == 0){
+		$('.'+countname).hide();	
+	}
+	else
+	{
+		$('.'+countname).show();
+	}
+
+	$('#lbl'+countname).text(count+unit);
+
+
+
+
+});
+
 
 //Clicking on the minus button
-$(document).on("click",".qtyminus",function(){
-	cabbagecontainercount = $(this).siblings('.qty').val();
-	if (cabbagecontainercount <= 0){	
+$(document).on("click",".qtyminus",function(e){
+	var quantity = $(this).siblings('.qty').val();
+	if (quantity <= 0){	
 	}
 	else{
-		cabbagecontainercount = Number(cabbagecontainercount) - 1;
-		$(this).siblings('.qty').val(cabbagecontainercount);
+		var newquantity = Number(quantity)- 1;
+		$(this).siblings('.qty').val(newquantity);
+
+	//[TODO] Update the information on the screen and the cart.
+	//alert("I am here");
+
+	var itemvalue = $(this).closest('div').children('.itemvalue').val();
+	var countname = $(this).closest('div').attr('id')+"count";
+	var displayname = $(this).closest('div').children('.item_name').html();
+	var count = $(this).closest('div').children('.qty').val();
+	var unit = $(this).closest('div').children('.itemunit').val();
+	var itemtotalcost = Number(itemvalue) * Number(count);
+
+	var totalprice = $(this).parent().siblings('.dataitemcost').html();
+	//var newtotalprice = unitprice * newquantity;
+
+	$(this).parents().siblings('.dataitemcost').html(itemtotalcost);
+
+	var exist = 0
+	exist =edititemincart(displayname,newquantity,itemtotalcost);
+	deleteitemsfromcart();
+
+	if (exist == 0 & count != 0){
+		additemtocart(displayname,countname,count,itemvalue,unit,itemtotalcost); 	
 	}
+
+	if(count == 0){
+		$('.'+countname).hide();	
+	}
+	else
+	{
+		$('.'+countname).show();
+	}
+
+	$('#lbl'+countname).text(count+unit);
+
+}
+
+
+	fillcart(cart);
+	e.preventDefault();
 });
 
 //Clicking on the add button of the checkout page
@@ -188,6 +275,7 @@ $(document).on("click",".addglyphicon",function(e){
 
 	edititemincart(displayname,newquantity,newtotalprice);
 
+
 	fillcart(cart);
 	e.preventDefault();
 	//var totalprice = 0;
@@ -200,17 +288,18 @@ $(document).on("click",".removeglyphicon",function(e){
 	if(quantity <= 1){
 
 	}else{
-	var newquantity = Number(quantity) - 1;
-	$(this).siblings('.qty').val(newquantity);	
-	var totalprice = $(this).parent().siblings('.dataitemcost').html();
-	var unitprice = $(this).parent().siblings('.itemprice').html();
-	var displayname = $(this).parent().siblings('.cartitemname').html()
-	var newtotalprice = unitprice * newquantity;
+		var newquantity = Number(quantity) - 1;
+		$(this).siblings('.qty').val(newquantity);	
+		var totalprice = $(this).parent().siblings('.dataitemcost').html();
+		var unitprice = $(this).parent().siblings('.itemprice').html();
+		var displayname = $(this).parent().siblings('.cartitemname').html()
+		var newtotalprice = unitprice * newquantity;
 
-	$(this).parents().siblings('.dataitemcost').html(newtotalprice);
+		$(this).parents().siblings('.dataitemcost').html(newtotalprice);
 
-	edititemincart(displayname,newquantity,newtotalprice);
-	fillcart(cart);
+		edititemincart(displayname,newquantity,newtotalprice);
+
+		fillcart(cart);
 
 	}
 	e.preventDefault();
@@ -249,17 +338,17 @@ $(document).on("click",".removefromcart",function(e){
 //Check if the item in the cart has been changed
 $(document).on("focusout",".inputcartcount",function(){
 //[TODO] Implement if the item is changed, to update the cart
-	var newquantity = $(this).val();
+var newquantity = $(this).val();
 
-	var unitprice = $(this).parent().siblings('.itemprice').html();
-	var displayname = $(this).parent().siblings('.cartitemname').html()
-	var newtotalprice = unitprice * newquantity;
+var unitprice = $(this).parent().siblings('.itemprice').html();
+var displayname = $(this).parent().siblings('.cartitemname').html()
+var newtotalprice = unitprice * newquantity;
 
-	$(this).parents().siblings('.dataitemcost').html(newtotalprice);
+$(this).parents().siblings('.dataitemcost').html(newtotalprice);
 
-	edititemincart(displayname,newquantity,newtotalprice);
-	fillcart(cart);
-	
+edititemincart(displayname,newquantity,newtotalprice);
+fillcart(cart);
+
 	/*
     $('#carttable tr').each(function(){
     	var name = $('td:nth-child(1)').text();
@@ -270,8 +359,8 @@ $(document).on("focusout",".inputcartcount",function(){
     });
 */
 
-	edititemincart(cartitemname,changedvalue,itemtotalcost);
-	fillcart(cart);
+edititemincart(cartitemname,changedvalue,itemtotalcost);
+fillcart(cart);
 	//alert(itemtotalcost);
 
 
@@ -369,7 +458,7 @@ $('#btnlogoutconfirm').on('click',function(){
 
 	window.location.href = "/checkout.html";
 
-	});
+});
 
 
 // On keyup on the search area
@@ -536,8 +625,8 @@ function showcarttable(cart){
 	$.each(cart,function(key,val){
 		//alert(val.name);
 
-	cartitems += "<tr class='cartrow'><td class='itemprice' style='display:none'>"+val.price+"</td><td class='cartitemname'>"+val.displayname+"</td><td class='cartitemcount'><a class='addglyphicon' href='#'><span class='glyphicon glyphicon-triangle-top '></span></a><input type='text' class='inputcartcount qty' value="+val.count+" /><a class='removeglyphicon' href='#'><span class='glyphicon glyphicon-triangle-bottom '></span></a> <label class='labelitemunit'>"+val.unit+"</label>"+
-	"</td><td class='dataitemcost'>"+val.itemtotalcost+"</td><td><a href='#'><span class='glyphicon glyphicon-trash removefromcart'></span></a></td>";
+		cartitems += "<tr class='cartrow'><td class='itemprice' style='display:none'>"+val.price+"</td><td class='cartitemname'>"+val.displayname+"</td><td class='cartitemcount'><a class='addglyphicon' href='#'><span class='glyphicon glyphicon-triangle-top '></span></a><input type='text' class='inputcartcount qty' value="+val.count+" /><a class='removeglyphicon' href='#'><span class='glyphicon glyphicon-triangle-bottom '></span></a> <label class='labelitemunit'>"+val.unit+"</label>"+
+		"</td><td class='dataitemcost'>"+val.itemtotalcost+"</td><td><a href='#'><span class='glyphicon glyphicon-trash removefromcart'></span></a></td>";
 
 	});
 	cartitems += "<tr class='cartrow deliverypricerow'><td class='cartitemname'>Delivery Fee</td><td class='cartitemcount'></td><td>4000</td><td></td>";
@@ -563,8 +652,8 @@ function showcart(cart)
 
 //[TODO] Function to change the title when there is a user
 function displayuser(firstname){
-$("#btnprofilename").html("Hi "+firstname+" <span class='caret'></span>");
-$("#labelfirstname").html(firstname);
+	$("#btnprofilename").html("Hi "+firstname+" <span class='caret'></span>");
+	$("#labelfirstname").html(firstname);
 }
 
 });

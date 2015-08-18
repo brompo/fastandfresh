@@ -9,6 +9,7 @@ ini_set('display_errors', '1');
 $personDAO = new personDAO();
 
 //	$person = $personDAO->insertperson("brian","paul","brompo@gmail.com",12345,12345,"mbeya");
+//Passed when a person is loggin in
 if(isset($_POST["email"]))
 {
 	$email = $_POST["email"];
@@ -17,7 +18,6 @@ if(isset($_POST["email"]))
 	$result = $personDAO->selectperson($email,$password);
 
 	print json_encode($result);
-
 
 }
 

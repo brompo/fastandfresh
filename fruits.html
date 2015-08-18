@@ -27,14 +27,39 @@
              <div class="fnfbrand"><!--fnfbrand-->
                <a class="navbar-brand" href="/index.html" title="Online Grocery Delivery in Dar es salaam"><img src="/images/icons/fastandfreshlogo.png" class="logoimage" alt="Online Grocery Delivery in Dar es salaaam"></a>
              </div><!--fnfbrand-->
-             <div class="fnfsearch"><!--fnfsearch-->
+
+             <div class="fnfaccount"><!--fnfaccount-->
+
+               <div class="dropdown cartholder">
+                <button id="btnprofilename" class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                  Login 
+                </button>
+                <ul class="dropdown-menu dropdown-menu-right accountdetail" aria-labelledby="dropdownMenu1">
+                  <li><a href="#"><span class="glyphicon glyphicon-user"></span> Account</a></li>
+                  <li><a href="#"><span class="glyphicon glyphicon-tasks"></span> Order History</a></li>
+                  <li role="separator" class="divider"></li>
+                  <li>
+                   <a href="#" id="logoutlink" data-toggle="modal" data-target="#logoutModal"><span class="glyphicon glyphicon-log-out"></span>  Logout</a>
+                 </li>
+               </ul>
+             </div>
+
+           </div><!--fnfaccount-->
+
+           <div class="fnfsearch"><!--fnfsearch-->
              <form class="navbar-form navbar-left fnfform">
               <input id="vegetablesearch" type="text" class="form-control" placeholder="Search Fruits">
             </form>
             </div><!--fnfsearch-->
-            <div class="btn-group cartholder"><!-- cartholder-->
+
+           <div class="btn-group cartholder"><!-- cartholder-->
+            
               <button id="btn-total-items" type="button" class="btn btn-default btn-cart drop-down-toggle dropdown cart-dropdown" data-toggle="dropdown">
                <span class="caret"></span>
+             
+             <!--
+             <button id="btn-total-items" type="button" class="btn btn-default btn-cart drop-down-toggle dropdown cart-dropdown">
+             -->
                <label class="btn-items">0 items</label>
              </button>
              <div class=" table-responsive  dropdown-menu">
