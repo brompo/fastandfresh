@@ -13,6 +13,7 @@ else
 	var person = {};
 	person = JSON.parse(sessionStorage["person"]);
 	displayuser(person['firstname']);
+	addaccountlinks();
 }
 
 
@@ -252,8 +253,8 @@ $(document).on("click",".qtyminus",function(e){
 }
 
 
-	fillcart(cart);
-	e.preventDefault();
+fillcart(cart);
+e.preventDefault();
 });
 
 //Clicking on the add button of the checkout page
@@ -441,6 +442,19 @@ $(document).on("click","button.btn-checkout",function(){
 	//showcart(cart);
 });
 
+//OnClick event for Login Button
+$(document).on("click","#btnprofilename",function(e){
+	if(checkpersonsession() === true){
+	}
+	else
+	{
+		if (window.location.pathname != "/checkout.html"){
+		window.location.href = "/checkout.html";
+			};
+	}
+
+});
+
 //On Load of the cart table
 
 $(document).on("click","#btnsubmitorder",function(){
@@ -495,6 +509,30 @@ $(document).on("click","button.btn-order",function(){
 	//alert(emptyfields);
 });
 
+
+//////// Function Areas ////////
+
+function checkpersonsession(){
+	if(sessionStorage.getItem("person")== null){
+		return false;
+	}
+	else
+	{
+		return true;
+	}
+}
+
+function addaccountlinks(){
+		var data = "<ul class='dropdown-menu dropdown-menu-right accountdetail' aria-labelledby='dropdownMenu1'>"+
+                  "<li><a href='#'><span class='glyphicon glyphicon-user'></span> Account</a></li>"+
+                  "<li><a href='#'><span class='glyphicon glyphicon-tasks'></span> Order History</a></li>"+
+                  "<li role='separator' class='divider'></li>"+
+                  "<li>"+
+                   "<a href='#' id='logoutlink' data-toggle='modal' data-target='#logoutModal'><span class='glyphicon glyphicon-log-out'></span>  Logout</a>"+
+                 "</li>"+
+               "</ul>"
+               $("#accountcontainer").append(data);
+}
 
 // Adding items to the Items List
 function addtoitems(itemtoappend,array)
