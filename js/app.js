@@ -563,13 +563,15 @@ function appendhtml(data){
 
 		var appendel = $("<div id='"+val.name+"' itemscope itemtype='http://schema.org/Product' class='col-xs-6 col-sm-4 col-md-2 col-lg-2 itemcontainer '>"+
 			"<div id='"+val.name+"containercount' class='"+val.name+"containercount cartcontainer' hidden>"+
-			"<button type='button' class='btn btn-default btn-xs'>"+
+			"<button type='button' class='btn btn-default btn-xs btn-counter'>"+
 			"<span class='glyphicon glyphicon-shopping-cart'></span>"+ 
 			"<label class='boughtitems' id='lbl"+val.name+"containercount'></label>"+
 			"</button>"+
 			"</div>"+
 			"<div class='thumbnail'>"+
+			"<div class='thumbnailimage'>"+
 			"<img data-src='/images/vegetables/cabbage.jpg' src='"+val.picture+"' alt='...'>"+
+			"</div>"+
 			"<div itemprop='offers' itemscope itemtype='http://schema.org/Offer' id='"+val.name+"container' class='caption simpleCart_shelfItem cartinfo'>"+
 			"<h5 itemprop='name' class='item_name'>"+val.displayname+"</h5>"+
 			"<input id='txtcabbage' class='itemvalue item_price' type='text' value='"+val.price+"' hidden>"+
@@ -578,7 +580,7 @@ function appendhtml(data){
 			"<input type='button' value='-' class='qtyminus' field='quantity'>"+
 			"<input type='text' name='quantity' value='0' class='qty val"+val.name+"containercount'>"+
 			"<input type='button' value='+'' class='qtyplus' field='quantity'>"+
-			"<p><a href='#' class='btn btn-default btn-add item_add' role='button'><b> Add to Cart</b></a></p>"+
+			//"<p><a href='#' class='btn btn-default btn-add item_add' role='button'><b> Add to Cart</b></a></p>"+
 			"</div>"+
 			"</div>"+
 			"</div>");
