@@ -81,7 +81,7 @@ $(document).ready(function(){
 				
 				var cart = JSON.parse(sessionStorage["cart"]);
 				
-				console.log(cart);
+				//console.log(cart);
 
 				//Convert the items in the cart into a string
 				var cartitems = JSON.stringify(cart);
@@ -102,6 +102,8 @@ $(document).ready(function(){
 
 				
 				//.html('<img id="imgloading" src="/images/loadingtomato.gif">');
+				$("#myModal").modal("show");
+				//$("#myModal .modal-body").html("<div>I am here</div>");
 				
 				$.ajax({
 					url: 'include/BL/orderBL.php',
