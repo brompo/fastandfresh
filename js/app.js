@@ -35,14 +35,32 @@ $(".categoriessidebar").find("a").each(function(){
 		//alert($(this).attr('href'));
 		$(this).parent().toggleClass('active',$(this).attr('href') == loc);
 	});
+if(loc == "/index.html")
+	{
+appendmain();
+}
 
+else if(loc == "/vegetables.html")
+	{
 	appendVegetables(); // Appends data into the vegetable page
+}
+else if(loc == "/herbs.html")
+	{
 	appendHerbs(); // Appends data into the Herbs page
+}
+else if(loc == "/fruits.html")
+	{
 	appendFruits(); // Appends data into the Fruits page
+}
+else if(loc == "/meats.html")
+	{
 	appendMeats(); //Appends data into the Meats page
+}
+else if(loc == "/driedgoods.html")
+	{
 	appendDriedGoods(); //Appends data into the dried goods page
-	appendCleaningMaterials(); //Appends data into the Cleaning Materials page
-	appendmain();
+}
+	//appendCleaningMaterials(); //Appends data into the Cleaning Materials page
 	if(loc == "/checkout.html")
 	{
 		showcarttable(cart);
@@ -63,54 +81,44 @@ $(".categoriessidebar").find("a").each(function(){
 		
 		
 	}
-	else if(loc == "/vegetable.html")
-	{
-		function appendVegetables(){
-		//Read the json file and append the div onto the 
-		$.getJSON("data/vegetables.json",function(data){
-			appendhtml(data);
-		});
-	}	
-}
-else if(loc == "/fruits.html")
-{
-	function appendFruits(){
-		$.getJSON("data/fruits.json",function(data){
-			appendhtml(data);
-		});
-	}
-}
-else if(loc == "/herbs.html")
-{
-	function appendHerbs(){
-				//Read the json file and append the div onto the 
-				$.getJSON("data/herbs.json",function(data){
-					appendhtml(data);
-				});
-			}	
-		}
-		else if(loc == "meats.html")
-		{
-			function appendMeats(){
-				$.getJSON("data/meatandseafoods.json",function(data){
-					appendhtml(data);
-				});
-			}
-		}
-		else if(loc == "driedgoods.html")
-		{
-			function appendDriedGoods(){
-				$.getJSON("data/driedgoods.json",function(data){
-					appendhtml(data);
-				});
-			}
-		}
-		function appendmain(){
+
+function appendmain(){
 	//Read the json file and append the div onto the 
 	$.getJSON("data/main.json",function(data){
 		appendhtml(data);
 	});
 }
+
+function appendVegetables(){
+		//Read the json file and append the div onto the 
+		$.getJSON("data/vegetables.json",function(data){
+			appendhtml(data);
+		});
+}
+
+function appendFruits(){
+		$.getJSON("data/fruits.json",function(data){
+			appendhtml(data);
+		});
+}
+
+function appendHerbs(){
+				//Read the json file and append the div onto the 
+				$.getJSON("data/herbs.json",function(data){
+					appendhtml(data);
+				});
+}	
+
+function appendMeats(){
+				$.getJSON("data/meatandseafoods.json",function(data){
+					appendhtml(data);
+				});
+}
+function appendDriedGoods(){
+				$.getJSON("data/driedgoods.json",function(data){
+					appendhtml(data);
+				});
+			}
 
 // Appnding data to the herbs page
 
@@ -175,6 +183,7 @@ $(document).on("click",".qtyplus",function(e){
 	var count = $(this).closest('div').children('.qty').val();
 	var unit = $(this).closest('div').children('.itemunit').val();
 	var itemtotalcost = Number(itemvalue) * Number(count);
+	var itemID = $(this).closest('div').children('.itemID').val();
 
 	var totalprice = $(this).parent().siblings('.dataitemcost').html();
 	//var newtotalprice = unitprice * newquantity;
@@ -185,7 +194,7 @@ $(document).on("click",".qtyplus",function(e){
 	exist =edititemincart(displayname,newquantity,itemtotalcost);
 
 	if (exist == 0 & count != 0){
-		additemtocart(displayname,countname,count,itemvalue,unit,itemtotalcost); 	
+		additemtocart(displayname,countname,count,itemvalue,unit,itemtotalcost,itemID); 	
 	}
 	
 
@@ -226,6 +235,7 @@ $(document).on("click",".qtyminus",function(e){
 	var count = $(this).closest('div').children('.qty').val();
 	var unit = $(this).closest('div').children('.itemunit').val();
 	var itemtotalcost = Number(itemvalue) * Number(count);
+	var itemID = $(this).closest('div').children('.itemID').val();
 
 	var totalprice = $(this).parent().siblings('.dataitemcost').html();
 	//var newtotalprice = unitprice * newquantity;
@@ -237,7 +247,7 @@ $(document).on("click",".qtyminus",function(e){
 	deleteitemsfromcart();
 
 	if (exist == 0 & count != 0){
-		additemtocart(displayname,countname,count,itemvalue,unit,itemtotalcost); 	
+		additemtocart(displayname,countname,count,itemvalue,unit,itemtotalcost,itemID); 	
 	}
 
 	if(count == 0){
@@ -375,6 +385,7 @@ $(document).on("click","a.btn-add",function(e){
 	var count = $(this).closest('div').children('.qty').val();
 	var unit = $(this).closest('div').children('.itemunit').val();
 	var itemtotalcost = Number(itemvalue) * Number(count);
+	var itemID = $(this).closest('div').children('.itemID').val();
 
 	var exist = 0
 	total = 0;
@@ -390,7 +401,7 @@ $(document).on("click","a.btn-add",function(e){
 		if (exist == 0 & count != 0)
 		{
 			//Adds to the cart
-			additemtocart(displayname,countname,count,itemvalue,unit,itemtotalcost);
+			additemtocart(displayname,countname,count,itemvalue,unit,itemtotalcost,itemID);
 		}
 
 		fillcart(cart);
@@ -566,9 +577,9 @@ function fillcart(presentcart){
 	
 } // fillcart
 
-function additemtocart(displayname,countname,count,itemvalue,unit,itemtotalcost){
+function additemtocart(displayname,countname,count,itemvalue,unit,itemtotalcost,itemID){
 	//cart.push({displayname:displayname,countname:countname,count:count,price:itemvalue, unit:unit,itemtotalcost:itemtotalcost});
-	cart.push({displayname:displayname,countname:countname,count:count, unit:unit,price:itemvalue,itemtotalcost:itemtotalcost});
+	cart.push({displayname:displayname,countname:countname,count:count, unit:unit,price:itemvalue,itemtotalcost:itemtotalcost,itemID:itemID});
 	//cart.push({itembought:itembought});
 	sessionStorage["cart"] = JSON.stringify(cart);
 }
@@ -618,6 +629,7 @@ function appendhtml(data){
 			"<input type='button' value='-' class='qtyminus' field='quantity'>"+
 			"<input type='text' name='quantity' value='0' class='qty val"+val.name+"containercount'>"+
 			"<input type='button' value='+'' class='qtyplus' field='quantity'>"+
+			"<input type='text' class='itemID' value='"+val.ID+"' hidden>"+
 			//"<p><a href='#' class='btn btn-default btn-add item_add' role='button'><b> Add to Cart</b></a></p>"+
 			"</div>"+
 			"</div>"+

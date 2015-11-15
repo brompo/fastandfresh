@@ -6,6 +6,9 @@ $server = 'localhost';
 $user = 'root';
 $pass = 'ruth';
 $db = 'fastandfresh';
+//$user = 'brompo_brompo';
+//$pass = 'f@st@ndfr3sh';
+//$db = 'brompo_fastandfresh';
 $link = mysql_connect($server,$user,$pass);
 if (!is_resource($link)) {   
 	$hasDB = false;

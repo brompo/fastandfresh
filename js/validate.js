@@ -83,9 +83,10 @@ $(document).ready(function(){
 				
 				console.log(cart);
 
-
-				var items = JSON.stringify(cart);
+				//Convert the items in the cart into a string
+				var cartitems = JSON.stringify(cart);
 				var orderdetails = {};
+
 				orderdetails["firstname"] = orderfirstname.val();
 				orderdetails["lastname"] = orderlastname.val();
 				orderdetails["where"] = orderwhere.val();
@@ -95,16 +96,20 @@ $(document).ready(function(){
 				orderdetails["comment"] = ordercomment.val();
 				//orderdetails["latitude"] = latitude.val();
 				//orderdetails["longitude"] = longitude.val();
+				persondetails = JSON.parse(sessionStorage["person"]);
 
-				var details = JSON.stringify(orderdetails);
+				var details = JSON.stringify(orderdetails);				
+
 				
-
-				$("#myModal").modal("show");
+				//.html('<img id="imgloading" src="/images/loadingtomato.gif">');
+				
 				$.ajax({
-					url: 'include/BL/personBL.php',
+					url: 'include/BL/orderBL.php',
 					type: 'POST',
-					data: {data: items,orderdetails:orderdetails},
+					data: {cartdata:cart,orderdetails:orderdetails,persondetails:persondetails},
 					success:function(response){
+
+					$("#myModal").modal("show");		
 						
 					},
 					error:function(ts){
@@ -151,12 +156,19 @@ $(document).ready(function(){
 					else
 					{
 						//alert(logininfo[1]["last_name"]);
+
+							if(logininfo[1]["role"] === "admin"){
+								var url = "admin";
+							 $(location).attr("href", url);
+								}
 						var person = {};
 						person["firstname"] = logininfo[1]["first_name"];
 						person["lastname"] = logininfo[1]["last_name"];
 						person["email"] = logininfo[1]["email"];
 						person["mobile"] = logininfo[1]["mobile_phone"];
 						person["where"] = logininfo[1]["default_location"];
+						person["ID"] = logininfo[1]["person_id"];
+						person["role"] = logininfo[1]["role"];
 						
 						sessionStorage["person"] = JSON.stringify(person);
 
@@ -226,6 +238,7 @@ registerform.submit(function(e) {
 					success:function(response){
 						$("#imgloading").hide();
 						var registrationinfo = $.parseJSON(response);
+						//alert(registrationinfo[0]);
 
 						if (registrationinfo[0] === 0)
 						{
@@ -246,6 +259,8 @@ registerform.submit(function(e) {
 							person["mobile"] = persondetails["phonenumber"];
 							person["where"] = persondetails["location"];
 							person["password"] = persondetails["password"];
+							person["ID"] = registrationinfo[1][1]["person_id"];
+							person["role"] = registrationinfo[1][1]["role"];
 							
 							sessionStorage["person"] = JSON.stringify(person);
 
@@ -465,13 +480,24 @@ function validatePassword(password){
 
 	$('#myModal').on('hidden.bs.modal', function (e) {
 
-		clearsessions();
+		clearcart();
 	})
 
 	function clearsessions()
 	{
 		sessionStorage.removeItem("person");
 		sessionStorage.removeItem("cart");
+		window.location.href = "/index.html";
+	}
+
+	function clearcart()
+	{
+		sessionStorage.removeItem("cart");
+		window.location.href = "/index.html";
+	}
+	function clearperson()
+	{
+		sessionStorage.removeItem("person");
 		window.location.href = "/index.html";
 	}
 /*

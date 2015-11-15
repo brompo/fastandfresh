@@ -3,8 +3,8 @@
 include_once("../DAO/personDAO.php");
 
 
-error_reporting(E_ALL);
-ini_set('display_errors', '1');
+//error_reporting(E_ALL);
+//ini_set('display_errors', '1');
 //Create an Object personDAO
 $personDAO = new personDAO();
 
@@ -14,6 +14,7 @@ if(isset($_POST["email"]))
 {
 	$email = $_POST["email"];
 	$password = $_POST["password"];
+	/*If the person is admin, send them to the admin page*/
 
 	$result = $personDAO->selectperson($email,$password);
 
@@ -31,14 +32,9 @@ if(isset($_POST["personinfo"])){
 	if($result[0] == 1){
 		sendemail($persondetails);
 	}
-}
-//Passed After Order Confirmation
-if(isset($_POST["data"])){
-	$cartdata = $_POST["data"];
-	$orderdetails = $_POST["orderdetails"];
-
 	
 }
+
 /*
 if(Isset($_POST["persondetails"]))
 {
@@ -79,7 +75,7 @@ $mail->IsSMTP(); // enable SMTP
 $mail->SMTPDebug = 1; // debugging: 1 = errors and messages, 2 = messages only
 $mail->SMTPAuth = true; // authentication enabled
 $mail->SMTPSecure = 'ssl'; // secure transfer enabled REQUIRED for GMail
-$mail->Host = "gator4027.hostgator.com";
+$mail->Host = "renault.websitewelcome.com";
 $mail->Port = 465; // or 587
 $mail->IsHTML(true);
 

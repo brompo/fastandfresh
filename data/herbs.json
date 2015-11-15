@@ -1,9 +1,9 @@
 {
 	"category":"herbs",
 	"products":
-	[{"name":"freshparsley","displayname":"Fresh Parsley","picture":"images/herbs/freshparsley.jpg","unit":"bunch","price":"700"},
-     {"name":"freshmint","displayname":"Fresh Mint","picture":"images/herbs/freshmint.jpg","unit":"bunch","price":"700"},
-     {"name":"freshbasil","displayname":"Fresh Basil","picture":"images/herbs/freshbasil.jpg","unit":"bunch","price":"700"},
-     {"name":"freshcoriander","displayname":"Fresh Coriander","picture":"images/herbs/freshcoriander.jpg","unit":"bunch","price":"700"}
+	[{"ID":"50","name":"freshparsley","displayname":"Fresh Parsley","picture":"images/herbs/freshparsley.jpg","unit":"bunch","price":"700"},
+     {"ID":"51","name":"freshmint","displayname":"Fresh Mint","picture":"images/herbs/freshmint.jpg","unit":"bunch","price":"700"},
+     {"ID":"52","name":"freshbasil","displayname":"Fresh Basil","picture":"images/herbs/freshbasil.jpg","unit":"bunch","price":"700"},
+     {"ID":"53","name":"freshcoriander","displayname":"Fresh Coriander","picture":"images/herbs/freshcoriander.jpg","unit":"bunch","price":"700"}
    	]
 }

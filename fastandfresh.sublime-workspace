@@ -1,0 +1,1197 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"fruits",
+				"fruits"
+			],
+			[
+				"session",
+				"sessionStorage"
+			],
+			[
+				"order",
+				"orderdate"
+			],
+			[
+				"person",
+				"persondetails"
+			],
+			[
+				"or",
+				"orderDAO"
+			],
+			[
+				"save",
+				"saveorderdetail"
+			],
+			[
+				"fun",
+				"fun	Function"
+			],
+			[
+				"rev",
+				"removeClass	.removeClass()"
+			],
+			[
+				"th",
+				"th	Tag"
+			],
+			[
+				"the",
+				"thead	Tag"
+			],
+			[
+				"rem",
+				"removeClass	.removeClass()"
+			],
+			[
+				"ad",
+				"addClass	.addClass()"
+			],
+			[
+				"is",
+				"isset"
+			],
+			[
+				"branch",
+				"branch_id"
+			],
+			[
+				"branc",
+				"branch_id"
+			],
+			[
+				"proje",
+				"projectitle"
+			],
+			[
+				"event",
+				"event_id"
+			],
+			[
+				"project",
+				"projectdescription"
+			],
+			[
+				"pro",
+				"projectdescription"
+			],
+			[
+				"brahc",
+				"branch_id"
+			],
+			[
+				"brach",
+				"branch_id"
+			],
+			[
+				"mysql",
+				"mysql_query"
+			],
+			[
+				"bran",
+				"branch_id"
+			],
+			[
+				"select",
+				"selecteventsbybranchid"
+			],
+			[
+				"bra",
+				"branch_id"
+			],
+			[
+				"myslq_",
+				"mysql_error"
+			],
+			[
+				"add",
+				"addaccountlinks"
+			],
+			[
+				"btn",
+				"btnprofilename"
+			],
+			[
+				"pass",
+				"passWord"
+			],
+			[
+				"use",
+				"userName"
+			],
+			[
+				"sub",
+				"submit	.submit()"
+			],
+			[
+				"user",
+				"username"
+			],
+			[
+				"pas",
+				"passWord"
+			],
+			[
+				"us",
+				"username"
+			],
+			[
+				"unit",
+				"unitprice"
+			],
+			[
+				"count",
+				"count"
+			],
+			[
+				"array",
+				"array"
+			],
+			[
+				"data",
+				"databasename"
+			],
+			[
+				"insert",
+				"insertquery"
+			],
+			[
+				"fresh",
+				"freshcoriander"
+			],
+			[
+				"Fi",
+				"Fillet"
+			],
+			[
+				"wh",
+				"whitesugar"
+			],
+			[
+				"white",
+				"whitericembeya1stgrade"
+			],
+			[
+				"u",
+				"uhtmilk"
+			],
+			[
+				"Man",
+				"Mango"
+			],
+			[
+				"eg",
+				"eggslocal"
+			],
+			[
+				"Wate",
+				"watermelon"
+			],
+			[
+				"gra",
+				"grapesimported"
+			],
+			[
+				"red",
+				"redirishpotatoes"
+			],
+			[
+				"gree",
+				"greenbellpeppers"
+			],
+			[
+				"show",
+				"Show"
+			],
+			[
+				"recovera",
+				"recoverpasswordemail"
+			],
+			[
+				"email",
+				"email"
+			],
+			[
+				"recove",
+				"recoverPasswordEmail"
+			],
+			[
+				"validateEma",
+				"validateEmail"
+			],
+			[
+				"orderwh",
+				"orderwhere"
+			],
+			[
+				"mobie",
+				"mobilenumber"
+			],
+			[
+				"sess",
+				"sessionStorage"
+			],
+			[
+				"sen",
+				"sendemail"
+			],
+			[
+				"a",
+				"a	Tag"
+			],
+			[
+				"regi",
+				"registerpanel"
+			],
+			[
+				"slide",
+				"slideDown	.slideDown()"
+			],
+			[
+				"firsnam",
+				"firstname"
+			],
+			[
+				"mobile",
+				"mobile_phone"
+			],
+			[
+				"last",
+				"last_name"
+			],
+			[
+				"fi",
+				"first_name"
+			],
+			[
+				"firs",
+				"first_name"
+			],
+			[
+				"first",
+				"firstname"
+			],
+			[
+				"jS",
+				"JSON"
+			],
+			[
+				"cs",
+				"css	.css() - single"
+			],
+			[
+				"parse",
+				"parseJSON"
+			],
+			[
+				"json",
+				"json_encode"
+			],
+			[
+				"login",
+				"logininfo"
+			],
+			[
+				"mysql_num",
+				"mysql_num_rows"
+			],
+			[
+				"sele",
+				"selectpersonbyemail"
+			],
+			[
+				"read",
+				"ready	$(document).ready"
+			],
+			[
+				"index",
+				"indexOf"
+			],
+			[
+				"search",
+				"searchitem"
+			],
+			[
+				"class",
+				"classname"
+			],
+			[
+				"font",
+				"font-weight"
+			],
+			[
+				"ff",
+				"ff962e"
+			],
+			[
+				"align",
+				"text-align"
+			],
+			[
+				"fad",
+				"fadeOut	.fadeOut()"
+			],
+			[
+				"mysql_row",
+				"mysql_num_rows"
+			],
+			[
+				"selec",
+				"selectpersonbyemail"
+			],
+			[
+				"persond",
+				"persondetails"
+			],
+			[
+				"pre",
+				"preventDefault"
+			],
+			[
+				"validate",
+				"validateEmail"
+			],
+			[
+				"validateM",
+				"validateMobile"
+			],
+			[
+				"validateEm",
+				"validateEmail"
+			],
+			[
+				"respon",
+				"responseText"
+			],
+			[
+				"inpuEmail",
+				"inputEmailLogin"
+			],
+			[
+				"validatep",
+				"validatePasswordLogin"
+			],
+			[
+				"key",
+				"keyup	.keyup()"
+			],
+			[
+				"validateEmail",
+				"validateEmailLogin"
+			],
+			[
+				"inputEmail",
+				"inputEmailLogin"
+			],
+			[
+				"inputEmai",
+				"inputEmailLogin"
+			],
+			[
+				"validateE",
+				"validateEmailLogin"
+			],
+			[
+				"li",
+				"link	Tag"
+			],
+			[
+				"res",
+				"responder_id"
+			],
+			[
+				"ques",
+				"questionnaire_code"
+			],
+			[
+				"possible_answe",
+				"possible_answers_id"
+			],
+			[
+				"possible_",
+				"possible_answers_id"
+			],
+			[
+				"question",
+				"questionnaire_code"
+			],
+			[
+				"que",
+				"questionnaire_code"
+			],
+			[
+				"responder",
+				"responder_id"
+			],
+			[
+				"po",
+				"possible_answers_id"
+			],
+			[
+				"results",
+				"resultspa"
+			],
+			[
+				"print",
+				"print_r"
+			],
+			[
+				"reson",
+				"responder"
+			],
+			[
+				"qu",
+				"questionnaire_code"
+			],
+			[
+				"questionn",
+				"questionnaire_code"
+			],
+			[
+				"myslq",
+				"mysql_error"
+			],
+			[
+				"quest",
+				"questionnaire_code"
+			],
+			[
+				"questo",
+				"questionnaire_code"
+			],
+			[
+				"al",
+				"alt	Attr"
+			],
+			[
+				"mysql_err",
+				"mysql_error"
+			],
+			[
+				"mys",
+				"mysql_query"
+			],
+			[
+				"msy",
+				"mysql_connect"
+			],
+			[
+				"v",
+				"vim"
+			],
+			[
+				"j",
+				"jik"
+			],
+			[
+				"Dett",
+				"dettolsoap"
+			],
+			[
+				"m",
+				"Mangojuicecerese"
+			],
+			[
+				"ap",
+				"Applejuiceceres"
+			],
+			[
+				"eggpla",
+				"eggplantwhite"
+			],
+			[
+				"val",
+				"val	.val()"
+			],
+			[
+				"l",
+				"loc"
+			],
+			[
+				"lat",
+				"latlng"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "include/DAO/connection.php",
+			"settings":
+			{
+				"buffer_size": 419,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "js/validate.js",
+			"settings":
+			{
+				"buffer_size": 15613,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "include/BL/orderBL.php",
+			"settings":
+			{
+				"buffer_size": 1239,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 138.0,
+		"selected_items":
+		[
+			[
+				"Package Control: ins",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: Install Package",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: Package",
+				"Package Control: Install Package"
+			],
+			[
+				"Pack",
+				"Package Control: Install Package"
+			],
+			[
+				"Package",
+				"Package Control: Install Package"
+			],
+			[
+				"Packa",
+				"Package Control: Enable Package"
+			],
+			[
+				"package Control:",
+				"Package Control: Add Channel"
+			],
+			[
+				"PAck",
+				"Package Control: Add Channel"
+			],
+			[
+				"Package Control: C",
+				"Package Control: List Packages"
+			],
+			[
+				"Angula",
+				"AngularJS: Toggle - Disable Built-in Element Completions"
+			],
+			[
+				"Ang",
+				"Set Syntax: HTML (Angular.js)"
+			],
+			[
+				"",
+				"AngularJS: Look Up Definition"
+			]
+		],
+		"width": 530.0
+	},
+	"console":
+	{
+		"height": 310.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404' + 'e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/var/www/html/js/validate.js",
+		"/var/www/html/js/app.js",
+		"/var/www/html/include/BL/personBL.php",
+		"/var/www/html/include/DAO/orderDAO.php",
+		"/var/www/html/include/BL/orderBL.php",
+		"/var/www/html/checkout.html",
+		"/var/www/html/data/vegetables.json",
+		"/var/www/html/include/BL/test.php",
+		"/var/www/html/data/fruits.json",
+		"/var/www/html/data/driedgoods.json",
+		"/var/www/html/about.html",
+		"/var/www/html/driedgoods.html",
+		"/var/www/html/fruits.html",
+		"/var/www/html/herbs.html",
+		"/var/www/html/index.html",
+		"/var/www/html/meats.html",
+		"/var/www/html/vegetables.html",
+		"/var/www/html/include/DAO/connection.php",
+		"/var/www/html/data/main.json",
+		"/var/www/html/data/meatandseafoods.json",
+		"/var/www/html/data/herbs.json",
+		"/var/www/html/indextest.php",
+		"/var/www/html/include/DAO/personDAO.php",
+		"/var/www/html/text.php",
+		"/var/www/html/admin/pages/index.html",
+		"/var/www/html/include/DAO/itemDAO.php",
+		"/var/www/html/admin/index.html",
+		"/var/www/html/fastandfresh.sublime-project",
+		"/var/www/html/uchaguzi/index.html",
+		"/var/www/html/uchaguzi/blog.html",
+		"/var/www/html/uchaguzi/.htaccess",
+		"/var/www/html/uchaguzi/.htaccess.off",
+		"/var/www/html/Living-Labs-System/js/admin.js",
+		"/etc/apache2/apache2.conf",
+		"/var/www/html/Living-Labs-System/js/ajaxCalls.js",
+		"/var/www/html/Living-Labs-System/dbconect.php",
+		"/var/www/html/Living-Labs-System/branch.php",
+		"/var/www/html/Living-Labs-System/forms.html",
+		"/var/www/html/Living-Labs-System/js/forms.js",
+		"/var/www/html/Living-Labs-System/js/leaflet-sidebar.js",
+		"/var/www/html/Living-Labs-System/index.html",
+		"/var/www/html/Living-Labs-System/profile.html",
+		"/var/www/html/Living-Labs-System/signin.php",
+		"/var/www/html.fastandresh/js/app.js",
+		"/var/www/html.fastandresh/index.html",
+		"/var/www/html/css/main.css",
+		"/var/www/html/Living-Labs-System/test.php",
+		"/var/www/html/vegetables.oldhtml",
+		"/var/www/html/vegetables.html.old",
+		"/var/www/html/tzconnect/include/DAO/connnection.php",
+		"/var/www/html/tzconnect/include/BL/userBL.php",
+		"/var/www/html/sql/driedgood.sql",
+		"/var/www/html/tzconnect/include/DAO/userDAO.php",
+		"/var/www/html/sql/herbs.sql",
+		"/var/www/html/js/simpleCart.js",
+		"/var/www/html/sql/meatandseafood.sql",
+		"/var/www/html/sql/vegetable.sql",
+		"/var/www/html/sql/fruit.sql",
+		"/var/www/html/data/cleaningmaterials.json",
+		"/var/www/html/include/mail.php",
+		"/var/www/html/forgotpassword.html",
+		"/var/www/html/cleanings.html",
+		"/var/www/html/css/styles.css",
+		"/var/www/html/ajax/page_vegetables.html",
+		"/var/www/html/newfnf/ajax/tables_datatables.html",
+		"/var/www/html.old/index.html",
+		"/var/www/html/ajax/tables_datatables.html",
+		"/var/www/html/ajax/home.html",
+		"/var/www/html/css/style.css",
+		"/home/brompo/Desktop/data/driedgoods.json",
+		"/home/brompo/Desktop/data/vegetables.json",
+		"/home/brompo/Desktop/data/fruits.json",
+		"/home/brompo/Desktop/data/meatandseafoods.json",
+		"/var/www/Blueprint-SlidePushMenus-master/index.html",
+		"/var/www/html/ajax/page_fruits.html",
+		"/var/www/html/ajax/page_driedgoods.html",
+		"/var/www/html/ajax/page_pricing.html",
+		"/var/www/html/ajax/page_freshherbs.html",
+		"/var/www/html/ajax/page_meatandseafood.html",
+		"/var/www/html/ajax/page_freshherbs",
+		"/var/www/html/ajax/page_meatandseafoods.html",
+		"/var/www/html/ajax/page_groceriesanddriedgoods.html",
+		"/var/www/html/include/DAO/test.html",
+		"/media/brompo/7AA1-DFC1/dodoso/number1.php",
+		"/var/www/html/dodoso/dashboard1.php",
+		"/var/www/html/dodoso/processdata/include/connection.php",
+		"/var/www/html/dodoso/index.php",
+		"/var/www/html/dodoso/login.php",
+		"/var/www/html/dodoso/number1.php",
+		"/var/www/html/homepage2/number1.php",
+		"/media/brompo/7AA1-DFC1/dodoso/dashboard1.php",
+		"/var/www/html/dodoso/payment.php",
+		"/var/www/html/dodoso/paysuccess.php",
+		"/var/www/html/dodoso/register.php",
+		"/var/www/html/dodoso/results.php",
+		"/var/www/html/dodoso/taketour.php",
+		"/var/www/html/dodoso/tips.php",
+		"/var/www/html/dodoso/viewresults.php",
+		"/var/www/html/dodoso/aboutus.php",
+		"/var/www/html/dodoso/contactsuccess.php",
+		"/var/www/html/dodoso/contactus.php",
+		"/var/www/html/homepage2/dashboard1.php",
+		"/var/www/html/homepage2/processdata/include/connection.php",
+		"/var/www/html/dodoso/test.php.workin.backup",
+		"/var/www/dodoso/test.php",
+		"/var/www/html/homepage2/processdata/BL/personbl.php",
+		"/var/www/html/dodoso/test.php",
+		"/etc/kannel/kannel.conf",
+		"/var/www/html/homepage2/test.php",
+		"/var/www/html/homepage2/processdata/DAO/questionnaireDAO.php",
+		"/var/www/html/homepage2/processdata/BL/questionnairebl.php",
+		"/var/www/html/dodoso/test.html",
+		"/usr/share/doc/kannel/examples/modems.conf",
+		"/usr/share/doc/kannel/examples/dlr-mysql.conf",
+		"/var/www/html/sitemap.xml",
+		"/var/www/html/robots.txt",
+		"/var/www/html/dashboard.html",
+		"/var/www/html/fastandfresh/meats.html",
+		"/var/www/html/fastandfresh/css/main.css",
+		"/var/www/html/fastandfresh/driedgoods.html",
+		"/var/www/html/fastandfresh/checkout.html",
+		"/var/www/html/fastandfresh/js/app.js",
+		"/var/www/html/fastandfresh/cleanings.html",
+		"/var/www/html/fastandfresh/fruits.html",
+		"/var/www/html/fastandfresh/css/styles.css",
+		"/var/www/html/fastandfresh/vegetables.html",
+		"/var/www/html/fastandfresh/herbs.html",
+		"/var/www/html/fastandfresh/index.html"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 93.0,
+		"where_history":
+		[
+			"/var/www/html/",
+			"/var/www/html/ajax/page_driedgoods.html",
+			"/var/www/html/ajax/page_meatandseafood.html",
+			"/var/www/html/ajax/page_fruits.html",
+			"/var/www/html/img/fruits",
+			"/var/www/html/",
+			"/var/www/html/dodoso",
+			"/var/www/html/fastandfresh",
+			"checkout.html",
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"potatoes",
+			"delivery",
+			"registerform",
+			"register",
+			"loginform",
+			"login",
+			"saveorder",
+			"appendve",
+			"clearsessions()",
+			"tomatoes",
+			"roundtomatoes",
+			"roundtomatoed",
+			"sessionStorage[\"cart",
+			"additemtocart",
+			".itemid",
+			".itemID",
+			"itemid",
+			"itemID",
+			"itemvalue item",
+			"additemtocart",
+			"fillcart",
+			"sessionStorage",
+			"cart",
+			"appendhtml",
+			"#myModal",
+			"checkoutform",
+			"cart",
+			"sessionStorage[\"person\"]",
+			"sessionStorage",
+			"sessionStorage[\"person\"]",
+			"sessionStorage",
+			"checkoutform",
+			"form",
+			"followers",
+			"registration",
+			"register",
+			"shiriki kutoa",
+			"shiriki",
+			"<p>",
+			"Speakers Announced",
+			"twitter",
+			"reserve",
+			"21",
+			"uchaguzi",
+			"Wagombea",
+			"Siku",
+			"#uchaguzi",
+			"You can change your",
+			"You can change",
+			"try to change",
+			"WAGOMBEA",
+			"days",
+			"upigaji",
+			"days",
+			"25",
+			"uchaguzi",
+			"sandbox",
+			"#uchaguzi",
+			"21",
+			"OCt",
+			"21",
+			"Project",
+			"projectTableBody",
+			"#event",
+			"projects",
+			"project",
+			"event",
+			"Home",
+			"Add Project",
+			"Add Projects",
+			"lbl",
+			"active",
+			"disappear",
+			"tabAddEvent",
+			"tabEvent",
+			"checked",
+			"section",
+			"td",
+			"th,td",
+			"th, td",
+			"th",
+			"events",
+			"phpmyadmin",
+			"project",
+			"event",
+			"eventloging",
+			"eventlogin",
+			"Agnes",
+			"firstname",
+			"here i am",
+			"here I am",
+			"setSessionStorage",
+			"profile",
+			"logout",
+			"profileLogin",
+			"champions",
+			"logins for",
+			"login for ",
+			"profilelogin",
+			"session",
+			"Profile",
+			"champions",
+			"logout",
+			"profile",
+			"logout",
+			"profilelogin",
+			"profileLogin",
+			"Agnes",
+			"Maxmil",
+			"Agnes",
+			"login",
+			"profile",
+			"projectform",
+			"eventform",
+			"projectform",
+			"createproject",
+			"editproject",
+			"selectproject",
+			"\"startDa",
+			"startDa",
+			"projectDes",
+			"projectTittle",
+			"projectTi",
+			"projectform",
+			"addaccountlinks",
+			"displayuser",
+			"session",
+			"are you sure"
+		],
+		"highlight": false,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"driedgoods",
+			"meatandseafoods",
+			"fruits",
+			"css/style.css",
+			"css/bootstrap.css",
+			"/css/bootstrap.css",
+			"/css/style.css",
+			"Contact US",
+			"",
+			"showcart",
+			"fillcart",
+			"showcart",
+			"populatecarts",
+			"showcart"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 2,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "include/DAO/connection.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 419,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								106,
+								106
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "js/validate.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 15613,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								8220,
+								8220
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 4374.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "include/BL/orderBL.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1239,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								572,
+								572
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 26.0
+	},
+	"input":
+	{
+		"height": 34.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.xdebug":
+	{
+		"height": 0.0
+	},
+	"project": "fastandfresh.sublime-project",
+	"replace":
+	{
+		"height": 48.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"settings":
+	{
+		"xdebug":
+		{
+			"hide_conflict": false,
+			"restore_index":
+			{
+				"17":
+				{
+					"group": 0,
+					"index": 0
+				},
+				"18":
+				{
+					"group": 0,
+					"index": 1
+				},
+				"19":
+				{
+					"group": 0,
+					"index": 2
+				},
+				"20":
+				{
+					"group": 1,
+					"index": 0
+				},
+				"21":
+				{
+					"group": 1,
+					"index": 1
+				},
+				"22":
+				{
+					"group": 2,
+					"index": 0
+				},
+				"23":
+				{
+					"group": 2,
+					"index": 2
+				},
+				"24":
+				{
+					"group": 2,
+					"index": 1
+				}
+			},
+			"restore_layout":
+			{
+				"cells":
+				[
+					[
+						0,
+						0,
+						2,
+						1
+					],
+					[
+						0,
+						1,
+						1,
+						2
+					],
+					[
+						1,
+						1,
+						2,
+						2
+					]
+				],
+				"cols":
+				[
+					0.0,
+					0.5,
+					1.0
+				],
+				"rows":
+				[
+					0.0,
+					0.930843706777,
+					1.0
+				]
+			}
+		}
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 246.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
