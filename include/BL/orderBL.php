@@ -8,13 +8,22 @@ ini_set('display_errors', '1');
 
 $orderDAO = new orderDAO();
 
+if(isset($_POST["action"])){
+	$action = $_POST["action"];
+	if($action == "retrieveorders"){
+		$personID = $_POST["personID"];
+		$orders = $orderDAO->selectallorderbyperson($personID);
+
+		print json_encode($orders);
+	}
+}
 //Passed After Order Confirmation
 if(isset($_POST["cartdata"])){
 	$cartdata = $_POST["cartdata"];
 	$orderdetails = $_POST["orderdetails"];
 	$persondetails = $_POST["persondetails"];
-	$orderstatus = "test";
-	$feedback = "test";
+	$orderstatus = "Pending";
+	$feedback = "NaN";
 	if($orderdetails["when"] == "")
 	{
 		$deliverydate = strtotime("tomorrow");

@@ -36,28 +36,28 @@ $(".categoriessidebar").find("a").each(function(){
 		$(this).parent().toggleClass('active',$(this).attr('href') == loc);
 	});
 if(loc == "/index.html")
-	{
-appendmain();
+{
+	appendmain();
 }
 
 else if(loc == "/vegetables.html")
-	{
+{
 	appendVegetables(); // Appends data into the vegetable page
 }
 else if(loc == "/herbs.html")
-	{
+{
 	appendHerbs(); // Appends data into the Herbs page
 }
 else if(loc == "/fruits.html")
-	{
+{
 	appendFruits(); // Appends data into the Fruits page
 }
 else if(loc == "/meats.html")
-	{
+{
 	appendMeats(); //Appends data into the Meats page
 }
 else if(loc == "/driedgoods.html")
-	{
+{
 	appendDriedGoods(); //Appends data into the dried goods page
 }
 	//appendCleaningMaterials(); //Appends data into the Cleaning Materials page
@@ -82,7 +82,7 @@ else if(loc == "/driedgoods.html")
 		
 	}
 
-function appendmain(){
+	function appendmain(){
 	//Read the json file and append the div onto the 
 	$.getJSON("data/main.json",function(data){
 		appendhtml(data);
@@ -94,27 +94,27 @@ function appendVegetables(){
 		$.getJSON("data/vegetables.json",function(data){
 			appendhtml(data);
 		});
-}
+	}
 
-function appendFruits(){
+	function appendFruits(){
 		$.getJSON("data/fruits.json",function(data){
 			appendhtml(data);
 		});
-}
+	}
 
-function appendHerbs(){
+	function appendHerbs(){
 				//Read the json file and append the div onto the 
 				$.getJSON("data/herbs.json",function(data){
 					appendhtml(data);
 				});
-}	
+			}	
 
-function appendMeats(){
+			function appendMeats(){
 				$.getJSON("data/meatandseafoods.json",function(data){
 					appendhtml(data);
 				});
-}
-function appendDriedGoods(){
+			}
+			function appendDriedGoods(){
 				$.getJSON("data/driedgoods.json",function(data){
 					appendhtml(data);
 				});
@@ -460,8 +460,8 @@ $(document).on("click","#btnprofilename",function(e){
 	else
 	{
 		if (window.location.pathname != "/checkout.html"){
-		window.location.href = "/checkout.html";
-			};
+			window.location.href = "/checkout.html";
+		};
 	}
 
 });
@@ -520,8 +520,62 @@ $(document).on("click","button.btn-order",function(){
 	//alert(emptyfields);
 });
 
+if (window.location.pathname == "/order.html"){
+
+	var persondetails = JSON.parse(sessionStorage["person"]);
+	var personID = persondetails["ID"];
+	var data = retrieveorders(personID);
+   	//alert(data);
+
+   }
+
 
 //////// Function Areas ////////
+
+function retrieveorders(personID){
+	$.ajax({
+		url: 'include/BL/orderBL.php',
+		type: 'POST',
+		dataType: 'json',
+		data: {action:"retrieveorders",personID:personID},
+		success:function(response){
+			//alert(response);
+						//[TODO] Display the data on a table format
+							displayorders(response);
+						//displayorders(response);
+					//var data = $.parseJSON(response);
+	//				return data;
+
+},
+error:function(ts){
+	var error = ts.responseText;
+						//alert(error);
+					}
+				});
+
+}
+function displayorders(orders){
+	$('#tblOrders').DataTable({
+		data:orders,
+		columns:[
+		{title:"OrderNo",},
+		{title:"Order Date"},
+		{title:"Delivery Date"},
+		{title:"Amount"},
+		{title:"Status"},
+		{title:"Comments","width":"30%"}],
+
+		"order": [[ 0, "desc" ]]
+	});
+
+	/*
+	$.each(data,function(key, val) {
+		var appendel = ("<tr><td>"+val.ID+"</td><td>"+val.orderdate+"</td><td>"+val.deliverydate+"</td><td>"+val.comments+"</td><td>"+val.status+"</td><td>"+val.amount+"</td></tr>");
+	$("#tblOrders tbody").append(appendel);
+	
+	});
+	*/
+}
 
 function checkpersonsession(){
 	if(sessionStorage.getItem("person")== null){
@@ -534,15 +588,15 @@ function checkpersonsession(){
 }
 
 function addaccountlinks(){
-		var data = "<ul class='dropdown-menu dropdown-menu-right accountdetail' aria-labelledby='dropdownMenu1'>"+
-                  "<li><a href='#'><span class='glyphicon glyphicon-user'></span> Account</a></li>"+
-                  "<li><a href='#'><span class='glyphicon glyphicon-tasks'></span> Order History</a></li>"+
-                  "<li role='separator' class='divider'></li>"+
-                  "<li>"+
-                   "<a href='#' id='logoutlink' data-toggle='modal' data-target='#logoutModal'><span class='glyphicon glyphicon-log-out'></span>  Logout</a>"+
-                 "</li>"+
-               "</ul>"
-               $("#accountcontainer").append(data);
+	var data = "<ul class='dropdown-menu dropdown-menu-right accountdetail' aria-labelledby='dropdownMenu1'>"+
+	"<li><a href='#'><span class='glyphicon glyphicon-user'></span> Account</a></li>"+
+	"<li><a href='order.html'><span class='glyphicon glyphicon-tasks'></span> Order History</a></li>"+
+	"<li role='separator' class='divider'></li>"+
+	"<li>"+
+	"<a href='#' id='logoutlink' data-toggle='modal' data-target='#logoutModal'><span class='glyphicon glyphicon-log-out'></span>  Logout</a>"+
+	"</li>"+
+	"</ul>"
+	$("#accountcontainer").append(data);
 }
 
 // Adding items to the Items List

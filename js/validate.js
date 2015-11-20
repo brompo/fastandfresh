@@ -96,7 +96,7 @@ $(document).ready(function(){
 				orderdetails["comment"] = ordercomment.val();
 				//orderdetails["latitude"] = latitude.val();
 				//orderdetails["longitude"] = longitude.val();
-				persondetails = JSON.parse(sessionStorage["person"]);
+				var persondetails = JSON.parse(sessionStorage["person"]);
 
 				var details = JSON.stringify(orderdetails);				
 
@@ -173,6 +173,8 @@ $(document).ready(function(){
 						person["role"] = logininfo[1]["role"];
 						
 						sessionStorage["person"] = JSON.stringify(person);
+
+						addaccountlinks();
 
 						//alert(person.length);
 /*
@@ -272,6 +274,10 @@ registerform.submit(function(e) {
 						});
 
 							displayuser(persondetails["firstname"]);
+							// Add links to the account button
+							addaccountlinks();
+
+
 							$("#orderContainer").css('display', 'block');
 							$("#inputOrderFirstname").val(persondetails["firstname"]);
 							$("#inputOrderLastname").val(persondetails["lastname"]);
@@ -484,6 +490,19 @@ function validatePassword(password){
 
 		clearcart();
 	})
+
+	function addaccountlinks(){
+		var data = "<ul class='dropdown-menu dropdown-menu-right accountdetail' aria-labelledby='dropdownMenu1'>"+
+                  "<li><a href='#'><span class='glyphicon glyphicon-user'></span> Account</a></li>"+
+                  "<li><a href='order.html'><span class='glyphicon glyphicon-tasks'></span> Order History</a></li>"+
+                  "<li role='separator' class='divider'></li>"+
+                  "<li>"+
+                   "<a href='#' id='logoutlink' data-toggle='modal' data-target='#logoutModal'><span class='glyphicon glyphicon-log-out'></span>  Logout</a>"+
+                 "</li>"+
+               "</ul>"
+               $("#accountcontainer").append(data);
+}
+
 
 	function clearsessions()
 	{
