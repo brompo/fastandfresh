@@ -1,7 +1,7 @@
 $(document).ready(function(){
 //Assign up a class for a clicked menu item
 var loc = window.location.pathname;
-	//alert(loc);
+	alert(loc);
 
 //Initialize Session Variables
 
