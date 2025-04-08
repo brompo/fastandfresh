@@ -40,7 +40,7 @@ if(loc == "/index.html")
 	appendmain();
 }
 
-else if(loc == "/vegetables.html")
+else if(loc == "vegetables.html")
 {
 	appendVegetables(); // Appends data into the vegetable page
 }
