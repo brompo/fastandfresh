@@ -1,7 +1,7 @@
 $(document).ready(function(){
 //Assign up a class for a clicked menu item
 var loc = window.location.pathname;
-	alert(loc);
+	//alert(loc);
 
 //Initialize Session Variables
 
@@ -35,7 +35,7 @@ $(".categoriessidebar").find("a").each(function(){
 		//alert($(this).attr('href'));
 		$(this).parent().toggleClass('active',$(this).attr('href') == loc);
 	});
-if(loc == "/index.html")
+if(loc == "/fastandfresh/index.html")
 {
 	appendmain();
 }
@@ -44,24 +44,24 @@ else if(loc == "/fastandfresh/vegetables.html")
 {
 	appendVegetables(); // Appends data into the vegetable page
 }
-else if(loc == "/herbs.html")
+else if(loc == "/fastandfresh/herbs.html")
 {
 	appendHerbs(); // Appends data into the Herbs page
 }
-else if(loc == "/fruits.html")
+else if(loc == "/fastandfresh/fruits.html")
 {
 	appendFruits(); // Appends data into the Fruits page
 }
-else if(loc == "/meats.html")
+else if(loc == "/fastandfresh/meats.html")
 {
 	appendMeats(); //Appends data into the Meats page
 }
-else if(loc == "/driedgoods.html")
+else if(loc == "/fastandfresh/driedgoods.html")
 {
 	appendDriedGoods(); //Appends data into the dried goods page
 }
 	//appendCleaningMaterials(); //Appends data into the Cleaning Materials page
-	if(loc == "/checkout.html")
+	if(loc == "/fastandfresh/checkout.html")
 	{
 		showcarttable(cart);
 		if($.isEmptyObject(person))
